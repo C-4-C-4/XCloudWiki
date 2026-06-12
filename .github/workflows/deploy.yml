@@ -41,7 +41,7 @@ jobs:
         run: pnpm --filter "./packages/*" build
 
       - name: Build Docs
-        run: pnpm --filter docs next build
+        run: pnpm --filter docs build
         env:
           NODE_ENV: production
           NEXT_PUBLIC_BASE_URL: https://c-4-c-4.github.io/XCloudWiki
