@@ -19,7 +19,7 @@ GitHub Actions 自动构建
     ↓
 GitHub Pages 托管
     ↓
-https://<你的用户名>.github.io/XCloudWiki
+https://c-4-c-4.github.io/XCloudWiki
 ```
 
 ## 核心配置说明
@@ -102,7 +102,7 @@ git push origin main
 部署成功后，访问：
 
 ```
-https://<你的用户名>.github.io/XCloudWiki
+https://c-4-c-4.github.io/XCloudWiki
 ```
 
 ## 本地开发
