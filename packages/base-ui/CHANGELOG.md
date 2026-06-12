@@ -1,0 +1,641 @@
+# @fumadocs/base-ui
+
+## 16.10.1
+
+### Patch Changes
+
+- 5017289: Use stable `fuma-translate`
+- 7a77722: fix display name of languages
+  - fumadocs-core@16.10.1
+
+## 16.10.0
+
+### Minor Changes
+
+- 779efff: **Introduce new translations API**
+
+  It is now powered by `fuma-translate`. Be careful: while the API surface is same, some translation keys are changed, unused labels will be ignored.
+
+### Patch Changes
+
+- 0cc1fac: Make `uiTranslations()` optional for translations API
+- Updated dependencies [9b9545f]
+  - fumadocs-core@16.10.0
+
+## 16.9.3
+
+### Patch Changes
+
+- Updated dependencies [42f0255]
+- Updated dependencies [a807798]
+  - fumadocs-core@16.9.3
+
+## 16.9.2
+
+### Patch Changes
+
+- 84ce691: consistent toc size when empty
+- Updated dependencies [5d579bd]
+- Updated dependencies [5836093]
+  - fumadocs-core@16.9.2
+
+## 16.9.1
+
+### Patch Changes
+
+- Updated dependencies [e77b9b3]
+- Updated dependencies [334c8fd]
+  - fumadocs-core@16.9.1
+
+## 16.9.0
+
+### Minor Changes
+
+- 214d5b0: Introduce new translations API
+
+### Patch Changes
+
+- Updated dependencies [818ed21]
+- Updated dependencies [214d5b0]
+- Updated dependencies [3b66725]
+  - fumadocs-core@16.9.0
+
+## 16.8.12
+
+### Patch Changes
+
+- Updated dependencies [768b676]
+  - fumadocs-core@16.8.12
+
+## 16.8.11
+
+### Patch Changes
+
+- Updated dependencies [1dc86c7]
+  - fumadocs-core@16.8.11
+
+## 16.8.10
+
+### Patch Changes
+
+- Updated dependencies [062beab]
+- Updated dependencies [505cfe0]
+  - fumadocs-core@16.8.10
+
+## 16.8.9
+
+### Patch Changes
+
+- Updated dependencies [2ca3eab]
+  - fumadocs-core@16.8.9
+
+## 16.8.8
+
+### Patch Changes
+
+- b494c8d: Support copy ID in headings
+- 03626ba: [Search UI] show `ctrl` for Linux machines
+  - fumadocs-core@16.8.8
+
+## 16.8.7
+
+### Patch Changes
+
+- 34f37f3: hotfix TOC
+  - fumadocs-core@16.8.7
+
+## 16.8.6
+
+### Patch Changes
+
+- 1aa48d0: fix RTL layout for Clerk style
+  - fumadocs-core@16.8.6
+
+## 16.8.5
+
+### Patch Changes
+
+- Updated dependencies [79d3209]
+  - fumadocs-core@16.8.5
+
+## 16.8.4
+
+### Patch Changes
+
+- b5ff03b: Support new OG image design for Takumi
+- Updated dependencies [61b15e9]
+- Updated dependencies [1a5433c]
+  - fumadocs-core@16.8.4
+
+## 16.8.3
+
+### Patch Changes
+
+- fumadocs-core@16.8.3
+
+## 16.8.2
+
+### Patch Changes
+
+- 0e8405a: Update default OG image
+  - fumadocs-core@16.8.2
+
+## 16.8.1
+
+### Patch Changes
+
+- 3ae8809: Improve TOC sizing
+  - fumadocs-core@16.8.1
+
+## 16.8.0
+
+### Patch Changes
+
+- Updated dependencies [68c2b49]
+- Updated dependencies [b60fa32]
+- Updated dependencies [a744f9f]
+- Updated dependencies [92a1204]
+  - fumadocs-core@16.8.0
+
+## 16.7.16
+
+### Patch Changes
+
+- f2c6e59: Reduce iterations for calculating TOC track
+- 9cf33e9: Improve inline code output
+- 9cf33e9: Support async hooks in Shiki transformers
+- Updated dependencies [9cf33e9]
+- Updated dependencies [9cf33e9]
+  - fumadocs-core@16.7.16
+
+## 16.7.15
+
+### Patch Changes
+
+- c731a92: Implement selective re-render for TOC
+- ccad791: Expose `next-themes`
+- Updated dependencies [e1567e2]
+- Updated dependencies [9a200c8]
+- Updated dependencies [c731a92]
+- Updated dependencies [a4189ce]
+  - fumadocs-core@16.7.15
+
+## 16.7.14
+
+### Patch Changes
+
+- 2d8f596: fix `npm pack` skipping nested `node_modules`
+- Updated dependencies [2d8f596]
+  - @fumadocs/tailwind@0.0.5
+  - fumadocs-core@16.7.14
+
+## 16.7.13
+
+### Patch Changes
+
+- 690ddb9: bundle more deps
+- Updated dependencies [690ddb9]
+  - @fumadocs/tailwind@0.0.4
+  - fumadocs-core@16.7.13
+
+## 16.7.12
+
+### Patch Changes
+
+- a5dcc11: allow to specify `<TOCItems />` props
+- 56f7e5b: Improve TOC thumb box
+  - fumadocs-core@16.7.12
+
+## 16.7.11
+
+### Patch Changes
+
+- Updated dependencies [5524927]
+- Updated dependencies [d47c4f1]
+  - fumadocs-core@16.7.11
+
+## 16.7.10
+
+### Patch Changes
+
+- 1473bee: fix: allow internal link resolver to resolve for "../" links
+  - fumadocs-core@16.7.10
+
+## 16.7.9
+
+### Patch Changes
+
+- f580ef6: Fix deserialized page tree item name styles
+- Updated dependencies [f580ef6]
+  - fumadocs-core@16.7.9
+
+## 16.7.8
+
+### Patch Changes
+
+- f7e69a6: Redesign sidebar footer
+  - fumadocs-core@16.7.8
+
+## 16.7.7
+
+### Patch Changes
+
+- 0f39a9f: Improve TOC rendering for steps
+- Updated dependencies [0a6507b]
+  - fumadocs-core@16.7.7
+
+## 16.7.6
+
+### Patch Changes
+
+- 6849807: Fix `shiki.css` padding
+  - fumadocs-core@16.7.6
+
+## 16.7.5
+
+### Patch Changes
+
+- 55479b3: Improve TOC detection logic
+- f9e6367: auto-close TOC popover
+- Updated dependencies [55479b3]
+  - fumadocs-core@16.7.5
+
+## 16.7.4
+
+### Patch Changes
+
+- 57c83a5: fix toc
+  - fumadocs-core@16.7.4
+
+## 16.7.3
+
+### Patch Changes
+
+- 9580621: fix sidebar scroll area
+- 7aa66f2: Redesign home layout navigation menu
+  - fumadocs-core@16.7.3
+
+## 16.7.2
+
+### Patch Changes
+
+- 652c725: Simplify internal types
+  - fumadocs-core@16.7.2
+
+## 16.7.1
+
+### Patch Changes
+
+- 11b8691: hotfix
+- 75b0b94: Refactor TOC slot
+  - fumadocs-core@16.7.1
+
+## 16.7.0
+
+### Minor Changes
+
+- 8bdee70: Implement renderer API for replacing layout components, deprecate old options
+- bdffeba: Improved `defineI18nUI()` usage: allow language translations to be defined at root config.
+- f45d703: stabilize Shiki factory API
+
+### Patch Changes
+
+- 3d17757: Improve `<GithubInfo />` component
+- Updated dependencies [f45d703]
+- Updated dependencies [45aa454]
+  - fumadocs-core@16.7.0
+
+## 16.6.17
+
+### Patch Changes
+
+- c3a723e: fix codeblock RSC highlighting
+- Updated dependencies [c2678c0]
+- Updated dependencies [417f07a]
+- Updated dependencies [bb07706]
+- Updated dependencies [f065406]
+  - fumadocs-core@16.6.17
+
+## 16.6.16
+
+### Patch Changes
+
+- Updated dependencies [054da73]
+  - fumadocs-core@16.6.16
+
+## 16.6.15
+
+### Patch Changes
+
+- 86d3abb: fix broken tsdown CSS logic
+  - fumadocs-core@16.6.15
+
+## 16.6.14
+
+### Patch Changes
+
+- a02048c: UI: override MDX types by default
+- 02201df: Simplify i18n setup
+- Updated dependencies [8382363]
+  - fumadocs-core@16.6.14
+
+## 16.6.13
+
+### Patch Changes
+
+- 2702b28: Bundle page actions into UI
+  - fumadocs-core@16.6.13
+
+## 16.6.12
+
+### Patch Changes
+
+- Updated dependencies [ddb0f81]
+  - fumadocs-core@16.6.12
+
+## 16.6.11
+
+### Patch Changes
+
+- Updated dependencies [d35f30c]
+- Updated dependencies [ae3e742]
+- Updated dependencies [269dfb3]
+  - fumadocs-core@16.6.11
+
+## 16.6.10
+
+### Patch Changes
+
+- Updated dependencies [9b5c2dd]
+  - fumadocs-core@16.6.10
+
+## 16.6.9
+
+### Patch Changes
+
+- 0aad574: fix: reverse sidebar chevron direction for RTL layouts
+
+  In RTL mode, the `ChevronDown` icon in collapsed sidebar folders was
+  incorrectly pointing to the right (via `-rotate-90`). Added `rtl:rotate-90`
+  so the icon points to the left when the folder is collapsed, matching
+  the expected RTL reading direction.
+
+- 6a7725b: fix: use logical CSS properties in Steps component for RTL support
+- 7a61fa5: Support `codeblock.rsc` API for server-side codeblocks
+- Updated dependencies [4d05c4e]
+- Updated dependencies [5f687b6]
+  - fumadocs-core@16.6.9
+
+## 16.6.8
+
+### Patch Changes
+
+- 5453502: use Shiki.js v4
+- 8fc467a: fix home layout navbar
+- Updated dependencies [5453502]
+  - @fumadocs/tailwind@0.0.3
+  - fumadocs-core@16.6.8
+
+## 16.6.7
+
+### Patch Changes
+
+- 8faa2e4: fix codeblock highlight styles
+  - fumadocs-core@16.6.7
+
+## 16.6.6
+
+### Patch Changes
+
+- 38bd784: improve flux layout
+  - fumadocs-core@16.6.6
+
+## 16.6.5
+
+### Patch Changes
+
+- Updated dependencies [1a614de]
+- Updated dependencies [6ab6692]
+  - fumadocs-core@16.6.5
+
+## 16.6.4
+
+### Patch Changes
+
+- 8f8e7f0: fix accessibility issues
+  - fumadocs-core@16.6.4
+
+## 16.6.3
+
+### Patch Changes
+
+- 1c26656: Extend grid of docs layout to 5 columns
+  - fumadocs-core@16.6.3
+
+## 16.6.2
+
+### Patch Changes
+
+- cfc5590: Implement `active` on sidebar link items
+  - fumadocs-core@16.6.2
+
+## 16.6.1
+
+### Patch Changes
+
+- 89c6e65: fix search dialog shortcuts
+- Updated dependencies [00c9a0f]
+  - fumadocs-core@16.6.1
+
+## 16.6.0
+
+### Minor Changes
+
+- 9241992: **Support Markdown in search results**
+
+  This deprecates the old `contentWithHighlights` field in search results, the highlights are marked with Markdown instead (e.g. `Hello <mark>World</mark>`).
+
+### Patch Changes
+
+- Updated dependencies [9241992]
+- Updated dependencies [64a0057]
+  - fumadocs-core@16.6.0
+
+## 16.5.4
+
+### Patch Changes
+
+- Updated dependencies [1ad8a38]
+- Updated dependencies [3e8efb0]
+  - fumadocs-core@16.5.4
+
+## 16.5.3
+
+### Patch Changes
+
+- Updated dependencies [be957f1]
+  - fumadocs-core@16.5.3
+
+## 16.5.2
+
+### Patch Changes
+
+- c22f6ee: bump tsdown
+- Updated dependencies [c22f6ee]
+  - @fumadocs/tailwind@0.0.2
+  - fumadocs-core@16.5.2
+
+## 16.5.1
+
+### Patch Changes
+
+- c08364a: support Flux layout
+- 53ad20b: Pre-scan class names to optimize Tailwind CSS compilation performance
+- Updated dependencies [db93ebd]
+  - @fumadocs/tailwind@0.0.1
+  - fumadocs-core@16.5.1
+
+## 16.5.0
+
+### Patch Changes
+
+- 85cc22f: support `.core` exports for dynamic codeblocks, migrate to effect-based `useShiki()` to avoid limitations of `<Suspense />`.
+- Updated dependencies [85cc22f]
+- Updated dependencies [9ba1250]
+  - @fumadocs/ui@16.5.0
+  - fumadocs-core@16.5.0
+
+## 16.4.11
+
+### Patch Changes
+
+- Updated dependencies [a75a84d]
+  - fumadocs-core@16.4.11
+  - @fumadocs/ui@16.4.11
+
+## 16.4.10
+
+### Patch Changes
+
+- 430a5f1: support `on` on docs layout
+- Updated dependencies [099fde7]
+- Updated dependencies [6fd7e63]
+  - fumadocs-core@16.4.10
+  - @fumadocs/ui@16.4.10
+
+## 16.4.9
+
+### Patch Changes
+
+- Updated dependencies [48dd0c2]
+  - fumadocs-core@16.4.9
+  - @fumadocs/ui@16.4.9
+
+## 16.4.8
+
+### Patch Changes
+
+- Updated dependencies [0025484]
+  - fumadocs-core@16.4.8
+  - @fumadocs/ui@16.4.8
+
+## 16.4.7
+
+### Patch Changes
+
+- Updated dependencies [0765817]
+- Updated dependencies [5dec9d0]
+  - @fumadocs/ui@16.4.7
+  - fumadocs-core@16.4.7
+
+## 16.4.6
+
+### Patch Changes
+
+- Updated dependencies [ea57dbf]
+  - fumadocs-core@16.4.6
+  - @fumadocs/ui@16.4.6
+
+## 16.4.5
+
+### Patch Changes
+
+- 9f06196: fix `footer.children` props
+  - fumadocs-core@16.4.5
+  - @fumadocs/ui@16.4.5
+
+## 16.4.4
+
+### Patch Changes
+
+- c804ac6: expose `useAutoScroll()`
+- Updated dependencies [cdc97e0]
+  - fumadocs-core@16.4.4
+  - @fumadocs/ui@16.4.4
+
+## 16.4.3
+
+### Patch Changes
+
+- 84ce624: Keep default prefetch behaviours in sidebar
+- Updated dependencies [f5dcb7c]
+- Updated dependencies [7e08b2f]
+  - fumadocs-core@16.4.3
+  - @fumadocs/ui@16.4.3
+
+## 16.4.2
+
+### Patch Changes
+
+- b16a32f: Switch to tsdown for bundling
+- Updated dependencies [590d36a]
+- Updated dependencies [98d38ff]
+- Updated dependencies [446631d]
+- Updated dependencies [b16a32f]
+  - fumadocs-core@16.4.2
+  - @fumadocs/ui@16.4.2
+
+## 16.4.1
+
+### Patch Changes
+
+- Updated dependencies [0a3adb8]
+  - @fumadocs/ui@16.4.1
+  - fumadocs-core@16.4.1
+
+## 16.4.0
+
+### Patch Changes
+
+- da98fe2: Support `onSelect` prop in `<SearchDialog />` component
+- Updated dependencies [a3b7919]
+  - fumadocs-core@16.4.0
+  - @fumadocs/ui@16.4.0
+
+## 16.3.2
+
+### Patch Changes
+
+- 7c78045: Support custom renderer for `title` in layouts
+  - @fumadocs/ui@16.3.2
+  - fumadocs-core@16.3.2
+
+## 16.3.1
+
+### Patch Changes
+
+- f398e36: Improve sidebar dropdown
+  - fumadocs-core@16.3.1
+  - @fumadocs/ui@16.3.1
+
+## 16.3.0
+
+### Minor Changes
+
+- a69b060: Support both Base UI and Radix UI as base component libraries
+
+### Patch Changes
+
+- Updated dependencies [a69b060]
+  - fumadocs-core@16.3.0
+  - @fumadocs/ui@16.3.0

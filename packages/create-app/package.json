@@ -1,0 +1,64 @@
+{
+  "name": "create-fumadocs-app",
+  "version": "16.0.122",
+  "description": "Create a new documentation site with Fumadocs",
+  "keywords": [
+    "Docs",
+    "Fumadocs",
+    "react"
+  ],
+  "homepage": "https://fumadocs.dev",
+  "license": "MIT",
+  "author": "Fuma Nama",
+  "repository": "github:fuma-nama/fumadocs",
+  "bin": "./dist/bin.js",
+  "files": [
+    "dist",
+    "template"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./plugins/*": {
+      "types": "./dist/plugins/*.d.ts",
+      "import": "./dist/plugins/*.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm run sync && tsdown",
+    "clean": "rimraf dist",
+    "dev": "tsdown --watch",
+    "lint": "oxlint .",
+    "types:check": "tsc --noEmit",
+    "sync": "node ./scripts/sync.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.5.1",
+    "@commander-js/extra-typings": "^15.0.0",
+    "@fumadocs/cli": "workspace:*",
+    "commander": "^15.0.0",
+    "fuma-cli": "^0.1.1",
+    "picocolors": "^1.1.1",
+    "tinyexec": "^1.2.4",
+    "ts-morph": "^28.0.0"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "25.9.2",
+    "tinyglobby": "^0.2.17",
+    "tsconfig": "workspace:*",
+    "tsdown": "0.22.2",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

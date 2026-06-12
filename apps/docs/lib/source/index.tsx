@@ -1,0 +1,65 @@
+import { type LoaderPlugin, loader } from 'fumadocs-core/source';
+import { blog as blogPosts, docs } from 'collections/server';
+import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
+import { lucideIconsPlugin } from 'fumadocs-core/source/lucide-icons';
+import { openapi } from '@/lib/openapi';
+import { asyncapi } from '../asyncapi';
+
+export const source = loader(
+  {
+    docs: docs.toFumadocsSource(),
+    openapi: await openapi.staticSource({
+      baseDir: 'openapi/(generated)',
+      meta: {
+        folderStyle: 'separator',
+      },
+      groupBy: 'tag',
+    }),
+    asyncapi: await asyncapi.staticSource({
+      baseDir: 'asyncapi/(generated)',
+      meta: {
+        folderStyle: 'separator',
+      },
+      groupBy: 'tag',
+    }),
+  },
+  {
+    baseUrl: '/docs',
+    plugins: [
+      pageTreeCodeTitles(),
+      lucideIconsPlugin(),
+      openapi.loaderPlugin(),
+      asyncapi.loaderPlugin(),
+    ],
+  },
+);
+
+function pageTreeCodeTitles(): LoaderPlugin {
+  return {
+    transformPageTree: {
+      file(node) {
+        if (
+          typeof node.name === 'string' &&
+          (node.name.endsWith('()') || node.name.match(/^<\w+ \/>$/))
+        ) {
+          return {
+            ...node,
+            name: (
+              <code key="0" className="text-[0.8125rem]">
+                {node.name}
+              </code>
+            ),
+          };
+        }
+        return node;
+      },
+    },
+  };
+}
+
+export const blog = loader(toFumadocsSource(blogPosts, []), {
+  baseUrl: '/blog',
+});
+
+export type Page = (typeof source)['$inferPage'];
+export type Meta = (typeof source)['$inferMeta'];

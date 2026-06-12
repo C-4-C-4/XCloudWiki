@@ -1,0 +1,60 @@
+import { createRootRoute, HeadContent, Outlet, Scripts, useParams } from '@tanstack/react-router';
+import * as React from 'react';
+import appCss from '@/styles/app.css?url';
+import { RootProvider } from 'fumadocs-ui/provider/tanstack';
+import { i18nProvider, uiTranslations } from 'fumadocs-ui/i18n';
+import { i18n } from '@/lib/i18n';
+import { zhTW } from '@fumadocs/language/zh-tw';
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        title: 'Fumadocs on TanStack Start',
+      },
+    ],
+    links: [{ rel: 'stylesheet', href: appCss }],
+  }),
+  component: RootComponent,
+});
+
+function RootComponent() {
+  return (
+    <RootDocument>
+      <Outlet />
+    </RootDocument>
+  );
+}
+
+const translations = i18n
+  .translations()
+  .extend(uiTranslations())
+  .preset('cn', zhTW())
+  .add({
+    cn: {
+      'Search(search trigger)': 'Translated Content',
+    },
+  });
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  const { lang = i18n.defaultLanguage } = useParams({ strict: false });
+
+  return (
+    <html suppressHydrationWarning>
+      <head>
+        <HeadContent />
+      </head>
+      <body className="flex flex-col min-h-screen">
+        <RootProvider i18n={i18nProvider(translations, lang)}>{children}</RootProvider>
+        <Scripts />
+      </body>
+    </html>
+  );
+}

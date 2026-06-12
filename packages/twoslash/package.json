@@ -1,0 +1,79 @@
+{
+  "name": "fumadocs-twoslash",
+  "version": "3.2.0",
+  "description": "Typescript Twoslash Integration for Fumadocs",
+  "keywords": [
+    "Docs",
+    "fumadocs"
+  ],
+  "homepage": "https://fumadocs.dev",
+  "license": "MIT",
+  "author": "Fuma Nama",
+  "repository": "github:fuma-nama/fumadocs",
+  "files": [
+    "dist",
+    "styles"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./twoslash.css": "./styles/twoslash.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js"
+    },
+    "./cache-fs": {
+      "types": "./dist/cache-fs.d.ts",
+      "import": "./dist/cache-fs.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rimraf dist",
+    "dev": "tsdown --watch",
+    "lint": "oxlint .",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@radix-ui/react-popover": "^1.1.16",
+    "@shikijs/twoslash": "^4.2.0",
+    "mdast-util-from-markdown": "^2.0.3",
+    "mdast-util-gfm": "^3.1.0",
+    "mdast-util-to-hast": "^13.2.1",
+    "tailwind-merge": "^3.6.0",
+    "twoslash": "^0.3.8"
+  },
+  "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "25.9.2",
+    "@types/react": "^19.2.17",
+    "fumadocs-core": "workspace:*",
+    "fumadocs-ui": "workspace:*",
+    "shiki": "4.2.0",
+    "tsconfig": "workspace:*",
+    "tsdown": "0.22.2",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "fumadocs-core": "^16.7.16",
+    "fumadocs-ui": "^16.7.16",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "shiki": "4.x.x"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  }
+}
