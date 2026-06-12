@@ -4,11 +4,15 @@ import Link from 'next/link';
 import { cva } from 'class-variance-authority';
 import {
   BatteryChargingIcon,
+  Coins,
   FileIcon,
   FileTextIcon,
   Heart,
+  Landmark,
   SearchIcon,
   SettingsIcon,
+  Store,
+  Swords,
   TerminalIcon,
   TimerIcon,
 } from 'lucide-react';
@@ -17,9 +21,10 @@ import { ServerCodeBlock } from 'fumadocs-ui/components/codeblock.rsc';
 import {
   Hero,
   AgnosticBackground,
-  CreateAppAnimation,
+  ServerStatus,
   PreviewImages,
   Writing,
+  SkinUploader,
 } from '@/app/(home)/page.client';
 import ShadcnImage from './shadcn.png';
 import ContributorCounter from '@/components/contributor-count';
@@ -27,6 +32,9 @@ import { owner, repo } from '@/lib/github-constants';
 import StoryImage from './story.png';
 import CLIImage from './cli.png';
 import Bg2Image from './bg-2.png';
+import Pcl2Image from './pcl2.png';
+import XcloudNetImage from './xcloud-net.png';
+import XcloudKeyImage from './xcloud-key.png';
 import { story } from '@/content/docs/(framework)/integrations/story/client.story';
 
 const headingVariants = cva('font-medium tracking-tight', {
@@ -68,21 +76,39 @@ const cardVariants = cva('rounded-2xl text-sm p-6 bg-origin-border shadow-lg', {
 export default function Page() {
   return (
     <main className="text-landing-foreground pt-4 pb-6 dark:text-landing-foreground-dark md:pb-12">
+      <style>{`
+        @keyframes pencil-draw {
+          0% { clip-path: polygon(0 0, 0 100%, 0 100%, 0 0); }
+          50% { clip-path: polygon(0 0, 0 100%, 2% 100%, 2% 0); }
+          100% { clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); }
+        }
+      `}</style>
       <div className="relative flex min-h-[600px] h-[70vh] max-h-[900px] border rounded-2xl overflow-hidden mx-auto w-full max-w-[1400px] bg-origin-border">
         <Hero />
         <div className="flex flex-col z-2 px-4 size-full md:p-12 max-md:items-center max-md:text-center">
           <p className="mt-12 text-xs text-brand font-medium rounded-full p-2 border border-brand/50 w-fit">
-            the React.js docs framework you love.
+            全新 Wiki 站点正式上线！
           </p>
           <h1 className="text-4xl my-8 leading-tighter font-medium xl:text-5xl xl:mb-12">
-            Build excellent
-            <br className="md:hidden" /> documentation,
+            闲云Wiki
             <br />
-            your <span className="text-brand">style</span>.
+            <span className="text-brand relative inline-block" style={{ backgroundImage: 'linear-gradient(90deg, #06B6D4, #22D3EE, #67E8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+              1.21.11
+              <span className="absolute -bottom-1 left-0 h-[3px] w-full overflow-hidden" style={{ imageRendering: 'pixelated' }}>
+                <span className="block h-full w-full" style={{
+                  background: 'linear-gradient(90deg, transparent 0%, #06B6D4 5%, #22D3EE 50%, #67E8F9 95%, transparent 100%)',
+                  boxShadow: '0 0 8px rgba(6,182,212,0.5)',
+                  clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)',
+                  animation: 'pencil-draw 1.5s ease-in-out forwards'
+                }} />
+              </span>
+            </span>
+            {' '}
+            正式上线
           </h1>
-          <div className="flex flex-row items-center justify-center gap-4 flex-wrap w-fit">
+          <div className="flex flex-row items-center justify-center gap-6 flex-wrap w-fit">
             <Link href="/docs" className={cn(buttonVariants(), 'max-sm:text-sm')}>
-              Getting Started
+              查看文档
             </Link>
             <a
               href="https://stackblitz.com/github/fuma-nama/fumadocs/tree/main/examples/stackblitz"
@@ -90,49 +116,21 @@ export default function Page() {
               rel="noreferrer noopener"
               className={cn(buttonVariants({ variant: 'secondary' }), 'max-sm:text-sm')}
             >
-              Open StackBlitz
+              关于我们
             </a>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-10 mt-12 px-6 mx-auto w-full max-w-[1400px] md:px-12 lg:grid-cols-2 lg:mt-20">
         <p className="text-2xl tracking-tight leading-snug font-light col-span-full md:text-3xl xl:text-4xl">
-          Fumadocs is a <span className="text-brand font-medium">React.js</span> documentation
-          framework for <span className="text-brand font-medium">Developers</span>, beautifully
-          designed by <span className="text-brand font-medium">Fuma Nama</span>. Bringing powerful
-          features for your docs workflows, with high customizability to fit your preferences, works
-          seamlessly with any React.js framework, CMS — anything.
+          <span className="text-brand font-medium">Minecraft XCloud Server</span>——我的世界 <span className="text-brand font-medium">闲云</span> 服务器 拥有多年的运营经验. 超多丰富的玩法：200+拓展附魔书、玩家小镇系统、独创的铁匠锻造玩法等...
+          <br />
+          <br />
+          <span className="text-brand font-medium">XCloud Wiki</span> 采用 <span className="text-brand font-medium">Fumadocs + React.js + Next.js</span> 构建. 由最专业的团队精心维护
         </p>
-        <div className="relative p-4 rounded-2xl col-span-full z-2 overflow-hidden md:p-8">
-          <Image
-            src={CLIImage}
-            alt=""
-            className="absolute inset-0 size-full object-top object-cover -z-1"
-          />
-          <div className="mx-auto w-full max-w-[800px] p-2 bg-fd-card text-fd-card-foreground border rounded-2xl shadow-lg">
-            <div className="flex flex-row gap-2">
-              <h2 className="text-brand content-center font-mono font-bold uppercase border-2 border-brand/50 px-2 rounded-xl">
-                Try it out
-              </h2>
-              <ServerCodeBlock
-                code="pnpm create fumadocs-app"
-                lang="bash"
-                codeblock={{
-                  className: 'bg-fd-secondary flex-1',
-                }}
-              />
-            </div>
-
-            <div className="relative bg-fd-secondary rounded-xl mt-2 border shadow-md">
-              <div className="flex flex-row items-center gap-2 border-b p-2 text-fd-muted-foreground">
-                <TerminalIcon className="size-4" />
-                <span className="text-xs font-medium">Terminal</span>
-                <div className="ms-auto me-2 size-2 rounded-full bg-red-400" />
-              </div>
-
-              <CreateAppAnimation className="p-2 text-fd-secondary-foreground/80" />
-            </div>
-          </div>
+        <div className="relative p-4 rounded-2xl col-span-full z-2 overflow-hidden md:p-8 min-h-[320px]">
+          <div className="absolute inset-0 size-full -z-1 bg-gradient-to-br from-orange-400 via-amber-300 to-yellow-500" />
+          <ServerStatus />
         </div>
         <Feedback />
         <Aesthetics />
@@ -140,83 +138,9 @@ export default function Page() {
         <AnybodyCanWrite />
 
         <ForEngineers />
-        <ForNonEnginners />
         <OpenSource />
       </div>
     </main>
-  );
-}
-
-function ForNonEnginners() {
-  return (
-    <>
-      <h2
-        className={cn(
-          headingVariants({
-            variant: 'h2',
-            className: 'mt-8 text-brand text-center mb-4 col-span-full',
-          }),
-        )}
-      >
-        Not Just Engineers.
-      </h2>
-
-      <div className={cn(cardVariants({ className: 'flex flex-col' }))}>
-        <SettingsIcon className="text-brand mb-4" />
-        <h3
-          className={cn(
-            headingVariants({
-              variant: 'h3',
-              className: 'mb-6',
-            }),
-          )}
-        >
-          Meet Fumapress.
-        </h3>
-        <p className="mb-8">
-          Want to use Fumadocs without the complexity of configurations & prior knowledge?
-          <br />
-          <br />
-          Fumapress is a React.js framework for Fumadocs, every feature needs only a plugin –
-          embracing simplicity fully for those who just want a working docs.
-        </p>
-        <div className="flex flex-row items-center gap-2">
-          <a
-            href="https://press.fumadocs.dev"
-            rel="noreferrer noopener"
-            target="_blank"
-            className={cn(buttonVariants({ variant: 'primary' }))}
-          >
-            Learn More
-          </a>
-          <a
-            href="https://press.fumadocs.dev/blog/introducing-fumapress"
-            rel="noreferrer noopener"
-            target="_blank"
-            className={cn(buttonVariants({ variant: 'secondary' }))}
-          >
-            Why?
-          </a>
-        </div>
-      </div>
-      <ServerCodeBlock
-        lang="ts"
-        codeblock={{ title: 'press.config.tsx' }}
-        code={`import { defineConfig } from "fumapress";
-import { fumadocsMdx } from "fumapress/adapters/mdx";
-import { flexsearchPlugin } from "fumapress/plugins/flexsearch";
-import { llmsPlugin } from "fumapress/plugins/llms.txt";
-import { docs } from "./.source/server";
-
-export default defineConfig({
-  content: {
-    docs: docs.toFumadocsSource(),
-  },
-})
-  .plugins(flexsearchPlugin(), llmsPlugin())
-  .adapters(fumadocsMdx());`}
-      />
-    </>
   );
 }
 
@@ -264,25 +188,36 @@ function Aesthetics() {
       <div
         className={cn(
           cardVariants({
-            variant: 'secondary',
-            className: 'flex items-center justify-center p-0',
+            className: 'flex items-center justify-center p-0 relative overflow-hidden',
           }),
         )}
+        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #134e4a 40%, #115e59 70%, #0f766e 100%)' }}
       >
         <PreviewImages />
       </div>
       <div className={cn(cardVariants(), 'flex flex-col')}>
         <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-          Minimal aesthetics, Maximum customizability.
+          携手前进 共同创建我们的一方天地
         </h3>
-        <p className="mb-4">
-          Fumadocs offer well-designed themes, with a headless mode to plug your own UI.
+        <p className="mb-5 text-lg leading-relaxed">
+          全新独创小镇玩法，让你有与众不同的社交圈子。
         </p>
-        <p className="mb-4">Pro designer? Customize the theme using Fumadocs CLI.</p>
-        <ServerCodeBlock
-          code={`pnpm dlx @fumadocs/cli customize\n\n> Choose a layout to customize...`}
-          lang="bash"
-        />
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { icon: Swords, title: '战斗加成', desc: '全方位攻击 BUFF' },
+            { icon: Coins, title: '分红奖励', desc: '活跃度专属收益' },
+            { icon: Store, title: '珍稀商店', desc: '兑换稀有道具' },
+            { icon: Landmark, title: '强大阵营', desc: '建立属于你们的基地' },
+          ].map((item) => (
+            <div key={item.title} className="flex items-start gap-3 rounded-xl bg-fd-secondary/50 p-4">
+              <item.icon className="size-6 shrink-0 text-brand mt-0.5" />
+              <div>
+                <p className="font-semibold text-brand">{item.title}</p>
+                <p className="text-sm text-fd-muted-foreground">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
@@ -294,121 +229,59 @@ function AnybodyCanWrite() {
       tabs={{
         writer: (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <ServerCodeBlock
-              code={`---
-title: Hello World
----
-
-## Overview
-
-I love **Fumadocs**!
-
-\`\`\`ts tab="Tab 1"
-console.log("Hello World")
-\`\`\`
-
-\`\`\`ts tab="Tab 2"
-return 0;
-\`\`\``}
-              lang="mdx"
-            />
+            <div className="relative rounded-xl overflow-hidden border bg-fd-card">
+              <Image
+                src={Pcl2Image}
+                alt="PCL2"
+                className="w-full h-auto object-cover"
+              />
+            </div>
             <div className="max-lg:row-start-1">
               <h3 className={cn(headingVariants({ variant: 'h3', className: 'my-4' }))}>
-                The familiar syntax.
+                下载整合包
               </h3>
               <p>
-                It is just Markdown, with additional features seamlessly composing into the syntax.
+                打开 PCL 启动器，点击下载页面，再次点击左侧整合包，搜索XCloud，下载第一个，将下载完的文件拖到 PCL 2软件，进行最后的校验
               </p>
-              <ul className="text-xs list-disc list-inside mt-8">
-                <li>Markdown features, including images</li>
-                <li>Syntax highlighting (Powered by Shiki)</li>
-                <li>Codeblock Groups</li>
-                <li>Callouts</li>
-                <li>Cards</li>
-                <li>Custom Heading Anchors</li>
-                <li>Auto Table of Contents</li>
-              </ul>
             </div>
           </div>
         ),
         developer: (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <ServerCodeBlock
-              code={`---
-title: Hello World
----
-
-import { Playground } from "@/components/playground";
-
-## Overview
-
-<Playground title="Test" />
-
-This codeblock shows TypeScript information!
-
-\`\`\`ts twoslash
-console.log("Hello World");
-
-// give your code decorations [!code ++]
-const name = "fumadocs";
-\`\`\`
-
-And re-use content:
-
-<include>./another-page.mdx</include>`}
-              lang="mdx"
-            />
+            <div className="relative rounded-xl overflow-hidden border bg-fd-card">
+              <Image
+                src={XcloudNetImage}
+                alt="XCloud Net"
+                className="w-full h-auto object-cover"
+              />
+            </div>
             <div className="max-lg:row-start-1">
               <h3 className={cn(headingVariants({ variant: 'h3', className: 'my-4' }))}>
-                Extensive but simple.
+                加入服务器
               </h3>
-              <p>MDX for developers authoring content, use JavaScript in content.</p>
-              <ul className="text-xs list-disc list-inside mt-8">
-                <li>JavaScript + JSX syntax</li>
-                <li>Custom Components</li>
-                <li>Include/Embed Content</li>
-                <li>TypeScript Twoslash: show type information in codeblocks.</li>
-                <li>Shiki Notations</li>
-                <li>Storybook integration to showcase components.</li>
-                <li>Extend via remark, rehype plugins</li>
-              </ul>
+              <p>
+                启动游戏后，点击多人游戏，创建多人游戏，输入：play.xcloudx.top 服务器地址，加入服务器
+              </p>
             </div>
           </div>
         ),
         automation: (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <ServerCodeBlock
-              code={`---
-title: Hello World
----
-
-import { db } from "@/lib/db";
-
-export async function DataView() {
-  const products = await db.select().from("products");
-  return products.map(product => <div key={product.id}>{product.name}</div>)
-}
-
-<DataView />
-
-<auto-type-table path='./my-file.ts' name='CardProps' />`}
-              lang="tsx"
-            />
+            <div className="relative rounded-xl overflow-hidden border bg-fd-card">
+              <Image
+                src={XcloudKeyImage}
+                alt="XCloud Key"
+                className="w-full h-auto object-cover"
+              />
+            </div>
 
             <div className="max-lg:row-start-1">
               <h3 className={cn(headingVariants({ variant: 'h3', className: 'my-4' }))}>
-                Content, always up-to-date.
+                创建账号
               </h3>
               <p>
-                Combining the power of MDX and React Server Components, use the latest data from
-                database, server — anywhere, to be part of your content.
+                初次加入服务器会显示验证，你需要加入官方QQ群，并发送验证码，即可完成创建账号
               </p>
-              <ul className="text-xs list-disc list-inside mt-8">
-                <li>Works on React Server Components</li>
-                <li>Display data from database, CMS, anything</li>
-                <li>auto-type-table for documenting types based on TypeScript Compiler</li>
-                <li>OpenAPI playground for documenting your APIs</li>
-              </ul>
             </div>
           </div>
         ),
@@ -419,32 +292,28 @@ export async function DataView() {
 
 const feedback = [
   {
-    avatar: 'https://avatars.githubusercontent.com/u/124599',
-    user: 'shadcn',
-    role: 'Creator of Shadcn UI',
-    message: `You know how you end up rebuilding a full docs site every time you start a new project?
-
-Fumadocs fixes this by giving you all the right blocks that you compose together.
-
-Like headless docs to build exactly what you need.`,
+    avatar: '/avatars/CCCC4444.jpg',
+    user: 'CCCC4444',
+    role: 'Wiki 站点管理员',
+    message: `我喜欢闲云，在我最困难的时候，像一束光照进了我的内心，给了我勇气。`,
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/35677084',
-    user: 'Anthony Shew',
-    role: 'Turbo DX at Vercel',
-    message: `Major shoutout to @fuma_nama for making fumadocs, a gorgeous documentation framework that composes beautifully into the App Router.`,
+    avatar: '/avatars/LoveStory.jpg',
+    user: 'Love Story',
+    role: '服主',
+    message: `闲云是我倾注了很多心血运营的服务器，闲云 No. 1`,
   },
   {
-    user: 'Aiden Bai',
-    avatar: 'https://avatars.githubusercontent.com/u/38025074',
-    role: 'Creator of Million.js',
-    message: 'fumadocs is the best Next.js docs framework',
+    avatar: '/avatars/xuan562.jpg',
+    user: 'xuan562',
+    role: '管理员',
+    message: `得吃！又得吃了！`,
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/10645823',
-    user: 'David Blass',
-    role: 'Creator of Arktype',
-    message: `I'd have no shot building @arktypeio docs that looked half this good without it 😍`,
+    avatar: '/avatars/StyleYM.jpg',
+    user: 'StyleYM',
+    role: '高级玩家',
+    message: `宝宝约吗？宝宝看看照片！`,
   },
 ];
 
@@ -453,14 +322,13 @@ function Feedback() {
     <>
       <div className={cn(cardVariants())}>
         <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-          A framework people love.
+          闲云画廊
         </h3>
         <p className="mb-6">
-          Loved by teams and developers from startups like Unkey, Vercel, Orama — evolving everyday
-          to be your favourite docs framework.
+          闲云中的各种有趣的瞬间
         </p>
         <Link href="/showcase" className={cn(buttonVariants())}>
-          Showcase
+          画廊
         </Link>
       </div>
       <div
@@ -471,7 +339,7 @@ function Feedback() {
           }),
         )}
       >
-        <div className="absolute inset-0 z-2 inset-shadow-[0_10px_60px] inset-shadow-brand-secondary rounded-2xl" />
+        <div className="absolute inset-0 z-0 rounded-2xl" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #134e4a 40%, #115e59 70%, #0f766e 100%)' }} />
         <Marquee className="p-8">
           {feedback.map((item) => (
             <div
@@ -513,9 +381,20 @@ function ForEngineers() {
           }),
         )}
       >
-        Docs for Engineers.
+        更换皮肤
       </h2>
-      <Story />
+      <SkinUploader />
+
+      <h2
+        className={cn(
+          headingVariants({
+            variant: 'h2',
+            className: 'mt-8 text-brand text-center mb-4 col-span-full',
+          }),
+        )}
+      >
+        多维世界
+      </h2>
 
       <div className={cn(cardVariants(), 'relative flex flex-col overflow-hidden z-2')}>
         <h3
@@ -526,12 +405,12 @@ function ForEngineers() {
             }),
           )}
         >
-          Framework Agnostic
+          多维世界
         </h3>
         <p className="mb-20">
-          Official support for Next.js, Tanstack Start, React Router, Waku — portable to any
-          React.js framework.
+          闲云镇、生存世界、冒险世界、征讨世界
         </p>
+        {/* 左下角图标已注释
         <div className="flex flex-row gap-2 mt-auto bg-brand text-brand-foreground rounded-xl p-2 w-fit">
           <svg
             fill="currentColor"
@@ -574,6 +453,7 @@ function ForEngineers() {
             <path d="M516.27,96c-1.2-1.7-3.24-2.56-6.14-2.56-1.54,0-2.94.09-4.22.26-1.28.17-2.09.26-2.43.26l1.79-17.66c10.07-1.36,20.39-2.98,30.98-4.86,10.58-1.88,17.41-3.16,20.48-3.84l2.82,4.86c-1.88,4.1-3.5,13.02-4.86,26.75-1.37,13.74-2.05,28.29-2.05,43.65,0,12.46,4.61,18.69,13.82,18.69,2.56,0,5.2-.6,7.94-1.79,2.73-1.19,5.97-2.98,9.73-5.38v-48.9c0-4.78-.64-7.89-1.92-9.34-1.28-1.45-4.06-2.26-8.32-2.43h-3.58l2.56-17.41c10.07-1.19,20.44-2.69,31.1-4.48,10.66-1.79,17.54-2.94,20.61-3.46l3.07,4.86c-2.22,3.93-4.06,13.53-5.5,28.8-1.45,15.28-2.18,32.22-2.18,50.82,0,2.9.77,5.25,2.3,7.04s3.58,2.69,6.14,2.69c2.22,0,4.52-.51,6.91-1.54,2.39-1.02,3.58-1.62,3.58-1.79l4.1,5.89c-.68,1.2-2.48,3.76-5.38,7.68-2.9,3.93-6.49,7.94-10.75,12.03-4.27,4.1-8.45,6.82-12.54,8.19-16.38,0-25.6-6.4-27.65-19.2l-2.3-1.28c-5.98,6.14-11.26,11.05-15.87,14.72-4.61,3.67-7.77,5.5-9.47,5.5-14,0-24.62-2.86-31.87-8.58-7.26-5.72-10.88-13.95-10.88-24.7l1.79-54.53c0-4.26-.6-7.25-1.79-8.96Z" />
           </svg>
         </div>
+        */}
 
         <AgnosticBackground />
       </div>
@@ -585,35 +465,32 @@ function ForEngineers() {
         )}
       >
         <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-          A truly composable framework.
+          不一样的风景
         </h3>
         <p className="mb-8">
-          Separated as <span className="text-brand">Content</span> →{' '}
-          <span className="text-brand">Core</span> → <span className="text-brand">UI</span>,
-          offering the high composability that engineers love — you can use Fumadocs as a library,
-          without adapting the entire framework.
+          每一个世界都有着不一样的风景和玩法，尽情的探索叭
         </p>
         <div className="mt-auto flex flex-col gap-2 @container mask-[linear-gradient(to_bottom,white,transparent)]">
           {[
             {
-              name: 'fumadocs-mdx',
-              description: 'Use MDX in your React framework elegantly.',
+              name: '生存世界',
+              description: '适合建家',
             },
             {
-              name: 'fumadocs-core',
-              description: 'Headless library for building docs + handling content.',
+              name: '冒险世界',
+              description: '适合探索，更多拓展地形、生物',
             },
             {
-              name: 'fumadocs-ui',
-              description: 'UI library for building docs.',
+              name: '征讨世界',
+              description: '挑战副本！攻打世界 BOSS！获取丰厚奖励！',
             },
             {
-              name: 'fumadocs-openapi',
-              description: 'Extend Fumadocs to render OpenAPI docs.',
+              name: '钓鱼世界',
+              description: '更多拓展鱼在这里捕获！',
             },
             {
-              name: 'fumadocs-obsidian',
-              description: 'Extend Fumadocs to handle Obsidian-style Markdown.',
+              name: 'PVP世界',
+              description: '和三五好友约好干架！',
             },
           ].map((item) => (
             <div
@@ -626,124 +503,8 @@ function ForEngineers() {
           ))}
         </div>
       </div>
-      <div className={cn(cardVariants())}>
-        <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-          Adopts your content.
-        </h3>
-        <p className="mb-4">
-          Designed to integrate with any <span className="text-brand">content source</span>,
-          Fumadocs works on MDX, Content Collections, and even your own CMS.
-        </p>
-        <div className="flex flex-row w-fit items-center gap-4 mb-6">
-          {[
-            {
-              href: 'https://github.com/fuma-nama/fumadocs-basehub',
-              text: 'BaseHub CMS',
-            },
-            {
-              href: 'https://github.com/fuma-nama/fumadocs-sanity',
-              text: 'Sanity',
-            },
-            {
-              href: 'https://github.com/MFarabi619/fumadocs-payloadcms',
-              text: 'Payload CMS',
-            },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-sm text-brand hover:underline"
-            >
-              {item.text}
-            </a>
-          ))}
-        </div>
-        <ServerCodeBlock
-          codeblock={{
-            title: 'Fumadocs MDX',
-          }}
-          code={`
-import { loader } from 'fumadocs-core/source';
-import { docs } from 'collections/server';
 
-export const source = loader({
-  source: docs.toFumadocsSource(),
-  baseUrl: '/docs',
-});`.trim()}
-          lang="ts"
-        />
-      </div>
-      <div
-        className={cn(cardVariants({ className: 'relative overflow-hidden min-h-[400px] z-2' }))}
-      >
-        <Image
-          src={Bg2Image}
-          alt=""
-          className="absolute inset-0 size-full object-cover object-top -z-1"
-        />
-        <div className="absolute top-8 left-4 w-[70%] flex flex-col bg-neutral-50/80 backdrop-blur-lg border text-neutral-800 p-2 rounded-xl shadow-lg shadow-black dark:bg-neutral-900/80 dark:text-neutral-200">
-          <p className="px-2 pb-2 font-medium border-b mb-2 text-neutral-500 dark:text-neutral-400">
-            My CMS
-          </p>
-          {['My Page', 'Another Page', 'Components', 'Getting Started'].map((page) => (
-            <div
-              key={page}
-              className="flex items-center gap-2 p-2 rounded-lg hover:bg-neutral-400/20"
-            >
-              <FileIcon className="stroke-neutral-500 size-4 dark:stroke-neutral-400" />
-              <span className="text-sm">{page}</span>
-              <div className="px-3 py-1 font-mono rounded-full bg-brand text-xs text-brand-foreground ms-auto">
-                Article
-              </div>
-            </div>
-          ))}
-        </div>
 
-        <div className="absolute bottom-8 right-4 w-[70%] flex flex-col bg-neutral-100 text-neutral-800 rounded-xl border shadow-lg shadow-black dark:bg-neutral-900 dark:text-neutral-200">
-          <div className="px-4 py-2 text-neutral-500 border-b font-medium dark:text-neutral-400">
-            MDX Editor
-          </div>
-          <pre className="text-base text-neutral-800 overflow-auto p-4 dark:text-neutral-400">
-            {`---
-title: Hello World
----
-
-# Hello World!
-
-This is my first document.`}
-          </pre>
-        </div>
-      </div>
-      <div className={cn(cardVariants(), 'flex flex-col max-md:pb-0')}>
-        <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-          Enhance your search experience.
-        </h3>
-        <p className="mb-6">Integrate with Orama Search and Algolia Search in your docs easily.</p>
-        <Link
-          href="/docs/headless/search/algolia"
-          className={cn(buttonVariants({ className: 'w-fit mb-8' }))}
-        >
-          Learn More
-        </Link>
-        <Search />
-      </div>
-      <div className={cn(cardVariants(), 'flex flex-col p-0 overflow-hidden')}>
-        <div className="p-6 mb-2">
-          <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}>
-            The shadcn/ui for docs
-          </h3>
-          <p className="mb-6">
-            Fumadocs CLI creates interactive components for your docs, offering a rich experience to
-            your users.
-          </p>
-          <Link href="/docs/cli" className={cn(buttonVariants({ className: 'w-fit' }))}>
-            Commands
-          </Link>
-        </div>
-        <Image src={ShadcnImage} alt="shadcn" className="mt-auto flex-1 w-full object-cover" />
-      </div>
     </>
   );
 }
@@ -789,7 +550,7 @@ function OpenSource() {
           }),
         )}
       >
-        Open Source Forever.
+        关于
       </h2>
 
       <div className={cn(cardVariants({ className: 'flex flex-col' }))}>
@@ -802,20 +563,14 @@ function OpenSource() {
             }),
           )}
         >
-          Made Possible by You.
+          感谢各位参与
         </h3>
-        <p className="mb-8">Fumadocs is 100% powered by passion and open source community.</p>
+        <p className="mb-8">服务器与Wiki 由强大的团队维护</p>
         <div className="mb-8 flex flex-row items-center gap-2">
           <Link href="/sponsors" className={cn(buttonVariants({ variant: 'primary' }))}>
-            Sponsors
+            关于我们
           </Link>
-          <a
-            href="https://github.com/fuma-nama/fumadocs/graphs/contributors"
-            rel="noreferrer noopener"
-            className={cn(buttonVariants({ variant: 'secondary' }))}
-          >
-            Contributors
-          </a>
+
         </div>
         <ContributorCounter repoOwner={owner} repoName={repo} />
       </div>
@@ -827,10 +582,10 @@ function OpenSource() {
         )}
       >
         <h2 className="text-3xl text-center font-extrabold font-mono uppercase mb-4 lg:text-4xl">
-          Build Your Docs
+          强大快速的Wiki站点
         </h2>
         <p className="text-center font-mono text-xs opacity-50 mb-8">
-          light and gorgeous, just like the moon.
+          采用 Fumadocs + React.js + Next.js 构建，配合EdgeOne 全球 CDN 加速服务
         </p>
         <div className="h-[200px] mt-auto overflow-hidden p-8 bg-gradient-to-b from-brand-secondary/10">
           <div className="mx-auto bg-radial-[circle_at_0%_100%] from-60% from-transparent to-brand-secondary size-[500px] rounded-full" />
@@ -847,10 +602,10 @@ function OpenSource() {
         <li>
           <span className="flex flex-row items-center gap-2 font-medium">
             <BatteryChargingIcon className="size-5" />
-            Battery guaranteed.
+            无盈利
           </span>
           <span className="mt-2 text-sm text-fd-muted-foreground">
-            Actively maintained, open for contributions.
+            Wiki站点由玩家自发维护，不进行任何的盈利！
           </span>
         </li>
         <li>
@@ -858,24 +613,24 @@ function OpenSource() {
             <svg viewBox="0 0 24 24" className="size-5" fill="currentColor">
               <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
             </svg>
-            Fully open-source.
+            站点开源
           </span>
           <span className="mt-2 text-sm text-fd-muted-foreground">
-            Open source, available on Github.
+            Wiki所有代码均在GitHub上开源，任何人都能下载部署！
           </span>
         </li>
         <li>
           <span className="flex flex-row items-center gap-2 font-medium">
             <TimerIcon className="size-5" />
-            Within seconds.
+            存续时间
           </span>
           <span className="mt-2 text-sm text-fd-muted-foreground">
-            Initialize a new project instantly with CLI.
+            除非地球爆炸，否则Wiki站点将永久存在！
           </span>
         </li>
         <li className="flex flex-row flex-wrap gap-2 mt-auto">
           <Link href="/docs" className={cn(buttonVariants())}>
-            Read docs
+            文档
           </Link>
           <a
             href="https://github.com/fuma-nama/fumadocs"
@@ -886,7 +641,7 @@ function OpenSource() {
               }),
             )}
           >
-            Open GitHub
+            GitHub
           </a>
         </li>
       </ul>

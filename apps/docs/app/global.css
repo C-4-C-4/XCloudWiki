@@ -11,8 +11,8 @@
   --spacing-page: 1436px;
   --color-brand: hsl(26, 73%, 51%);
   --color-brand-foreground: white;
-  --color-brand-secondary: #c6bb58;
-  --color-brand-secondary-foreground: #97890c;
+  --color-brand-secondary: #5eead4;
+  --color-brand-secondary-foreground: #0f766e;
   --color-brand-200: hsl(33, 100%, 50%);
 
   --color-landing-foreground: #59592a;
@@ -24,8 +24,8 @@
   --color-landing-foreground-200: #b7af7e;
 
   --color-brand: #fff383;
-  --color-brand-secondary: #fc7744;
-  --color-brand-secondary-foreground: #521700;
+  --color-brand-secondary: #14b8a6;
+  --color-brand-secondary-foreground: #0d9488;
   --color-brand-foreground: black;
   --color-brand-200: #fff7c8;
 }

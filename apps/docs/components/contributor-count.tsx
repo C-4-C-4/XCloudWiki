@@ -1,56 +1,56 @@
 import type { HTMLAttributes } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/cn';
-import { fetchContributors } from '@/lib/get-contributors';
+
+const localAvatars = [
+  '/avatars/LoveStory.jpg',
+  '/avatars/CCCC4444.jpg',
+  '/avatars/xuan562.jpg',
+  '/avatars/84531.jpg',
+  '/avatars/Sa1nt_Hal0.jpg',
+  '/avatars/Yep.jpg',
+  '/avatars/abnormalclarke.jpg',
+  '/avatars/sickle.jpg',
+  '/avatars/laccket.jpg',
+  '/avatars/xing.png',
+];
 
 export interface ContributorCounterProps extends HTMLAttributes<HTMLDivElement> {
-  repoOwner: string;
-  repoName: string;
+  repoOwner?: string;
+  repoName?: string;
   displayCount?: number;
 }
 
 export default async function ContributorCounter({
+  displayCount = 20,
   repoOwner,
   repoName,
-  displayCount = 20,
   ...props
 }: ContributorCounterProps): Promise<React.ReactElement> {
-  const contributors = await fetchContributors(repoOwner, repoName);
-  const topContributors = contributors
-    .filter((contributor) => contributor.login !== repoOwner)
-    .slice(0, displayCount);
+  const avatars = localAvatars.slice(0, displayCount);
 
   return (
     <div {...props} className={cn('flex flex-col items-center gap-4', props.className)}>
       <div className="flex flex-row flex-wrap items-center justify-center md:pe-4">
-        {topContributors.map((contributor, i) => (
-          <a
-            key={contributor.login}
-            href={`https://github.com/${contributor.login}`}
-            rel="noreferrer noopener"
-            target="_blank"
+        {avatars.map((src, i) => (
+          <div
+            key={src}
             className="size-10 overflow-hidden rounded-full border-4 border-fd-background bg-fd-background md:-mr-4 md:size-12"
             style={{
-              zIndex: topContributors.length - i,
+              zIndex: avatars.length - i,
             }}
           >
             <Image
-              src={contributor.avatar_url}
-              alt={`${contributor.login}'s avatar`}
-              unoptimized
+              src={src}
+              alt="avatar"
               width={48}
               height={48}
             />
-          </a>
-        ))}
-        {displayCount < contributors.length ? (
-          <div className="size-12 content-center rounded-full bg-fd-secondary text-center">
-            +{contributors.length - displayCount}
           </div>
-        ) : null}
+        ))}
       </div>
       <div className="text-center text-sm text-fd-muted-foreground">
-        Some of our best contributors.
+        感谢你们的付出和努力
       </div>
     </div>
   );

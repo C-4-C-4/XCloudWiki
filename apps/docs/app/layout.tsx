@@ -11,8 +11,8 @@ import { NextProvider } from 'fumadocs-core/framework/next';
 
 export const metadata = createMetadata({
   title: {
-    template: '%s | Fumadocs',
-    default: 'Fumadocs',
+    template: '%s | XCloudWiki',
+    default: 'XCloudWiki',
   },
   description: 'The React.js documentation framework.',
   metadataBase: baseUrl,

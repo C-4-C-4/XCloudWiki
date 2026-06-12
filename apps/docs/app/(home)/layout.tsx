@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
         {
           type: 'menu',
           on: 'menu',
-          text: 'Documentation',
+          text: '文档',
           items: [
             {
               text: 'Getting Started',
@@ -39,7 +39,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           children: (
             <NavbarMenu>
               <NavbarMenuTrigger>
-                <Link href="/docs">Documentation</Link>
+                <Link href="/docs">文档</Link>
               </NavbarMenuTrigger>
               <NavbarMenuContent>
                 <NavbarMenuLink href="/docs" className="md:row-span-2">

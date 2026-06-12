@@ -7,18 +7,18 @@ import Logo from '@/public/logo.png';
 export const linkItems: LinkItemType[] = [
   {
     icon: <AlbumIcon />,
-    text: 'Blog',
+    text: '时间线',
     url: '/blog',
     active: 'nested-url',
   },
   {
-    text: 'Showcase',
+    text: '画廊',
     url: '/showcase',
     icon: <LayoutTemplate />,
     active: 'url',
   },
   {
-    text: 'Sponsors',
+    text: '关于',
     url: '/sponsors',
     icon: <Heart />,
   },
@@ -39,11 +39,11 @@ export const linkItems: LinkItemType[] = [
 export const logo = (
   <>
     <Image
-      alt="Fumadocs"
+      alt="XCloudWiki"
       src={Logo}
       sizes="100px"
       className="hidden w-22 in-[.uwu]:block"
-      aria-label="Fumadocs"
+      aria-label="XCloudWiki"
     />
 
     <FumadocsIcon className="size-5 in-[.uwu]:hidden" />
@@ -56,7 +56,7 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           {logo}
-          <span className="font-medium in-[.uwu]:hidden">Fumadocs</span>
+          <span className="font-medium in-[.uwu]:hidden">XCloudWiki</span>
         </>
       ),
     },
