@@ -66,18 +66,22 @@ export function RootProvider({
       </SearchProvider>
     );
 
-  if (theme?.enabled !== false)
+  if (theme?.enabled !== false) {
+    const scriptProps =
+      typeof window === 'undefined' ? undefined : ({ type: 'application/json' } as const);
     body = (
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
+        scriptProps={scriptProps}
         {...theme}
       >
         {body}
       </ThemeProvider>
     );
+  }
 
   if (i18n) {
     body = <I18nProvider {...i18n}>{body}</I18nProvider>;

@@ -8,7 +8,7 @@ const baseDir = path.join(import.meta.dirname, '../../');
 
 export const compileOptions: Partial<CompileOptions> = {
   onUnknownFile(absolutePath) {
-    const filePath = path.relative(baseDir, absolutePath);
+    const filePath = path.relative(baseDir, absolutePath).replace(/\\/g, '/');
 
     // source object is external
     if (filePath.startsWith('lib/source/')) return false;
@@ -23,7 +23,7 @@ export const compileOptions: Partial<CompileOptions> = {
     }
 
     if (ref.type === 'file') {
-      let file = path.relative(baseDir, ref.file);
+      let file = path.relative(baseDir, ref.file).replace(/\\/g, '/');
 
       if (file === 'lib/cn.ts') {
         return {
@@ -32,7 +32,7 @@ export const compileOptions: Partial<CompileOptions> = {
         };
       }
 
-      file = path.relative(radixUi.registry.dir, ref.file);
+      file = path.relative(radixUi.registry.dir, ref.file).replace(/\\/g, '/');
       if (file.startsWith('contexts/') || file.startsWith('utils/use-')) {
         return {
           dep: 'fumadocs-ui',
@@ -41,7 +41,7 @@ export const compileOptions: Partial<CompileOptions> = {
         };
       }
 
-      file = path.relative(baseUi.registry.dir, ref.file);
+      file = path.relative(baseUi.registry.dir, ref.file).replace(/\\/g, '/');
       if (file.startsWith('contexts/') || file.startsWith('utils/use-')) {
         return {
           dep: '@fumadocs/base-ui',

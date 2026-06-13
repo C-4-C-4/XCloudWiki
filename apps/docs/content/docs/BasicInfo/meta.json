@@ -1,0 +1,12 @@
+{
+  "title": "基础信息",
+  "description": "关于闲云服务器的基础指南与说明",
+  "icon": "Info",
+  "root": true,
+  "pages": [
+    "ServerRules",
+    "Title",
+    "ServerActivity",
+    "Mascot"
+  ]
+}

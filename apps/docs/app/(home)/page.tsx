@@ -29,13 +29,11 @@ import {
 import ShadcnImage from './shadcn.png';
 import ContributorCounter from '@/components/contributor-count';
 import { owner, repo } from '@/lib/github-constants';
-import StoryImage from './story.png';
 import CLIImage from './cli.png';
 import Bg2Image from './bg-2.png';
 import Pcl2Image from './pcl2.png';
 import XcloudNetImage from './xcloud-net.png';
 import XcloudKeyImage from './xcloud-key.png';
-import { story } from '@/content/docs/(framework)/integrations/story/client.story';
 
 const headingVariants = cva('font-medium tracking-tight', {
   variants: {
@@ -141,44 +139,6 @@ export default function Page() {
         <OpenSource />
       </div>
     </main>
-  );
-}
-
-function Story() {
-  return (
-    <div className="relative col-span-full min-h-[570px] px-2 py-6 rounded-2xl z-2 border shadow-md">
-      <Image
-        src={StoryImage}
-        alt=""
-        className="absolute inset-0 size-full -z-1 pointer-events-none object-cover object-top rounded-2xl"
-      />
-
-      <div className="w-full m-auto max-w-[500px] text-start shadow-xl p-2 bg-fd-card/80 backdrop-blur-md rounded-xl border shadow-black/50 dark:bg-fd-card/50">
-        <div className="pt-3 px-3">
-          <h2
-            className={cn(
-              headingVariants({
-                className: 'mb-4',
-                variant: 'h3',
-              }),
-            )}
-          >
-            Fumadocs Story
-          </h2>
-          <p className="text-sm mb-4">
-            Built for UI component libraries – bring an interactive playground to showcase your
-            components vividly.
-          </p>
-          <Link
-            href="/docs/integrations/story"
-            className={cn(buttonVariants({ variant: 'primary', className: 'text-sm py-2 mb-4' }))}
-          >
-            Explore
-          </Link>
-        </div>
-        <story.WithControl />
-      </div>
-    </div>
   );
 }
 
