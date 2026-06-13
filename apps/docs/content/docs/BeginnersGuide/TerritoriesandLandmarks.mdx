@@ -1,0 +1,530 @@
+﻿---
+title: 领地与地标
+outline: deep
+description: 闲云服务器领地圈地与玩家地标系统指南
+published: true
+date: 2026-05-16T00:00:00.000Z
+tags: 
+editor: markdown
+dateCreated: 2026-05-16T00:00:00.000Z
+---
+
+<img src="/wiki-img/BeginnersGuide/TerritoriesandLandmarks/500px-Plains_Small_House_3.png" width="200" style={{ display: 'block', margin: '0 auto' }} />
+
+# <center>领地与地标</center>
+
+<center><font face="courier New" color="#2e7d32" size="6">Territory & Landmarks</font></center>
+
+> [!TIP] 💡 须知
+> 领地用于保护你的建筑与资源；地标则用于向全服玩家展示并传送到你的店铺、基地或公益设施。二者配合使用，是生存服建家与经营的核心功能。
+
+
+## 一、领地系统
+
+### 1、创建领地
+
+<Callout type="info" title="圈地工具">
+请**手持木锄**，用**左键**点击一个方块作为起点，再用**右键**点击另一个方块作为对角点。两点所围成的平面区域即为预选领地范围。
+</Callout>
+
+- 目前领地**高度无上限**，选定平面后 Y 轴整列高度均计入领地，因此通常只需用平面对角线两点圈地即可。
+- 选区完成后，屏幕会显示**圈地范围**与**所需金币**。
+- 确认无误后，输入 `/res create [自定义名字]` (名称仅英文与数字，不可包含特殊符号)即可创建属于你的领地。
+
+![](/wiki-img/BeginnersGuide/TerritoriesandLandmarks/2.png)
+
+---
+
+### 2、领地指令一览
+
+<p className="cmd-section-desc">以下指令按功能分类展示；标注 <span className="cmd-tag">需站在领地内</span> 的须在对应领地中执行，<span className="cmd-tag global">全局</span> 可在任意位置使用。<br/>点击下方指令即可复制！</p>
+
+#### 📦 创建与设置
+<br/>
+<div className="command-grid">
+  <div className="cmd-card">
+    <div className="cmd-name">/res create [名字]</div>
+    <div className="cmd-desc">在木锄选定的区域内创建领地，名称仅支持英文与数字。</div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res remove</div>
+    <div className="cmd-desc">删除当前站立所在的领地。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res set</div>
+    <div className="cmd-desc">打开领地设置面板，可配置回血、禁足、禁止传送等选项。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res expand [格数]</div>
+    <div className="cmd-desc">面向需要扩大的方向延伸领地边界。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+</div>
+
+---
+
+#### 👥 权限管理
+<br/>
+<div className="command-grid">
+  <div className="cmd-card">
+    <div className="cmd-name">/res padd [玩家ID]</div>
+    <div className="cmd-desc">授予指定玩家进入与使用领地的权限。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res pdel [玩家ID]</div>
+    <div className="cmd-desc">移除指定玩家的领地权限。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res pset [玩家ID]</div>
+    <div className="cmd-desc">针对特定玩家进行领地权限设置</div>
+  </div>
+</div>
+
+---
+
+#### 🧭 传送与查询
+<br/>
+<div className="command-grid">
+  <div className="cmd-card">
+    <div className="cmd-name">/res tpset</div>
+    <div className="cmd-desc">将当前位置设为领地传送点，配合 <code>/res tp</code> 回家，不占用 home 位。<span className="cmd-tag">需站在领地内</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res tp [领地名字]</div>
+    <div className="cmd-desc">传送至指定领地。<span className="cmd-tag warn">无法跨区传送</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res limits</div>
+    <div className="cmd-desc">查询当前称号下可圈地的最大范围与相关上限。<span className="cmd-tag global">全局</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/res list</div>
+    <div className="cmd-desc">列出你拥有权限的所有领地，包含他人授权给你的领地。<span className="cmd-tag global">全局</span></div>
+  </div>
+</div>
+
+---
+
+### 3、领地计算器
+
+不同玩家称号的圈地**最大范围**与**价格**各不相同。为便于规划，可使用下方**领地计算器**——选择你的称号等级并输入尺寸，即可快速估算圈地费用。
+
+<ResidenceCalculator />
+
+---
+
+### 4、特别提醒
+
+<Callout type="error" title="请务必注意">
+
+- 领地传送` /res tp [领地名字] `**不支持跨世界/跨分区**，请在目标生存分区内完成圈地或传送。
+- **严禁**恶意破坏他人领地及周边地形；违规行为将依据 [服务器规定](/index/基础信息/服务器规定(必看).md) 予以处理。
+
+</Callout>
+
+
+## 二、地标系统
+
+### 1、什么是地标？
+
+<Callout type="info" title="玩家地标 · Player Warp">
+专为**个人商店**、**特色建筑**与**公益设施**设计的全服公共传送点。在店铺或机器旁购买并挂载后，其他玩家可通过地标列表或 `/pw` 指令一键到达你的位置——相当于一个可交互的「活广告」。
+</Callout>
+
+![](/wiki-img/BeginnersGuide/TerritoriesandLandmarks/1.png)
+
+---
+
+### 2、地标能做什么？
+
+<p className="warp-section-desc">挂载地标后，全服玩家都能发现并传送到地标的位置。常见用途如下：</p>
+
+<div className="warp-use-grid">
+  <div className="warp-use-card warp-use-card--shop">
+    <div className="warp-use-head">
+      <div className="warp-use-icon-wrap" aria-hidden="true">🏪</div>
+      <div className="warp-use-title">开设商店</div>
+    </div>
+    <p className="warp-use-desc">在店铺门口设置地标，顾客可通过地标列表或 <code>/pw</code> 一键到店，省去反复问路。</p>
+    <div className="warp-use-tags">
+      <span className="warp-use-tag">个人商店</span>
+      <span className="warp-use-tag">箱子商店</span>
+    </div>
+  </div>
+  <div className="warp-use-card warp-use-card--build">
+    <div className="warp-use-head">
+      <div className="warp-use-icon-wrap" aria-hidden="true">🏘️</div>
+      <div className="warp-use-title">分享建筑</div>
+    </div>
+    <p className="warp-use-desc">小镇、城市、奇观等特色建筑均可挂载地标，方便全服玩家参观打卡与传送到入口。</p>
+    <div className="warp-use-tags">
+      <span className="warp-use-tag">小镇 & 城市</span>
+      <span className="warp-use-tag">优秀建筑 & 奇观</span>
+    </div>
+  </div>
+  <div className="warp-use-card warp-use-card--public">
+    <div className="warp-use-head">
+      <div className="warp-use-icon-wrap" aria-hidden="true">💚</div>
+      <div className="warp-use-title">公益设施</div>
+    </div>
+    <p className="warp-use-desc">刷怪塔、交易站、星露谷种子店等公用机器旁设置地标，让更多玩家快速找到并受益。</p>
+    <div className="warp-use-tags">
+      <span className="warp-use-tag">刷怪塔</span>
+      <span className="warp-use-tag">交易站</span>
+      <span className="warp-use-tag">种子店</span>
+    </div>
+  </div>
+</div>
+
+---
+
+### 3、如何使用地标？
+
+<p className="warp-section-desc">根据你的身份，选择对应的操作方式：</p>
+
+<div className="warp-role-grid">
+  <div className="warp-role-card warp-role-card--visitor">
+    <div className="warp-role-header">
+      <span className="warp-role-icon">🧭</span>
+      <span className="warp-role-title">访客</span>
+      <span className="warp-role-badge">传送到他人地标</span>
+    </div>
+    <ul className="warp-role-steps">
+      <li>按 <kbd>Shift</kbd> + <kbd>F</kbd> 打开菜单，在地标列表中选择目标传送</li>
+      <li>或在聊天框输入 <code>/pw [地标名称]</code> 快速传送</li>
+    </ul>
+  </div>
+  <div className="warp-role-card warp-role-card--owner">
+    <div className="warp-role-header">
+      <span className="warp-role-icon">📍</span>
+      <span className="warp-role-title">店主</span>
+      <span className="warp-role-badge">管理自己的地标</span>
+    </div>
+    <ul className="warp-role-steps">
+      <li>在想要挂载的位置<strong>购买地标</strong>并完成挂载</li>
+      <li>支持<strong>重命名</strong>、<strong>删除</strong>等管理操作（以游戏内菜单为准）</li>
+      <li>可挂载数量随头衔等级提升，详见 <a href="/index/基础信息/头衔称号.md">头衔称号</a></li>
+    </ul>
+  </div>
+</div>
+
+---
+
+### 4、相关指令
+
+<div className="command-grid">
+  <div className="cmd-card">
+    <div className="cmd-name">/pw [地标名称]</div>
+    <div className="cmd-desc">快速传送到指定的公共玩家地标（Player Warp）。</div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/pw desc set [地标名称] [描述]</div>
+    <div className="cmd-desc">为指定地标设置说明文字，供地标列表中展示。</div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/pw set [地标名称]</div>
+    <div className="cmd-desc">将地标传送点设置到当前站立位置。<span className="cmd-tag">需在目标位置执行</span></div>
+  </div>
+  <div className="cmd-card">
+    <div className="cmd-name">/pw remove [地标名称]</div>
+    <div className="cmd-desc">移除已挂载的指定地标。</div>
+  </div>
+</div>
+
+<Callout type="warn" title="与「家」的区别">
+`/sethome` 与 `/home` 设置的是**私人传送点**，仅自己使用；`/pw` 传送的是**全服公开的玩家地标**，供所有玩家浏览与访问。领地传送 `/res tp` 则绑定在圈地区域内，三者用途不同，请按需选择。
+</Callout>
+
+
+<style>{`
+.cmd-section-desc {
+  margin: 0.5rem 0 1.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border-left: 3px solid #2e7d32;
+}
+.cmd-section-desc .cmd-tag {
+  vertical-align: middle;
+  margin: 0 0.15rem;
+}
+h4 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1rem;
+  color: var(--vp-c-text-1);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  min-width: 0;
+}
+.cmd-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  padding: 1.1rem 1.2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  overflow: hidden;
+  min-width: 0;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.cmd-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.08);
+  border-color: #2e7d32;
+}
+.cmd-name {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2e7d32;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  background: var(--vp-c-bg-alt);
+  padding: 0.35rem 0.65rem;
+  padding-right: 2.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.cmd-name:hover {
+  border-color: #2e7d32;
+  background: var(--vp-c-bg-mute);
+}
+.cmd-desc {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+  margin: 0;
+}
+.cmd-desc code {
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.cmd-tag {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.15em 0.5em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 4px;
+  color: #1565c0;
+  background: rgba(21, 101, 192, 0.1);
+  border: 1px solid rgba(21, 101, 192, 0.25);
+}
+.cmd-tag.global {
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+  border-color: rgba(46, 125, 50, 0.3);
+}
+.cmd-tag.warn {
+  color: #c62828;
+  background: rgba(198, 40, 40, 0.08);
+  border-color: rgba(198, 40, 40, 0.25);
+}
+/* 地标系统：区块说明与卡片网格 */
+.warp-section-desc {
+  margin: 0.25rem 0 1rem;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border-left: 3px solid #2e7d32;
+}
+.warp-use-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 1.25rem;
+}
+.warp-use-card {
+  --warp-accent: #2e7d32;
+  --warp-accent-bg: rgba(46, 125, 50, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.15rem 1.1rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-alt) 100%);
+  border-top: 3px solid var(--warp-accent);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.warp-use-card--shop {
+  --warp-accent: #e65100;
+  --warp-accent-bg: rgba(230, 81, 0, 0.1);
+}
+.warp-use-card--build {
+  --warp-accent: #1565c0;
+  --warp-accent-bg: rgba(21, 101, 192, 0.1);
+}
+.warp-use-card--public {
+  --warp-accent: #2e7d32;
+  --warp-accent-bg: rgba(46, 125, 50, 0.1);
+}
+.warp-use-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--warp-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--warp-accent) 45%, var(--vp-c-divider));
+}
+.warp-use-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.warp-use-icon-wrap {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  line-height: 1;
+  border-radius: 12px;
+  background: var(--warp-accent-bg);
+  border: 1px solid color-mix(in srgb, var(--warp-accent) 25%, var(--vp-c-divider));
+}
+.warp-use-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  letter-spacing: 0.02em;
+}
+.warp-use-desc {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  flex: 1;
+}
+.warp-use-desc code {
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.warp-use-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.15rem;
+}
+.warp-use-tag {
+  display: inline-block;
+  padding: 0.2em 0.55em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 999px;
+  color: var(--warp-accent);
+  background: var(--warp-accent-bg);
+  border: 1px solid color-mix(in srgb, var(--warp-accent) 30%, var(--vp-c-divider));
+}
+.warp-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 1.25rem;
+}
+.warp-role-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.warp-role-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.warp-role-card--visitor {
+  border-top: 3px solid #1565c0;
+}
+.warp-role-card--owner {
+  border-top: 3px solid #2e7d32;
+}
+.warp-role-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+.warp-role-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.warp-role-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+.warp-role-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15em 0.55em;
+  border-radius: 99px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-divider);
+}
+.warp-role-card--visitor .warp-role-badge {
+  color: #1565c0;
+  background: rgba(21, 101, 192, 0.1);
+  border-color: rgba(21, 101, 192, 0.25);
+}
+.warp-role-card--owner .warp-role-badge {
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+  border-color: rgba(46, 125, 50, 0.3);
+}
+.warp-role-steps {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.65;
+}
+.warp-role-steps li + li {
+  margin-top: 0.45rem;
+}
+.warp-role-steps kbd {
+  display: inline-block;
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+  font-family: var(--vp-font-family-mono);
+  border-radius: 4px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+  box-shadow: 0 1px 0 var(--vp-c-divider);
+}
+.warp-role-steps code {
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.warp-role-steps a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+.warp-role-steps a:hover {
+  text-decoration: underline;
+}
+`}</style>

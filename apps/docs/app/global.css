@@ -135,3 +135,18 @@ body {
     transform: translateX(212px);
   }
 }
+
+/* VitePress CSS 变量兼容映射 */
+:root {
+  --vp-c-brand-1: var(--color-fd-primary);
+  --vp-c-brand-2: var(--color-fd-primary);
+  --vp-c-bg: var(--color-fd-background);
+  --vp-c-bg-soft: var(--color-fd-card);
+  --vp-c-bg-mute: var(--color-fd-muted);
+  --vp-c-bg-alt: var(--color-fd-muted);
+  --vp-c-text-1: var(--color-fd-foreground);
+  --vp-c-text-2: var(--color-fd-muted-foreground);
+  --vp-c-text-3: var(--color-fd-muted-foreground);
+  --vp-c-divider: var(--color-fd-border);
+}
+
