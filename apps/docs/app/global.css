@@ -89,6 +89,13 @@
   --headless-color: hsl(250, 80%, 54%);
   --framework-color: hsl(41, 100%, 40%);
   --ui-color: hsl(217, 100%, 58%);
+
+  /* 文档站点分类颜色 - 亮色模式 */
+  --basic-info-color: hsl(210, 90%, 55%);
+  --beginners-guide-color: hsl(145, 70%, 42%);
+  --expanded-gameplay-color: hsl(280, 75%, 55%);
+  --player-community-color: hsl(25, 95%, 53%);
+  --other-color: hsl(195, 70%, 45%);
 }
 
 html {
@@ -108,6 +115,71 @@ body {
   --headless-color: hsl(250 100% 80%);
   --framework-color: #fff383;
   --ui-color: #a9ceff;
+
+  /* 文档站点分类颜色 - 暗色模式 */
+  --basic-info-color: #60a5fa;
+  --beginners-guide-color: #4ade80;
+  --expanded-gameplay-color: #c084fc;
+  --player-community-color: #fbbf24;
+  --other-color: #22d3ee;
+}
+
+/* 侧边栏分类颜色 - 按 meta.json 顺序:
+   BasicInfo | (framework) | BeginnersGuide | Expandedgameplay | PlayerCommunity | Other
+*/
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(1) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(1) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(1) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(1) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(1) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(1) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(1) > [data-slot='sidebar-folder-link'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(1) > [data-slot='sidebar-folder-link'] svg {
+  color: var(--basic-info-color);
+}
+
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(3) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(3) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(3) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(3) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(3) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(3) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(3) > [data-slot='sidebar-folder-link'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(3) > [data-slot='sidebar-folder-link'] svg {
+  color: var(--beginners-guide-color);
+}
+
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(4) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(4) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(4) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(4) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(4) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(4) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(4) > [data-slot='sidebar-folder-link'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(4) > [data-slot='sidebar-folder-link'] svg {
+  color: var(--expanded-gameplay-color);
+}
+
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(5) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(5) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(5) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(5) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(5) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(5) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(5) > [data-slot='sidebar-folder-link'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(5) > [data-slot='sidebar-folder-link'] svg {
+  color: var(--player-community-color);
+}
+
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(6) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(6) > [data-slot='sidebar-folder-trigger'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(6) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(6) > [data-slot='sidebar-folder-link'],
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(6) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(6) > [data-slot='sidebar-folder-trigger'] svg,
+[data-slot='sidebar-viewport'] [data-state='open']:nth-child(6) > [data-slot='sidebar-folder-link'] svg,
+[data-slot='sidebar-viewport'] [data-state='closed']:nth-child(6) > [data-slot='sidebar-folder-link'] svg {
+  color: var(--other-color);
 }
 
 @keyframes circuit_1 {
