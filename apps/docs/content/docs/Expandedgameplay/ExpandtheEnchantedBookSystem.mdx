@@ -1,0 +1,389 @@
+---
+title: 拓展附魔书系统
+description: 拓展附魔书系统介绍
+published: true
+date: 2025-01-26T16:17:47.618Z
+tags: 
+editor: markdown
+dateCreated: 2025-01-26T16:17:47.618Z
+---
+
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/150px-enchanted_book.webp" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
+
+<h1 align="center">拓展附魔书系统</h1>
+
+<center><font face="courier New" color="#CC6CE7" size="6">Enchanted Book</font></center>
+
+<Callout type="info" title="核心玩法介绍">
+拓展附魔书是服务器中最主要的玩法之一。玩家可以使用 **<font color="#EF4444">附魔之眼</font>** 抽取各种品质的附魔书。  
+当前系统内收录的拓展附魔书总数量已达到：**277 本**！
+</Callout>
+
+<div className="quality-grid">
+  <div className="quality-card" style={{}}>
+    <div className="q-icon">⬜</div>
+    <div className="q-info">
+      <div className="q-name">普通附魔书</div>
+      <div className="q-tier">白色品质</div>
+    </div>
+  </div>
+  <div className="quality-card" style={{}}>
+    <div className="q-icon">🟩</div>
+    <div className="q-info">
+      <div className="q-name">优秀附魔书</div>
+      <div className="q-tier">绿色品质</div>
+    </div>
+  </div>
+  <div className="quality-card" style={{}}>
+    <div className="q-icon">🟪</div>
+    <div className="q-info">
+      <div className="q-name">史诗附魔书</div>
+      <div className="q-tier">紫色品质</div>
+    </div>
+  </div>
+  <div className="quality-card" style={{}}>
+    <div className="q-icon">🟧</div>
+    <div className="q-info">
+      <div className="q-name">传说附魔书</div>
+      <div className="q-tier">橙色品质</div>
+    </div>
+  </div>
+  <div className="quality-card" style={{ '--q-color': '#F87171' }}>
+    <div className="q-icon">🟥</div>
+    <div className="q-info">
+      <div className="q-name">神话附魔书</div>
+      <div className="q-tier">红色品质</div>
+    </div>
+  </div>
+  <div className="quality-card disabled" style={{}}>
+    <div className="q-icon">🟦</div>
+    <div className="q-info">
+      <div className="q-name">虚幻附魔书</div>
+      <div className="q-tier">蓝色品质 <small>(无法抽取)</small></div>
+    </div>
+  </div>
+</div>
+
+<style>{`
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.quality-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 4px solid var(--q-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.quality-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.quality-card.disabled {
+  opacity: 0.6;
+  border-style: dashed;
+}
+.q-icon {
+  font-size: 1.8em;
+}
+.q-name {
+  font-weight: 700;
+  font-size: 0.95em;
+  color: var(--q-color);
+}
+.q-tier {
+  font-size: 0.8em;
+  color: var(--vp-c-text-2);
+  margin-top: 0.2rem;
+}
+`}</style>
+
+
+## 一、附魔书获取
+### 1、附魔之眼兑换
+
+<Callout type="info" title="💡 核心兑换说明">
+玩家可通过 **每日任务**、**玩家市场**、**提升职业等级** 等途径获取 **<font color="#EF4444">附魔之眼</font>**。  
+收集足够的附魔之眼后，前往主城的 **NPC 附魔师** 处，即可抽取兑换对应品质的附魔书（附魔属性与等级均为随机）。
+
+**🎁 保底机制**：单品质连续抽取 **10 次** 后触发保底——普通必出 **六级**，优秀/史诗必出 **五级**，传说/神话必出 **四级**。另可 **全品质随机抽取**，连续 **20 次** 后保底必出 **六级** 附魔书。
+
+**💰 抽取消耗**：普通 **8000 经验**；优秀 **1** 个附魔之眼；史诗 **4** 个；传说 **10** 个；神话 **15** 个。
+</Callout>
+
+<div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+  <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/1.png" style={{ borderRadius: '8px', width: '48%', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+  <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/2.png" style={{ borderRadius: '8px', width: '48%', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+</div>
+
+### 2、附魔书兑换卷
+
+<Callout type="info" title="🎫 兑换卷获取">
+玩家可通过 **活动签到**、**通行证**、**赛事活动**、**市场**、**贡献币商店**、**官方商城** 等途径获取 **<font color="#F59E0B">附魔书兑换卷</font>**。  
+收集足够的兑换卷后，前往主城的 **NPC 附魔师** 处，即可直接兑换对应品质的附魔书。
+</Callout>
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/3.png" style={{ borderRadius: '8px', width: '80%', margin: '1rem auto', display: 'block', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+
+### 3、玩家市场
+
+<Callout type="info" title="🛒 市场购买">
+玩家可通过 **玩家市场** 处，直接购买对应品质的附魔书。
+</Callout>
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/4.png" style={{ borderRadius: '8px', width: '80%', margin: '1rem auto', display: 'block', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+
+### 4、附魔书抽奖体验
+
+> [!NOTE] 🎲 Wiki 抽奖模拟器
+> 在正式前往主城 **NPC 附魔师** 抽取之前，可先在下方模拟器体验。支持分品质抽取与 **全品质随机**；消耗、保底次数与保底等级与上文规则一致（普通消耗经验，其余消耗附魔之眼）。卡池数据与 Wiki 图鉴同步，不代表游戏内真实概率。
+>
+> 完整属性检索请前往 [附魔书查询引擎](/index/拓展玩法/附魔书查询引擎)。
+
+<EnchantLottery />
+
+<br/>
+
+---
+
+# 二、附魔书查询
+
+> [!NOTE] 🔍 查询途径指南
+> 为了方便大家快速了解海量拓展附魔的具体属性与冲突机制，我们提供了以下几种便捷查询方式：
+
+<div className="query-methods">
+  <div className="query-card">
+    <div className="query-icon">🗺️</div>
+    <div className="query-content">
+      <strong>主城 NPC 查询</strong>
+      <span>前往主城寻找“附魔师 NPC”，可以直接在界面内查阅附魔图鉴。</span>
+    </div>
+  </div>
+  {/*
+  <div className="query-card">
+    <div className="query-icon">📄</div>
+    <div className="query-content">
+      <strong>群文件 Excel</strong>
+      <span>在官方交流群的文件区或公告中，下载“附魔大全”Excel 表格进行本地查阅。</span>
+    </div>
+  </div>*/}
+  <div className="query-card">
+    <div className="query-icon">🌐</div>
+    <div className="query-content">
+      <strong>飞书在线文档</strong>
+      <span>点击访问网页版 <a href="https://q1wvda1l0d0.feishu.cn/base/DGO5b3Zl4a4s9Ms36qpcu5NHnAB?table=tbloqWKjx3eRaUE8&view=vewsV7UMIT" target="_blank" style={{ color: 'var(--vp-c-brand-1)' }}>拓展附魔书文档</a> 或 <a href="https://q1wvda1l0d0.feishu.cn/share/base/query/shrcnQDbSFmUar2jbIiGOJvs4Bh" target="_blank" style={{ color: 'var(--vp-c-brand-1)' }}>搜索系统</a>，支持快速检索。</span>
+    </div>
+  </div>
+</div>
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/5.png" style={{ borderRadius: '8px', width: '80%', margin: '1rem auto', display: 'block', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+
+<style>{`
+.query-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.query-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.query-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.query-icon {
+  font-size: 2em;
+}
+.query-content strong {
+  display: block;
+  font-size: 1.05em;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.2rem;
+}
+.query-content span {
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+`}</style>
+<br/>
+
+---
+
+# 三、附魔注意事项 
+
+<Callout type="warn" title="⚠️ 附魔核心规则">
+- **槽位机制**：每件装备初始仅有 **3 个**附魔槽。如需新增附魔，必须使用 **附魔凿** 工具开启新槽位（最大上限 8 个）。
+- **品质限制**：<font color="#FBBF24">传说</font> 和 <font color="#F87171">神话</font> 品质的附魔在同一装备上**各仅限一种**！
+- **附魔冲突**：部分附魔之间存在互斥（例如经验修补与无限，以及部分特殊拓展附魔），冲突会导致无法附魔，请提前在图鉴中确认。
+</Callout>
+
+<div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', margin: '1.5rem 0' }}>
+  <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/6.png" style={{ borderRadius: '8px', width: '32%', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+  <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/7.png" style={{ borderRadius: '8px', width: '32%', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+  <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/8.png" style={{ borderRadius: '8px', width: '32%', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+</div>
+
+### 1、清洗与拆卸
+
+如果附魔打错了，你可以前往主城寻找 **NPC 附魔师** 进行以下补救操作：
+
+<div className="action-grid">
+  <div className="action-card">
+    <div className="action-header">
+      <span className="action-icon">🗑️</span>
+      <span className="action-title">附魔清洗</span>
+    </div>
+    <div className="action-desc">将选定的附魔从装备上彻底清除（该附魔将直接消失）。</div>
+    <div className="action-cost">
+      <strong>所需消耗：</strong>金币 🪙 + 积分 💎 + 经验等级 🧪
+    </div>
+  </div>
+
+  <div className="action-card">
+    <div className="action-header">
+      <span className="action-icon">📖</span>
+      <span className="action-title">附魔拆卸</span>
+    </div>
+    <div className="action-desc">将选定的附魔安全拆卸，并将其重新转化为可使用的<strong>附魔书</strong>。</div>
+    <div className="action-cost">
+      <strong>所需消耗：</strong>金币 🪙 + 积分 💎 + 经验等级 🧪
+    </div>
+  </div>
+</div>
+
+> [!NOTE] 消耗说明
+> 清洗与拆卸所需的具体 **金币、积分 和 经验等级** 数量，会根据附魔的**具体品质**有所不同，请以游戏内界面的实际显示为准！
+
+<style>{`
+.action-grid {
+  display: flex;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.action-card {
+  flex: 1;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.action-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px dashed var(--vp-c-divider);
+  padding-bottom: 0.6rem;
+}
+.action-icon {
+  font-size: 1.5em;
+}
+.action-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--vp-c-text-1); /* 使用纯文本亮色以匹配整体UI */
+}
+.action-desc {
+  font-size: 0.9em;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+.action-cost {
+  font-size: 0.85em;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-alt);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+}
+.action-cost strong {
+  color: var(--vp-c-text-1);
+}
+@media (max-width: 640px) {
+  .action-grid {
+    flex-direction: column;
+  }
+}
+`}</style>
+<br/>
+
+---
+
+# 五、附魔突破
+
+<Callout type="info" title="🚀 突破系统简介">
+**附魔突破** 能够将拓展附魔书（不包括原版附魔书）的等级上限**强行提高一级**，打破装备属性的极限！
+</Callout>
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/image-fm5.png" style={{ borderRadius: '8px', display: 'block', margin: '1rem auto', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+
+### 1、突破核心规则
+
+<div className="breakthrough-rules">
+  <ul>
+    <li><strong>前置条件：</strong> 只有达到<strong>极限等级</strong>的附魔才能进行突破。</li>
+    <li><strong>成功概率：</strong> 每放入一本相同的满级附魔书增加 <strong>34%</strong> 概率，放入三本即可达 <strong>100%</strong> 成功率。</li>
+    <li><strong>失败惩罚：</strong> 突破失败会导致<strong>所有材料（包括附魔书）消失</strong>。</li>
+    <li><strong>必须材料：</strong> <font color="#EF4444"><strong>附魔进阶卷轴</strong></font> 是突破的硬性消耗品。</li>
+    <li><strong>保底材料：</strong> <font color="#4ADE80"><strong>附魔突破水晶</strong></font>（非必须），若突破失败可<strong>保留原附魔书</strong>不被销毁。</li>
+  </ul>
+</div>
+
+### 2、突破界面指南
+
+<img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/agaalgvgzyzrlj24cazg8r9i1hvwss29.png" style={{ borderRadius: '8px', width: '70%', display: 'block', margin: '1.5rem auto', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
+
+> [!IMPORTANT] 💡 界面摆放说明
+> - **顶部槽位**：放置需要突破的**最高等级附魔书**。
+> - **左下槽位**：放置 **<font color="#4ADE80">附魔突破水晶</font>**（非必须，用于防爆防碎）。
+> - **右下槽位**：放置 **<font color="#EF4444">附魔进阶卷轴</font>**（必须）。
+> - **底部按钮**：点击确认按钮前，可以查看当前的成功率以及所需的突破费用（固定为 **<font color="#F59E0B">15000 金币</font>**）。
+
+<style>{`
+.breakthrough-rules {
+  background: var(--vp-c-bg-soft);
+  border-left: 4px solid var(--vp-c-brand-1);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.2rem 0;
+}
+.breakthrough-rules ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.breakthrough-rules li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+.breakthrough-rules li strong {
+  color: var(--vp-c-text-1);
+}
+.breakthrough-rules li:last-child {
+  margin-bottom: 0;
+}
+`}</style>
+
+

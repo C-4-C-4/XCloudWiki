@@ -1,0 +1,560 @@
+---
+title: 星露谷农作物系统
+description: 星露谷农作物系统介绍
+published: true
+date: 2025-01-26T17:57:04.810Z
+tags: 
+editor: markdown
+dateCreated: 2025-01-26T17:52:38.932Z
+---
+
+<img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/wheat_je2_be2.webp" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
+
+<h1 align="center">星露谷农作物系统</h1>
+
+<center><font face="courier New" color="#16A34A" size="6">Stardew Valley</font></center>
+
+<Callout type="info" title="🌾 核心玩法">
+**“星露谷农作物系统”**是服务器中最优秀的休闲养成玩法之一！<br />目前已实装 **20 种**各具特色的农作物，快来体验悠闲的种田生活吧~
+</Callout>
+
+---
+
+# 一、获取种子
+
+### 1. 主城农夫 NPC
+
+玩家可以前往主城，寻找农夫NPC **“农作物市场”** 购买各类作物的种子。
+
+<div className="npc-purchase-grid">
+  <div className="npc-purchase-text">
+    <h4>🛒 种子购买规则</h4>
+    <ul>
+      <li><strong>购买价格</strong>：单价视作物种类而定（例如：黄瓜种子 <font color="#F59E0B">3 金币</font>/个）。</li>
+      <li><strong>库存刷新</strong>：种子商店会在每日 <strong>00:00:00</strong> 准时刷新库存。</li>
+      <li><strong>购买限制</strong>：<ul><li><font color="#3B82F6">个人购买上限</font>：每位玩家每日限购指定数量（如 64 个）。</li><li><font color="#EF4444">全服购买上限</font>：全服每日总库存有限（如 6400 个），买完即止！</li></ul></li>
+    </ul>
+  </div>
+  <div className="npc-purchase-image">
+    <img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/1.png" alt="农夫NPC外观" style={{ borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', border: '1px solid var(--vp-c-divider)', marginBottom: '1rem', width: '100%' }} />
+    <img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/2025-01-13_10.43.07.png" alt="农夫NPC购买界面" style={{ borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', border: '1px solid var(--vp-c-divider)', width: '100%' }} />
+  </div>
+</div>
+
+### 2. 玩家商店
+
+除了在主城购买外，你还可以通过**地标系统**寻找其他玩家开设的“星露谷商店”购买种子。
+
+<div className="npc-purchase-grid">
+  <div className="npc-purchase-text">
+    <h4>🛒 玩家商店规则</h4>
+    <ul>
+      <li><strong>购买价格</strong>：由开设商店的玩家自由定价，有时能淘到便宜货！</li>
+      <li><strong>寻找方式</strong>：使用快捷键或指令打开地标传送，寻找带有商店标识的玩家地标。</li>
+      <li><strong>库存优势</strong>：<ul><li>玩家商店的种子<font color="#10B981">完全不受官方全服总库存的限制</font>。</li><li>全看店主自己的补货速度。</li></ul></li>
+    </ul>
+  </div>
+  <div className="npc-purchase-image">
+    <img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/2.png" alt="寻找玩家地标" style={{ borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', border: '1px solid var(--vp-c-divider)', marginBottom: '1rem', width: '100%' }} />
+    <img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/3.png" alt="玩家商店购买界面" style={{ borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', border: '1px solid var(--vp-c-divider)', width: '100%' }} />
+  </div>
+</div>
+<br/>
+
+---
+
+# 二、农作物类型
+
+<Callout type="info" title="📅 四季种植">
+目前服务器共实装 **20 种** 农作物。大部分作物只能在其对应的季节种植并存活，但也有部分特殊作物无视季节限制。
+</Callout>
+
+<div className="season-crop-grid">
+  <div className="season-card spring">
+    <div className="season-header">🌸 春季作物</div>
+    <div className="season-list">
+      <span className="crop-tag">菠萝</span><span className="crop-tag">黄瓜</span><span className="crop-tag">牛油果</span><span className="crop-tag">莴苣</span><span className="crop-tag">茄子</span><span className="crop-tag">草莓</span>
+    </div>
+  </div>
+
+  <div className="season-card summer">
+    <div className="season-header">☀️ 夏季作物</div>
+    <div className="season-list">
+      <span className="crop-tag">火龙果</span><span className="crop-tag">荔枝</span><span className="crop-tag">西红柿</span><span className="crop-tag">玉米</span><span className="crop-tag">猕猴桃</span><span className="crop-tag">香蕉</span>
+    </div>
+  </div>
+
+  <div className="season-card autumn">
+    <div className="season-header">🍁 秋季作物</div>
+    <div className="season-list">
+      <span className="crop-tag">石榴</span><span className="crop-tag">橙子</span><span className="crop-tag">芒果</span><span className="crop-tag">番石榴</span>
+    </div>
+  </div>
+
+  <div className="season-card winter">
+    <div className="season-header">❄️ 冬季作物</div>
+    <div className="season-list">
+      <span className="crop-tag">枸杞</span><span className="crop-tag">椰子</span><span className="crop-tag">木瓜</span>
+    </div>
+  </div>
+
+  <div className="season-card all-season">
+    <div className="season-header">🌟 无视季节</div>
+    <div className="season-list">
+      <span className="crop-tag special">辣椒</span>
+    </div>
+  </div>
+</div>
+<br/>
+
+# 三、种植工具
+> [!IMPORTANT] 💡 种植核心法则
+> **必须使用原版耕地！**<br />
+> 并且在撒下第一粒种子前，**必须先使用水壶或水桶将土地浇湿**，干旱的土地是绝对无法进行播种的。
+
+### 核心农具与设施
+
+<div className="tool-grid">
+  <div className="tool-card">
+    <div className="tool-icon">🌾</div>
+    <div className="tool-info">
+      <h4>稻草人</h4>
+      <p>放置在农田附近，可有效防止乌鸦成群结队来偷食你的心血作物。</p>
+    </div>
+  </div>
+  
+  <div className="tool-card">
+    <div className="tool-icon">💦</div>
+    <div className="tool-info">
+      <h4>水壶 / 洒水器</h4>
+      <p>前期使用水壶手动浇灌，后期布置洒水器实现全自动化灌溉，彻底解放双手！</p>
+    </div>
+  </div>
+
+  <div className="tool-card">
+    <div className="tool-icon">🔍</div>
+    <div className="tool-info">
+      <h4>土壤检测仪</h4>
+      <p>高科技农具，右键土地即可精确检测并显示当前水分的具体剩余格数。</p>
+    </div>
+  </div>
+
+  <div className="tool-card">
+    <div className="tool-icon">🧊</div>
+    <div className="tool-info">
+      <h4>温室玻璃</h4>
+      <p>搭建温室大棚的核心材料！在温室内可以<strong>完全无视季节限制</strong>，跨季节种植任何植物。</p>
+    </div>
+  </div>
+</div>
+
+### 农业辅料（肥料）
+
+<Callout type="info" title="💡 肥料使用须知">
+所有肥料或增产剂**必须在农作物种植前**对耕地使用，并且具有长达数十个游戏日的有效时间！
+</Callout>
+
+<div className="fertilizer-cards">
+  <div className="f-card">
+    <div className="f-header">📈 基础增产剂 <span className="f-price">💰 30 金币</span></div>
+    <div className="f-desc">农作物收获时，将提供极其强大的额外爆率：</div>
+    <ul className="f-stats">
+      <li><font color="#10B981"><strong>80%</strong></font> 额外获得 1 个农作物</li>
+      <li><font color="#10B981"><strong>40%</strong></font> 额外获得 2 个农作物</li>
+      <li><font color="#10B981"><strong>10%</strong></font> 额外获得 3 个农作物</li>
+    </ul>
+    <div className="f-duration">⏳ 有效时间：<strong>28</strong> 个游戏日</div>
+  </div>
+
+  <div className="f-card">
+    <div className="f-header">✨ 基础肥料 <span className="f-price">💰 30 金币</span></div>
+    <div className="f-desc">专门用于提升最终采摘果实的星级品质：</div>
+    <ul className="f-stats">
+      <li>小幅度增加农作物产出<font color="#10B981"><strong>品阶</strong></font></li>
+    </ul>
+    <div className="f-duration">⏳ 有效时间：<strong>28</strong> 个游戏日</div>
+  </div>
+
+  <div className="f-card">
+    <div className="f-header">💧 基础保湿土壤 <span className="f-price">💰 30 金币</span></div>
+    <div className="f-desc">耕地水分消耗 1 次后，有概率触发保水机制：</div>
+    <ul className="f-stats">
+      <li><font color="#10B981"><strong>10%</strong></font> 概率不消耗水分</li>
+    </ul>
+    <div className="f-duration">⏳ 有效时间：<strong>28</strong> 个游戏日</div>
+  </div>
+
+  <div className="f-card">
+    <div className="f-header">⏱️ 生长激素 <span className="f-price">💰 30 金币</span></div>
+    <div className="f-desc">农作物生长 1 次后，有极高概率直接加速生长：</div>
+    <ul className="f-stats">
+      <li><font color="#10B981"><strong>50%</strong></font> 额外减少 1 个生长周期</li>
+    </ul>
+    <div className="f-duration">⏳ 有效时间：<strong>14</strong> 个游戏日</div>
+  </div>
+</div>
+<br/>
+
+---
+
+# 四、种植方式
+<div className="farming-guide">
+<div className="guide-steps">
+<div className="step-item">
+<div className="step-num">1</div>
+<div className="step-content">
+<h4>🌤️ 辨识当前季节</h4>
+<p>在游戏屏幕正上方，会有 <strong>Survival World</strong> 字样以及旁边的季节 Logo（例如图中为冬季标志）。不合时令的作物无法种植。</p>
+</div>
+</div>
+<div className="step-item">
+<div className="step-num">2</div>
+<div className="step-content">
+<h4>🚧 圈地与防护措施</h4>
+<p>开垦原版耕地作为农田。为了防止乌鸦来偷吃作物，强烈建议在农田的四角放置 <strong>稻草人</strong> 进行防范。注意：稻草人只保护周围7格平齐的农作物！</p>
+</div>
+</div>
+<div className="step-item">
+<div className="step-num">3</div>
+<div className="step-content">
+<h4>🧪 提前施加肥料</h4>
+<p>如果你购买了肥料或增产剂，<strong>必须在播种前</strong>拿着化肥对准耕地右键使用。每 1 个耕地块需要消耗 1 包化肥。</p>
+</div>
+</div>
+<div className="step-item">
+<div className="step-num">4</div>
+<div className="step-content">
+<h4>💦 浇水与自动化设施</h4>
+<p>每块耕地可存水5格，拿起水壶对着水源右键装水（最高容量为 4 格），然后对准耕地长按右键即可浇水。<br /><strong>进阶技巧</strong>：如果放置了洒水器，你可以用水壶右击洒水器为其充能。洒水器等级越高，全自动浇水的覆盖面积就越大！</p>
+</div>
+</div>
+</div>
+<div className="guide-images">
+<img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/5.png" alt="查看季节信息" />
+<img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/6.png" alt="农田与洒水器布局" />
+</div>
+</div>
+
+<div className="greenhouse-tip">
+  <div className="greenhouse-text">
+    <h4>🧊 温室玻璃搭建技巧</h4>
+    <p>关于 <strong>温室玻璃</strong> 的使用非常简单：只需悬空放置在每个耕地块的<strong>正上方</strong>即可生效，实现无视季节种植。周围的左右、前后方向均<strong>无需额外包裹</strong>玻璃，大幅节省材料！</p>
+  </div>
+  <div className="greenhouse-image">
+    <img src="/wiki-img/Expandedgameplay/StardewValleyCropSystem/7.png" alt="温室玻璃放置示范" />
+  </div>
+</div>
+
+
+<style>{`
+/* 温室玻璃提示 */
+.greenhouse-tip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 4px solid #3B82F6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.greenhouse-text {
+  flex: 1;
+}
+.greenhouse-text h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--vp-c-text-1);
+  font-size: 1.1rem;
+}
+.greenhouse-text p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+.greenhouse-image {
+  flex-shrink: 0;
+  width: 260px;
+}
+.greenhouse-image img {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  display: block;
+}
+@media (max-width: 640px) {
+  .greenhouse-tip {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .greenhouse-image {
+    width: 100%;
+  }
+}
+
+/* 种植指南布局 */
+.farming-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.step-item {
+  display: flex;
+  gap: 1rem;
+  background: var(--vp-c-bg-soft);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.step-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--vp-c-brand-1);
+}
+.step-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--vp-c-brand-1);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.step-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--vp-c-text-1);
+  font-size: 1.05rem;
+}
+.step-content p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.guide-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.guide-images img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid var(--vp-c-divider);
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .guide-images {
+    grid-template-columns: 1fr;
+  }
+}
+`}</style>
+
+<style>{`
+/* 农具网格 */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.tool-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  padding: 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.tool-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+}
+.tool-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.tool-info h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05em;
+  color: var(--vp-c-brand-1);
+}
+.tool-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+
+/* 辅料列表 */
+.fertilizer-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.f-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.f-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-color: var(--vp-c-brand-1);
+}
+.f-card.primary {
+  border-color: #10B981;
+  background: rgba(16, 185, 129, 0.05);
+}
+.f-header {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.f-price {
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+.f-desc {
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+.f-stats {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+.f-duration {
+  font-size: 0.85em;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-alt);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: auto;
+}
+`}</style>
+
+<style>{`
+/* 季节卡片网格 */
+.season-crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.season-card {
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid var(--vp-c-divider);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background: var(--vp-c-bg-soft);
+}
+.season-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  border-color: var(--vp-c-brand-1);
+}
+.season-header {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid;
+}
+.spring .season-header { color: #EC4899; border-color: #FBCFE8; }
+.summer .season-header { color: #EAB308; border-color: #FEF08A; }
+.autumn .season-header { color: #D97706; border-color: #FDE68A; }
+.winter .season-header { color: #3B82F6; border-color: #BFDBFE; }
+.all-season .season-header { color: #8B5CF6; border-color: #DDD6FE; }
+
+.season-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.crop-tag {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
+  transition: all 0.2s;
+}
+.crop-tag:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+.crop-tag.special {
+  background: #FEF2F2;
+  color: #EF4444;
+  border-color: #FECACA;
+}
+.dark .crop-tag.special {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.npc-purchase-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: center;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.npc-purchase-text h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+  color: var(--vp-c-brand-1);
+}
+.npc-purchase-text ul {
+  line-height: 1.8;
+  padding-left: 1.2rem;
+}
+.npc-purchase-image img {
+  width: 100%;
+  display: block;
+}
+@media (max-width: 768px) {
+  .npc-purchase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+`}</style>

@@ -1,0 +1,10 @@
+{
+  "$schema": "..\\..\\..\\.source\\json-schema\\docs.meta.json",
+  "title": "拓展玩法",
+  "description": "闲云服务器的拓展玩法与特色系统",
+  "icon": "Gamepad2",
+  "root": true,
+  "pages": [
+    "..."
+  ]
+}

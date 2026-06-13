@@ -1,0 +1,349 @@
+﻿---
+title: 铁匠系统
+description: 铁匠锻造与装备强化系统指南
+published: true
+date: 2026-05-08T06:08:39.000Z
+tags:
+  - 拓展玩法
+  - 装备强化
+editor: markdown
+dateCreated: 2026-05-08T06:08:39.000Z
+---
+
+<img src="/wiki-img/Expandedgameplay/BlacksmithSystem/Anvil_JE3_BE3.png" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
+
+<h1 align="center">铁匠系统</h1>
+
+<center><font face="courier New" color="#EF4444" size="6">Blacksmith System</font></center>
+
+<Callout type="warn" title="🚧 建设中">
+当前页面内容正在完善中...
+</Callout>
+
+<div style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)', position: 'relative', overflow: 'hidden', marginTop: '1rem' }}>
+  <div style={{ position: 'absolute', right: '-15px', bottom: '-15px', fontSize: '5rem', opacity: '0.08', transform: 'rotate(-15deg)', pointerEvents: 'none', userSelect: 'none' }}>🔨</div>
+  <div style={{ fontSize: '2rem', background: 'rgba(239, 68, 68, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', flexShrink: '0', boxShadow: 'inset 0 0 8px rgba(239, 68, 68, 0.15)' }}>⚒️</div>
+  <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '0.25rem', textAlign: 'left' }}>
+    <div style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--vp-c-text-1)', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+      🔥 铁匠工坊功能开启 <span style={{ fontSize: '0.72rem', background: 'rgba(239, 68, 68, 0.12)', color: '#ef4444', padding: '2px 8px', borderRadius: '20px', fontWeight: '700' }}>装备升级</span>
+    </div>
+    <div style={{ fontSize: '0.92rem', color: 'var(--vp-c-text-2)', lineHeight: '1.55', margin: '0' }}>
+      在主城中与铁匠 NPC 对话，即可进入铁匠工坊界面。进行装备升级！
+    </div>
+  </div>
+</div>
+
+---
+
+# 一、基础介绍
+
+<Callout type="info" title="💡 铁匠工坊入口指引">
+在主城中寻找 **铁匠 NPC** 对话并选择装备升级，即可进入铁匠工坊交互界面。将您背包中的装备放入精炼槽，即可开始专属装备的属性提升！
+</Callout>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/1.png" alt="在主城中与铁匠 NPC 对话，即可进入铁匠工坊界面，进行装备升级！" />
+</div>
+
+<div className="forge-tips-grid">
+  <div className="forge-tip-card">
+    <span className="tip-num">01</span>
+    <span className="tip-icon">⚡</span>
+    <div className="tip-content">
+      <strong>强化</strong>
+      <p>可以让装备 +1、+2，最高可以强化到 +15。</p>
+    </div>
+  </div>
+  <div className="forge-tip-card">
+    <span className="tip-num">02</span>
+    <span className="tip-icon">♻️</span>
+    <div className="tip-content">
+      <strong>分解</strong>
+      <p>分解多余装备可以获取精华继续强化装备。</p>
+    </div>
+  </div>
+  <div className="forge-tip-card">
+    <span className="tip-num">03</span>
+    <span className="tip-icon">🔮</span>
+    <div className="tip-content">
+      <strong>重铸</strong>
+      <p>可以让强化装备复原到未强化状态。</p>
+    </div>
+  </div>
+  <div className="forge-tip-card">
+    <span className="tip-num">04</span>
+    <span className="tip-icon">🔓</span>
+    <div className="tip-content">
+      <strong>解绑</strong>
+      <p>可以让装备处于未绑定装备可用于交易。</p>
+    </div>
+  </div>
+  <div className="forge-tip-card">
+    <span className="tip-num">05</span>
+    <span className="tip-icon">📖</span>
+    <div className="tip-content">
+      <strong>图鉴</strong>
+      <p>可以查看服务器可获取的 RPG 装备。</p>
+    </div>
+  </div>
+  <div className="forge-tip-card">
+    <span className="tip-num">06</span>
+    <span className="tip-icon">🌟</span>
+    <div className="tip-content">
+      <strong>觉醒</strong>
+      <p>是让本身含有技能的装备觉醒技能或强化技能。</p>
+    </div>
+  </div>
+</div>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/2.png" alt="铁匠的提示" />
+</div>
+
+---
+
+# 二、基础玩法
+
+### 1、强化
+
+<Callout type="info" title="💡 强化指引">
+装备强化是大幅提升战力的核心途径。进行强化时，需要注意以下核心规则：
+</Callout>
+
+<div className="forge-upgrade-rules">
+  <div className="rule-item">
+    <span className="rule-badge">01</span>
+    <p><strong>消耗材料</strong>：强化需要消耗 <strong>金币</strong> 和 <strong>强化石或精粹</strong> 以提供装备升级所需的经验值。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">02</span>
+    <p><strong>属性构成</strong>：强化至 <strong>+15</strong> 满阶的装备，将拥有 <strong>1 个核心主属性</strong> 以及 <strong>4 个附加副属性</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">03</span>
+    <p><strong>词条突破</strong>：装备等级强化达到 <strong>+3、+6、+9、+12、+15</strong> 阶段时，均会随机开启一个全新副词条属性。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">04</span>
+    <p><strong>主数值成长</strong>：装备的每一次强化升级，均会百分之百增加其 <strong>核心主属性数值</strong> 强度！</p>
+  </div>
+</div>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/3.png" alt="装备强化功能展示" />
+</div>
+
+---
+
+### 2、分解
+
+<Callout type="info" title="💡 分解指引">
+装备分解是回收材料、获取高级强化资源的重要方式。进行分解时，请务必关注以下细则：
+</Callout>
+
+<div className="forge-upgrade-rules">
+  <div className="rule-item">
+    <span className="rule-badge">01</span>
+    <p><strong>获得材料</strong>：装备分解后，可获得用于强化对应装备套装的 <strong>核心套装精华</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">02</span>
+    <p><strong>奖励判定</strong>：具体获得的精华奖励数量，由被分解装备的 <strong>强化状态</strong> 与 <strong>装备品阶</strong> 共同决定。</p>
+  </div>
+</div>
+
+<Callout type="warn" title="⚠️ 警告">
+**请注意！装备一旦分解完成，其数据将被永久销毁，完全无法复原！** 请各位冒险者在分解高级装备前仔细核对，以免造成不必要的损失。
+</Callout>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/4.png" alt="装备分解功能展示" />
+</div>
+
+---
+
+### 3、重铸
+
+<Callout type="info" title="💡 重铸指引">
+装备重铸可以将已强化的装备完美还原。进行重铸时，请遵循以下流程指引：
+</Callout>
+
+<div className="forge-upgrade-rules">
+  <div className="rule-item">
+    <span className="rule-badge">01</span>
+    <p><strong>装备槽位</strong>：在重铸操作面板中，将需要重铸的已强化装备放入 <strong>左侧槽位</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">02</span>
+    <p><strong>消耗材料</strong>：将重铸所需的专属消耗品 <strong>「遗忘刻印」</strong> 放入面板 <strong>右侧槽位</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">03</span>
+    <p><strong>确认执行</strong>：在重铸条件均满足后，用鼠标点击下方的 <strong>确认按钮</strong> 即可开始重铸。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">04</span>
+    <p><strong>重置效果</strong>：重铸完成后，装备会完美 <strong>恢复到未强化（初始 +0）状态</strong>。</p>
+  </div>
+</div>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/5.png" alt="装备重铸功能展示" />
+</div>
+
+---
+
+### 4、觉醒
+
+<Callout type="info" title="💡 觉醒指引">
+装备觉醒能够激活或强化装备上的附带技能。进行觉醒操作时，请遵循以下步骤指引：
+</Callout>
+
+<div className="forge-upgrade-rules">
+  <div className="rule-item">
+    <span className="rule-badge">01</span>
+    <p><strong>武器槽位</strong>：在觉醒操作面板中，首先将需要觉醒的核心武器放入 <strong>中间槽位</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">02</span>
+    <p><strong>消耗材料</strong>：将所对应的专属材料 <strong>「觉醒石」</strong> 放入面板的 <strong>下方槽位</strong>。</p>
+  </div>
+  <div className="rule-item">
+    <span className="rule-badge">03</span>
+    <p><strong>升级执行</strong>：双道具槽位准备妥当后，在面板上使用 <strong>鼠标左键点击对应的技能图标</strong> 即可成功执行觉醒与技能升级！</p>
+  </div>
+</div>
+
+<div className="forge-showcase-container">
+  <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/6.png" alt="装备觉醒功能展示" />
+</div>
+
+
+<style>{`
+.forge-showcase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 2rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+.forge-showcase-container img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.forge-showcase-container:hover {
+  border-color: #ef4444;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.05);
+}
+
+.forge-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.forge-tip-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.forge-tip-card:hover {
+  border-color: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.04);
+}
+.tip-num {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--vp-c-text-3);
+  opacity: 0.3;
+  font-family: monospace;
+}
+.tip-icon {
+  font-size: 1.25rem;
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(239, 68, 68, 0.06);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.tip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+}
+.tip-content strong {
+  font-size: 0.98rem;
+  color: var(--vp-c-text-1);
+  font-weight: 700;
+}
+.tip-content p {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin: 0 !important;
+}
+
+.forge-upgrade-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1.5rem 0 2rem;
+}
+.forge-upgrade-rules .rule-item {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.25s ease;
+}
+.forge-upgrade-rules .rule-item:hover {
+  border-color: #ef4444;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.03);
+}
+.rule-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-family: monospace;
+}
+.forge-upgrade-rules .rule-item p {
+  font-size: 0.92rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin: 0 !important;
+}
+`}</style>
