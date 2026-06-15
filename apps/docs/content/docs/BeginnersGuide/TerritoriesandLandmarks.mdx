@@ -7,7 +7,11 @@ date: 2026-05-16T00:00:00.000Z
 tags: 
 editor: markdown
 dateCreated: 2026-05-16T00:00:00.000Z
+publishedAt: 2026-06-14
+authors: "CCCC4444"
 ---
+
+import { Lightbulb, Package, Users, Compass, Store, Building2, Heart, MapPin } from 'lucide-react';
 
 <img src="/wiki-img/BeginnersGuide/TerritoriesandLandmarks/500px-Plains_Small_House_3.png" width="200" style={{ display: 'block', margin: '0 auto' }} />
 
@@ -15,7 +19,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 
 <center><font face="courier New" color="#2e7d32" size="6">Territory & Landmarks</font></center>
 
-> [!TIP] 💡 须知
+> [!TIP] <Lightbulb className="size-4 inline-block mr-1" /> 须知
 > 领地用于保护你的建筑与资源；地标则用于向全服玩家展示并传送到你的店铺、基地或公益设施。二者配合使用，是生存服建家与经营的核心功能。
 
 
@@ -39,7 +43,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 
 <p className="cmd-section-desc">以下指令按功能分类展示；标注 <span className="cmd-tag">需站在领地内</span> 的须在对应领地中执行，<span className="cmd-tag global">全局</span> 可在任意位置使用。<br/>点击下方指令即可复制！</p>
 
-#### 📦 创建与设置
+#### <Package className="size-4 inline-block mr-1" /> 创建与设置
 <br/>
 <div className="command-grid">
   <div className="cmd-card">
@@ -62,7 +66,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 
 ---
 
-#### 👥 权限管理
+#### <Users className="size-4 inline-block mr-1" /> 权限管理
 <br/>
 <div className="command-grid">
   <div className="cmd-card">
@@ -81,7 +85,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 
 ---
 
-#### 🧭 传送与查询
+#### <Compass className="size-4 inline-block mr-1" /> 传送与查询
 <br/>
 <div className="command-grid">
   <div className="cmd-card">
@@ -141,7 +145,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 <div className="warp-use-grid">
   <div className="warp-use-card warp-use-card--shop">
     <div className="warp-use-head">
-      <div className="warp-use-icon-wrap" aria-hidden="true">🏪</div>
+      <div className="warp-use-icon-wrap" aria-hidden="true"><Store className="size-6" /></div>
       <div className="warp-use-title">开设商店</div>
     </div>
     <p className="warp-use-desc">在店铺门口设置地标，顾客可通过地标列表或 <code>/pw</code> 一键到店，省去反复问路。</p>
@@ -152,7 +156,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
   </div>
   <div className="warp-use-card warp-use-card--build">
     <div className="warp-use-head">
-      <div className="warp-use-icon-wrap" aria-hidden="true">🏘️</div>
+      <div className="warp-use-icon-wrap" aria-hidden="true"><Building2 className="size-6" /></div>
       <div className="warp-use-title">分享建筑</div>
     </div>
     <p className="warp-use-desc">小镇、城市、奇观等特色建筑均可挂载地标，方便全服玩家参观打卡与传送到入口。</p>
@@ -163,7 +167,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
   </div>
   <div className="warp-use-card warp-use-card--public">
     <div className="warp-use-head">
-      <div className="warp-use-icon-wrap" aria-hidden="true">💚</div>
+      <div className="warp-use-icon-wrap" aria-hidden="true"><Heart className="size-6" /></div>
       <div className="warp-use-title">公益设施</div>
     </div>
     <p className="warp-use-desc">刷怪塔、交易站、星露谷种子店等公用机器旁设置地标，让更多玩家快速找到并受益。</p>
@@ -184,7 +188,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
 <div className="warp-role-grid">
   <div className="warp-role-card warp-role-card--visitor">
     <div className="warp-role-header">
-      <span className="warp-role-icon">🧭</span>
+      <span className="warp-role-icon"><Compass className="size-5" /></span>
       <span className="warp-role-title">访客</span>
       <span className="warp-role-badge">传送到他人地标</span>
     </div>
@@ -195,7 +199,7 @@ dateCreated: 2026-05-16T00:00:00.000Z
   </div>
   <div className="warp-role-card warp-role-card--owner">
     <div className="warp-role-header">
-      <span className="warp-role-icon">📍</span>
+      <span className="warp-role-icon"><MapPin className="size-5" /></span>
       <span className="warp-role-title">店主</span>
       <span className="warp-role-badge">管理自己的地标</span>
     </div>

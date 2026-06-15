@@ -384,7 +384,7 @@ interface ServerStatusData {
   favicon_url: string;
 }
 
-export function ServerStatus(props: ComponentProps<'div'>) {
+export function ServerStatus({ compact, ...props }: ComponentProps<'div'> & { compact?: boolean }) {
   const [data, setData] = useState<ServerStatusData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -411,47 +411,62 @@ export function ServerStatus(props: ComponentProps<'div'>) {
 
   return (
     <div {...props} className={cn(props.className)}>
-      <div className="mx-auto w-full max-w-[800px] p-2 bg-fd-card text-fd-card-foreground border rounded-2xl shadow-lg">
+      <div className={cn(
+        "mx-auto w-full bg-fd-card text-fd-card-foreground border rounded-2xl shadow-lg",
+        compact ? "" : "max-w-[800px] p-2"
+      )}>
         {/* 标题栏 */}
-        <div className="flex flex-row items-center gap-3">
-          <h2 className="text-brand content-center font-mono font-bold uppercase border-2 border-brand/50 px-3 py-1.5 rounded-xl text-sm flex items-center gap-2">
-            <Server className="size-4" />
+        <div className={cn(
+          "flex flex-row items-center",
+          compact ? "gap-2 px-3 py-2" : "gap-3"
+        )}>
+          <h2 className={cn(
+            "text-brand content-center font-mono font-bold uppercase border text-sm flex items-center",
+            compact ? "border-brand/50 px-2 py-0.5 rounded-lg gap-1.5 text-xs" : "border-2 border-brand/50 px-3 py-1.5 rounded-xl gap-2"
+          )}>
+            <Server className={compact ? "size-3.5" : "size-4"} />
             服务器状态
           </h2>
           {data && data.favicon_url && (
             <img
               src={data.favicon_url}
               alt="server icon"
-              className="size-8 rounded-md"
+              className={compact ? "size-6 rounded-md" : "size-8 rounded-md"}
             />
           )}
           {loading ? (
-            <Loader2 className="size-4 animate-spin text-fd-muted-foreground" />
+            <Loader2 className={compact ? "size-3 animate-spin text-fd-muted-foreground" : "size-4 animate-spin text-fd-muted-foreground"} />
           ) : data?.online ? (
-            <div className="flex items-center gap-1.5 text-green-400 text-xs font-medium">
-              <Wifi className="size-3" />
+            <div className={cn("flex items-center font-medium", compact ? "gap-1 text-green-400 text-[11px]" : "gap-1.5 text-green-400 text-xs")}>
+              <Wifi className={compact ? "size-2.5" : "size-3"} />
               在线
             </div>
           ) : (
-            <div className="flex items-center gap-1.5 text-red-400 text-xs font-medium">
-              <WifiOff className="size-3" />
+            <div className={cn("flex items-center font-medium", compact ? "gap-1 text-red-400 text-[11px]" : "gap-1.5 text-red-400 text-xs")}>
+              <WifiOff className={compact ? "size-2.5" : "size-3"} />
               离线
             </div>
           )}
           <button
             onClick={fetchData}
             disabled={loading}
-            className="ms-auto p-2 rounded-lg text-brand hover:bg-brand/10 transition-colors disabled:opacity-50"
+            className={cn("ms-auto rounded-lg text-brand hover:bg-brand/10 transition-colors disabled:opacity-50", compact ? "p-1.5" : "p-2")}
             title="刷新服务器状态"
           >
-            <RefreshCw className={cn('size-4', loading && 'animate-spin')} />
+            <RefreshCw className={cn(loading && 'animate-spin', compact ? "size-3.5" : "size-4")} />
           </button>
         </div>
 
         {/* 状态内容区 */}
-        <div className="relative bg-fd-secondary rounded-xl mt-2 border shadow-md overflow-hidden">
+        <div className={cn(
+          "relative bg-fd-secondary border shadow-md overflow-hidden",
+          compact ? "rounded-b-xl border-t mt-0" : "rounded-xl mt-2"
+        )}>
           {/* MOTD 区域 */}
-          <div className="border-b p-3 text-fd-muted-foreground flex justify-center items-center">
+          <div className={cn(
+            "border-b text-fd-muted-foreground flex justify-center items-center",
+            compact ? "px-3 py-1.5 h-[38px]" : "p-3 h-[62px]"
+          )}>
             {loading ? (
               <div className="flex items-center gap-2 text-sm">
                 <Loader2 className="size-4 animate-spin" />
@@ -460,7 +475,7 @@ export function ServerStatus(props: ComponentProps<'div'>) {
             ) : error || !data ? (
               <p className="text-sm text-red-400">无法连接到服务器</p>
             ) : (
-              <pre className="text-xs whitespace-pre-wrap font-mono leading-relaxed text-center m-0">
+              <pre className={cn("whitespace-pre-wrap font-mono text-center m-0", compact ? "text-[11px] leading-tight" : "text-xs leading-relaxed")}>
                 {data.motd_clean
                   .split('\n')
                   .map((line) => line.trim().replace(/\s*\[.*不删档内测.*?\]\s*/g, ''))
@@ -472,42 +487,78 @@ export function ServerStatus(props: ComponentProps<'div'>) {
 
           {/* 数据面板 */}
           {!loading && data && !error && (
-            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border">
-              <div className="p-3 flex flex-col items-center gap-1">
-                <Users className="size-5 text-brand" />
-                <span className="text-xl font-bold text-fd-foreground">{data.players}</span>
-                <span className="text-[10px] text-fd-muted-foreground uppercase tracking-wider">在线玩家</span>
-                <span className="text-[10px] text-fd-muted-foreground/60">/ {data.max_players}</span>
+            <div className={cn(
+              "grid grid-cols-3 gap-0 divide-x divide-fd-border",
+              compact ? "h-[74px]" : "h-[112px]"
+            )}>
+              <div className={cn("flex flex-col items-center justify-center", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <Users className={cn("text-brand", compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-bold text-fd-foreground", compact ? "text-base" : "text-xl")}>{data.players}</span>
+                <span className={cn("text-fd-muted-foreground uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>在线玩家</span>
+                <span className={cn("text-fd-muted-foreground/60", compact ? "text-[9px]" : "text-[10px]")}>/ {data.max_players}</span>
               </div>
-              <div className="p-3 flex flex-col items-center gap-1">
-                <Server className="size-5 text-brand" />
-                <span className="text-xs font-mono font-bold text-fd-foreground">
+              <div className={cn("flex flex-col items-center justify-center", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <Server className={cn("text-brand", compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-mono font-bold text-fd-foreground", compact ? "text-[11px]" : "text-xs")}>
                   play.xcloudx.top
                 </span>
-                <span className="text-[10px] text-fd-muted-foreground uppercase tracking-wider">服务器地址</span>
+                <span className={cn("text-fd-muted-foreground uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>服务器地址</span>
               </div>
-              <div className="p-3 flex flex-col items-center gap-1">
-                <Wifi className="size-5 text-brand" />
-                <span className="text-xs font-mono font-bold text-fd-foreground truncate max-w-full px-1">
+              <div className={cn("flex flex-col items-center justify-center", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <Wifi className={cn("text-brand", compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-mono font-bold text-fd-foreground truncate max-w-full px-1", compact ? "text-xs" : "text-xs")}>
                   {data.version.replace('Velocity ', '')}
                 </span>
-                <span className="text-[10px] text-fd-muted-foreground uppercase tracking-wider">服务端版本</span>
-                <span className="text-[10px] text-fd-muted-foreground/60">Velocity</span>
+                <span className={cn("text-fd-muted-foreground uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>服务端版本</span>
+                <span className={cn("text-fd-muted-foreground/60", compact ? "text-[9px]" : "text-[10px]")}>Velocity</span>
               </div>
             </div>
           )}
 
           {/* 加载中骨架屏 */}
           {loading && (
-            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border">
+            <div className={cn(
+              "grid grid-cols-3 gap-0 divide-x divide-fd-border",
+              compact ? "h-[74px]" : "h-[112px]"
+            )}>
               {[1, 2, 3].map((i) => (
-                <div key={i} className="p-3 flex flex-col items-center gap-1.5 animate-pulse">
-                  <div className="size-5 rounded bg-fd-muted-foreground/20" />
-                  <div className="h-5 w-12 rounded bg-fd-muted-foreground/15" />
-                  <div className="h-3 w-14 rounded bg-fd-muted-foreground/10" />
-                  <div className="h-3 w-8 rounded bg-fd-muted-foreground/8" />
+                <div key={i} className={cn("flex flex-col items-center justify-center animate-pulse", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1.5")}>
+                  <div className={cn("rounded bg-fd-muted-foreground/20", compact ? "size-3.5" : "size-5")} />
+                  <div className={cn("rounded bg-fd-muted-foreground/15", compact ? "h-4 w-10" : "h-5 w-12")} />
+                  <div className={cn("rounded bg-fd-muted-foreground/10", compact ? "h-2.5 w-12" : "h-3 w-14")} />
+                  <div className={cn("rounded bg-fd-muted-foreground/8", compact ? "h-2.5 w-7" : "h-3 w-8")} />
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* 离线占位面板 */}
+          {!loading && (error || !data) && (
+            <div className={cn(
+              "grid grid-cols-3 gap-0 divide-x divide-fd-border",
+              compact ? "h-[74px]" : "h-[112px]"
+            )}>
+              <div className={cn("flex flex-col items-center justify-center text-fd-muted-foreground/50", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <Users className={cn(compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-bold", compact ? "text-base" : "text-xl")}>--</span>
+                <span className={cn("uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>在线玩家</span>
+                <span className={cn(compact ? "text-[9px]" : "text-[10px]")}>/ --</span>
+              </div>
+              <div className={cn("flex flex-col items-center justify-center text-fd-muted-foreground/50", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <Server className={cn(compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-mono font-bold truncate max-w-full", compact ? "text-[11px]" : "text-xs")}>
+                  play.xcloudx.top
+                </span>
+                <span className={cn("uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>服务器地址</span>
+              </div>
+              <div className={cn("flex flex-col items-center justify-center text-fd-muted-foreground/50", compact ? "px-2 py-1.5 gap-0" : "p-3 gap-1")}>
+                <WifiOff className={cn(compact ? "size-3.5" : "size-5")} />
+                <span className={cn("font-mono font-bold truncate max-w-full px-1", compact ? "text-xs" : "text-xs")}>
+                  --
+                </span>
+                <span className={cn("uppercase tracking-wider", compact ? "text-[9px]" : "text-[10px]")}>服务端版本</span>
+                <span className={cn(compact ? "text-[9px]" : "text-[10px]")}>离线</span>
+              </div>
             </div>
           )}
         </div>
@@ -692,4 +743,165 @@ export function SkinUploader() {
     </div>
   );
 }
+
+// 专门为文章详情页设计的服务器状态卡片组件，具有自适应且不易遮挡文本的布局比例
+export function ArticleServerStatus({ ...props }: ComponentProps<'div'>) {
+  const [data, setData] = useState<ServerStatusData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const fetchData = () => {
+    setLoading(true);
+    setError(false);
+    fetch('https://uapis.cn/api/v1/game/minecraft/serverstatus?server=play.xcloudx.top')
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.online) {
+          setData(json);
+        } else {
+          setError(true);
+        }
+      })
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <div {...props} className={cn(props.className)}>
+      <div className="mx-auto w-full bg-fd-card text-fd-card-foreground border rounded-2xl shadow-lg p-2">
+        {/* 标题栏 */}
+        <div className="flex flex-row items-center gap-3">
+          <h2 className="text-brand content-center font-mono font-bold uppercase border-2 border-brand/50 px-3 py-1.5 rounded-xl gap-2 text-sm flex items-center">
+            <Server className="size-4" />
+            服务器状态
+          </h2>
+          {data && data.favicon_url && (
+            <img
+              src={data.favicon_url}
+              alt="server icon"
+              className="size-8 rounded-md"
+            />
+          )}
+          {loading ? (
+            <Loader2 className="size-4 animate-spin text-fd-muted-foreground" />
+          ) : data?.online ? (
+            <div className="flex items-center font-medium gap-1.5 text-green-400 text-xs">
+              <Wifi className="size-3" />
+              在线
+            </div>
+          ) : (
+            <div className="flex items-center font-medium gap-1.5 text-red-400 text-xs">
+              <WifiOff className="size-3" />
+              离线
+            </div>
+          )}
+          <button
+            onClick={fetchData}
+            disabled={loading}
+            className="ms-auto rounded-lg text-brand hover:bg-brand/10 transition-colors disabled:opacity-50 p-2"
+            title="刷新服务器状态"
+          >
+            <RefreshCw className={cn(loading && 'animate-spin', "size-4")} />
+          </button>
+        </div>
+
+        {/* 状态内容区 */}
+        <div className="relative bg-fd-secondary border shadow-md overflow-hidden rounded-xl mt-2">
+          {/* MOTD 区域 */}
+          <div className="border-b text-fd-muted-foreground flex justify-center items-center py-1 px-3 h-[46px]">
+            {loading ? (
+              <div className="flex items-center gap-2 text-sm">
+                <Loader2 className="size-4 animate-spin" />
+                正在连接服务器...
+              </div>
+            ) : error || !data ? (
+              <p className="text-sm text-red-400">无法连接到服务器</p>
+            ) : (
+              <pre className="whitespace-pre-wrap font-mono text-center m-0 text-xs leading-relaxed">
+                {data.motd_clean
+                  .split('\n')
+                  .map((line) => line.trim().replace(/\s*\[.*不删档内测.*?\]\s*/g, ''))
+                  .filter((line) => line.length > 0)
+                  .join('\n')}
+              </pre>
+            )}
+          </div>
+
+          {/* 数据面板 */}
+          {!loading && data && !error && (
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+              <div className="flex flex-col items-center justify-center py-1 px-2 gap-0.5">
+                <Users className="text-brand size-4" />
+                <span className="font-bold text-fd-foreground text-lg">{data.players}</span>
+                <span className="text-fd-muted-foreground uppercase tracking-wider text-[10px]">在线玩家</span>
+                <span className="text-fd-muted-foreground/60 text-[10px]">/ {data.max_players}</span>
+              </div>
+              <div className="flex flex-col items-center justify-center py-1 px-2 gap-0.5">
+                <Server className="text-brand size-4" />
+                <span className="font-mono font-bold text-fd-foreground text-xs">
+                  play.xcloudx.top
+                </span>
+                <span className="text-fd-muted-foreground uppercase tracking-wider text-[10px]">服务器地址</span>
+              </div>
+              <div className="flex flex-col items-center justify-center py-1 px-2 gap-0.5">
+                <Wifi className="text-brand size-4" />
+                <span className="font-mono font-bold text-fd-foreground truncate max-w-full px-1 text-xs">
+                  {data.version.replace('Velocity ', '')}
+                </span>
+                <span className="text-fd-muted-foreground uppercase tracking-wider text-[10px]">服务端版本</span>
+                <span className="text-fd-muted-foreground/60 text-[10px]">Velocity</span>
+              </div>
+            </div>
+          )}
+
+          {/* 加载中骨架屏 */}
+          {loading && (
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="flex flex-col items-center justify-center animate-pulse py-1 px-2 gap-1">
+                  <div className="rounded bg-fd-muted-foreground/20 size-4" />
+                  <div className="rounded bg-fd-muted-foreground/15 h-4 w-12" />
+                  <div className="rounded bg-fd-muted-foreground/10 h-2.5 w-14" />
+                  <div className="rounded bg-fd-muted-foreground/8 h-2.5 w-8" />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 离线占位面板 */}
+          {!loading && (error || !data) && (
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+              <div className="flex flex-col items-center justify-center text-fd-muted-foreground/50 py-1 px-2 gap-0.5">
+                <Users className="size-4" />
+                <span className="font-bold text-lg">--</span>
+                <span className="uppercase tracking-wider text-[10px]">在线玩家</span>
+                <span className="text-[10px]">/ --</span>
+              </div>
+              <div className="flex flex-col items-center justify-center text-fd-muted-foreground/50 py-1 px-2 gap-0.5">
+                <Server className="size-4" />
+                <span className="font-mono font-bold truncate max-w-full text-xs">
+                  play.xcloudx.top
+                </span>
+                <span className="uppercase tracking-wider text-[10px]">服务器地址</span>
+              </div>
+              <div className="flex flex-col items-center justify-center text-fd-muted-foreground/50 py-1 px-2 gap-0.5">
+                <WifiOff className="size-4" />
+                <span className="font-mono font-bold truncate max-w-full px-1 text-xs">
+                  --
+                </span>
+                <span className="uppercase tracking-wider text-[10px]">服务端版本</span>
+                <span className="text-[10px]">离线</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 

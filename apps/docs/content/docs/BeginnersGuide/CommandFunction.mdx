@@ -3,21 +3,133 @@ title: 指令功能
 description: 闲云服务器指令中枢，包含玩家常用基础与进阶指令，支持实时过滤和一键快捷复制。
 published: true
 date: 2025-01-26T16:17:47.618Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2025-01-26T16:17:47.618Z
+publishedAt: 2026-06-14
+authors: "星，CCCC4444"
 ---
 
+import { Terminal, MapPin, Globe, Coins, User, ShieldAlert } from 'lucide-react';
 
-<img src="/wiki-img/BeginnersGuide/CommandFunction/Impulse_Command_Block.gif" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
+<img src="/wiki-img/BeginnersGuide/CommandFunction/Impulse_Command_Block.gif" width="100" className="mx-auto my-4 block" />
 
-<h1 align="center">指令功能</h1>
+<h1 className="text-center font-mono text-cyan-500 text-3xl md:text-4xl my-4">指令功能</h1>
 
-<center><font face="courier New" color="#f30606ff" size="6">Command Function</font></center>
+<p className="text-center text-fd-muted-foreground my-2">Command Function</p>
 
-> [!TIP] 💡 须知
-> 本页面收录了闲云服务器中玩家常用的各类基础与进阶指令。合理运用这些快捷指令，能极大提升你在服务器中的游玩体验！
+<Callout type="info" title="使用须知">
+  本页面收录了闲云服务器中玩家常用的各类基础与进阶指令。合理运用这些快捷指令，能极大提升你在服务器中的游玩体验！
+  您可以使用指令面板顶部的搜索框进行全局实时检索，并可点击命令旁边的“复制”按钮一键快速复制。
+</Callout>
 
-<CommandConsole />
-
-
+<CommandList categories={[
+  {
+    name: '基础指令',
+    icon: <Terminal className="size-4" />,
+    subCategories: [
+      {
+        name: '传送类',
+        commands: [
+          { cmd: '/menu', desc: '打开闲云综合菜单，快速访问常用功能。' },
+          { cmd: '/spawn', desc: '将自己瞬间传送回服务器的主城重生点。' },
+          { cmd: '/tpa [玩家名]', desc: '向指定玩家发送传送请求，对方同意后你将被传送到其身边。' },
+          { cmd: '/tpaccept', desc: '接受其他玩家发来的传送请求。' },
+          { cmd: '/sethome [家名称]', desc: '在你当前站立的位置设置一个"家"的地标。' },
+          { cmd: '/home [家名称]', desc: '瞬间传送到你之前设置的"家"的位置。' },
+          { cmd: '/back', desc: '传送到你上一次死亡的地点（或者上一次传送前的地点）。' },
+          { cmd: '/rtp', desc: '将你随机传送到某一个未知坐标。' },
+        ],
+      },
+      {
+        name: '功能类',
+        commands: [
+          { cmd: '/fly', desc: '开启或关闭飞行模式，让你在天空中自由翱翔。' },
+        ],
+      },
+    ],
+  },
+  {
+    name: '玩家地标',
+    icon: <MapPin className="size-4" />,
+    subCategories: [
+      {
+        name: '基础操作',
+        commands: [
+          { cmd: '/pw help', desc: '显示玩家地标系统的帮助菜单。' },
+          { cmd: '/pw [地标名称]', desc: '传送至指定玩家地标位置。' },
+          { cmd: '/pw set [地标名称]', desc: '将你的个人地标设置在当前站立位置。' },
+          { cmd: '/pw remove [地标名称]', desc: '移除你已设置的指定地标。' },
+          { cmd: '/pw reset [地标名称]', desc: '重新设定该地标的位置至当前你站立的位置。' },
+          { cmd: '/pw rename [地标名称] [新名称]', desc: '将已有的地标重命名为全新的地标名称。' },
+          { cmd: '/pw info [地标名称]', desc: '获取并显示该地标的详细信息与访问统计。' },
+          { cmd: '/pw favourite [地标名称]', desc: '将指定地标加入快捷收藏夹中。' },
+          { cmd: '/pw list [页码] [玩家名]', desc: '列出所有公开的玩家地标，可指定页码或特定玩家。' },
+          { cmd: '/pw open [菜单] [选项]', desc: '打开玩家地标的图形化菜单界面。' },
+          { cmd: '/pw amount [玩家名]', desc: '浏览你当前已创建的地标数量上限与已用额度，亦可指定查看他人。' },
+        ],
+      },
+      {
+        name: '设置与自定义',
+        commands: [
+          { cmd: '/pw desc set/remove [地标名称] [描述]', desc: '修改地标的详细描述信息（set 设置，remove 清除）。' },
+          { cmd: '/pw icon set/remove [地标名称]', desc: '在菜单中为你的地标设置或移除特定的展示图标（手持对应物品）。' },
+          { cmd: '/pw category set/remove/list [地标名称] [分类]', desc: '设置、移除或查看地标的分类归属。' },
+          { cmd: '/pw rate [地标名称] [分值]', desc: '为你到访过的玩家地标评分（支持1-5分）。' },
+        ],
+      },
+      {
+        name: '权限与管理',
+        commands: [
+          { cmd: '/pw ban set/remove/list [地标名称] [玩家名] [时长] [理由]', desc: '管理指定地标的玩家拉黑与禁入列表（支持禁入时长及设定理由）。' },
+          { cmd: '/pw managers set/remove/list [地标名称] [玩家名]', desc: '管理地标的多人协同管理员（set 添加，remove 移除，list 查看列表）。' },
+          { cmd: '/pw setowner [地标名称] [玩家名]', desc: '将该地标的所有权完全转移给另一位玩家。' },
+        ],
+      },
+      {
+        name: '管理员专属',
+        icon: <ShieldAlert className="size-3.5" />,
+        commands: [
+          { cmd: '/pw removeall [玩家名]', desc: '移除指定玩家的所有地标（管理员功能）。' },
+          { cmd: '/pw reload', desc: '重新载入地标系统的全部配置文件（管理员功能）。' },
+          { cmd: '/pw addwarps [玩家名] [数量]', desc: '通过命令直接增加该玩家可设定的地标数量上限（管理员功能）。' },
+        ],
+      },
+    ],
+  },
+  {
+    name: '世界传送',
+    icon: <Globe className="size-4" />,
+    commands: [
+      { cmd: '/server zc', desc: '瞬间传送到闲云服务器的主城大厅。' },
+      { cmd: '/server sc1', desc: '前往生存一区（主挂机与生活区）。' },
+      { cmd: '/server sc2', desc: '前往生存二区（深海及开拓生活区）。' },
+      { cmd: '/server mx1', desc: '前往冒险一区（资源采集与副本区）。' },
+    ],
+  },
+  {
+    name: '社交经济',
+    icon: <Coins className="size-4" />,
+    commands: [
+      { cmd: '/pay [玩家名] [金额]', desc: '将你持有的游戏金币安全转账给指定的玩家。' },
+      { cmd: '/msg [玩家名] [内容]', desc: '向指定的在线玩家发送一条私密聊天消息。' },
+      { cmd: '/mailbox send [玩家名]', desc: '将你当前主手拿在手上的物品，远程邮寄给对应的在线/离线玩家邮箱。' },
+      { cmd: '/market buy [价格]', desc: '在金币市场中，以指定单价发起对当前手持物品的大量求购。' },
+      { cmd: '/market sell [价格]', desc: '将当前主手拿在手上的物品，以指定单价上架金币市场出售。' },
+    ],
+  },
+  {
+    name: '皮肤管理',
+    icon: <User className="size-4" />,
+    commands: [
+      { cmd: '/skin set [ID]', desc: '快速切换为指定正版 Minecraft 玩家的经典/高清皮肤。' },
+      { cmd: '/skin url [链接]', desc: '直接使用皮肤纹理的 Direct URL（可通过各大皮肤库生成）更换皮肤外观。' },
+      { cmd: '/skin menu', desc: '打开精美的图形化皮肤菜单，可直接浏览与应用经典皮肤。' },
+      { cmd: '/skin clear', desc: '清除当前使用的自定义皮肤，恢复您默认的正版或初始外观。' },
+      { cmd: '/skin update', desc: '强制在服务器中刷新当前的皮肤显示，解决本地渲染异常问题。' },
+      { cmd: '/skin random', desc: '随机套用一款系统精心推荐的精美高画质皮肤。' },
+      { cmd: '/skin favourite', desc: '将你当前正在穿戴使用的优秀皮肤快速添加到你的私人收藏夹。' },
+      { cmd: '/skin favourites', desc: '查看您的个人皮肤收藏列表与换装历史记录。' },
+    ],
+  }
+]} />

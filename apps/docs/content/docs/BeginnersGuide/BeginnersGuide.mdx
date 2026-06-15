@@ -1,7 +1,9 @@
 ---
-title: 基础信息
+title: 新手指南
 outline: deep
-description: 闲云服务器基础信息、常用指令与菜单按键指南
+description: 新手指南
+publishedAt: 2026-06-14
+authors: "星，CCCC4444"
 published: true
 date: 2026-05-07T00:00:00.000Z
 tags: 
@@ -9,9 +11,17 @@ editor: markdown
 dateCreated: 2026-05-07T00:00:00.000Z
 ---
 
+import { 
+  Sparkles, Cloud, Flower2, TriangleAlert, Lightbulb, MapPin, Pencil,
+  Droplets, ClipboardList, Trophy, Wrench, Dice5, Fish, Store,
+  Hammer, Recycle, Users, Sparkle, Tv, Wheat, Tag, Gem,
+  Bug, Package, Skull, Star, Sofa, ScrollText, Circle,
+  PartyPopper, Building, Building2, Home, Map, Shield, Hand, Globe, Shuffle, PersonStanding, Swords, CircleHelp, Cog
+} from 'lucide-react';
+
 <img src="/wiki-img/BeginnersGuide/BeginnersGuide/Lectern_JE3_BE2.png" width="100" style={{ display: 'block', margin: '0 auto' }} />
 
-# <center>新手指南</center>
+<div style={{ textAlign: 'center', fontSize: '2em', fontWeight: 'bold', marginTop: '1em', marginBottom: '0.5em' }}>新手指南</div>
 
 <center><font face="courier New" color="#ca5b8dff" size="6">Beginner's Guide</font></center>
 
@@ -22,24 +32,10 @@ dateCreated: 2026-05-07T00:00:00.000Z
 **当前页面图片较多，不建议网络连接受限、缓慢的用户阅读此页面！<br />
 使用流量数据的用户，请注意您的流量剩余！**
 
-<div className="co-creation-box">
-  <div className="co-creation-title">✨ 页面共创</div>
-  <div className="co-creation-users">
-    <div className="co-user">
-      <img src="/avatars/xing.png" alt="星" className="co-avatar" />
-      <span className="co-name">星</span>
-    </div>
-    <div className="co-user">
-      <img src="https://pic1.imgdb.cn/item/6810cbc558cb8da5c8d46931.jpg" alt="CCCC4444" className="co-avatar" />
-      <span className="co-name">CCCC4444</span>
-    </div>
-  </div>
-</div>
-
 ## 一、启程
 
 <div className="features-intro">
-  <div className="intro-icon">✨</div>
+  <div className="intro-icon"><Sparkles className="size-6" /></div>
   <p className="features-desc">欢迎来到闲云服务器！在这里，无论你是热爱冒险、还是充满创意的建筑师，都能找到属于自己的乐趣。探索、生存、建造、战斗、社交——<strong>多样化的玩法等你来体验！</strong></p>
 </div>
 
@@ -102,18 +98,18 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <h3>温馨社区，并肩同行</h3>
       <p>在闲云，你还可以加入独特的<strong>小镇系统</strong>，与志同道合的伙伴们齐心协力、共同发展。一起攻坚副本、探索未知、或是合力建造宏伟小镇，打造属于你们的温馨家园！</p>
       <div className="town-tags">
-        <span className="town-tag"><span className="icon">☁️</span> 云朵小镇</span>
-        <span className="town-tag"><span className="icon">🌼</span> 金鸢尾兰</span>
+        <span className="town-tag"><span className="icon"><Cloud className="size-4" /></span> 云朵小镇</span>
+        <span className="town-tag"><span className="icon"><Flower2 className="size-4" /></span> 金鸢尾兰</span>
       </div>
     </div>
     <div className="feature-images multi">
       <figure>
         <img src="/wiki-img/BeginnersGuide/BeginnersGuide/jc8.png" alt="云朵小镇" />
-        <figcaption>☁️ 云朵小镇</figcaption>
+        <figcaption><Cloud className="size-4 inline-block mr-1" /> 云朵小镇</figcaption>
       </figure>
       <figure>
         <img src="/wiki-img/BeginnersGuide/BeginnersGuide/jc9.png" alt="金鸢尾兰" />
-        <figcaption>🌼 金鸢尾兰</figcaption>
+        <figcaption><Flower2 className="size-4 inline-block mr-1" /> 金鸢尾兰</figcaption>
       </figure>
     </div>
   </div>
@@ -183,7 +179,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="step-content">
       <h3>账号绑定认证</h3>
       <div className="step-warning">
-        <p><strong>⚠️ 重要：</strong>为了保障您的账号安全，初次进入服务器时需要进行账号绑定。</p>
+        <p><strong><TriangleAlert className="size-4 inline-block mr-1" /> 重要：</strong>为了保障您的账号安全，初次进入服务器时需要进行账号绑定。</p>
       </div>
       <p>进入服务器后，屏幕或聊天框会显示一串<strong>数字验证码</strong>。请回到官方 QQ 群，在群聊中发送：<br />
       <code className="bind-cmd">绑定+这串数字</code> （例如：<code>绑定+123456</code>）<br />
@@ -192,7 +188,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
         <img src="/wiki-img/BeginnersGuide/BeginnersGuide/fwq10.png" alt="群内绑定账号" />
       </div>
       <div className="step-tip">
-        <strong>💡 常见问题：</strong>如果您遇到“重名”或因为“中文ID”导致无法进入，请在群内发送 <code>解绑+你的游戏名称</code>。修改好符合要求的名称后，再次进入服务器获取新验证码进行绑定即可。
+        <strong><Lightbulb className="size-4 inline-block mr-1" /> 常见问题：</strong>如果您遇到"重名"或因为"中文ID"导致无法进入，请在群内发送 <code>解绑+你的游戏名称</code>。修改好符合要求的名称后，再次进入服务器获取新验证码进行绑定即可。
       </div>
     </div>
   </div>
@@ -220,107 +216,107 @@ dateCreated: 2026-05-07T00:00:00.000Z
 
 ### 1、主城 NPC 坐标
 
-<div className="npc-grid-title">📍 主城 NPC 坐标一览</div>
-<div className="npc-credit">📝 坐标信息由 <strong>Nore1eco</strong> 提供</div>
+<div className="npc-grid-title"><MapPin className="size-5 inline-block mr-1" /> 主城 NPC 坐标一览</div>
+<div className="npc-credit"><Pencil className="size-4 inline-block mr-1" /> 坐标信息由 <strong>Nore1eco</strong> 提供</div>
 
 <div className="npc-grid">
   <div className="npc-card">
-    <div className="npc-icon">🌊</div>
+    <div className="npc-icon"><Droplets className="size-6" /></div>
     <div className="npc-name">经验池</div>
     <div className="npc-coord"><code>-193 75 6</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">📋</div>
+    <div className="npc-icon"><ClipboardList className="size-6" /></div>
     <div className="npc-name">新手签到</div>
     <div className="npc-coord"><code>-62 74 20</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🏆</div>
+    <div className="npc-icon"><Trophy className="size-6" /></div>
     <div className="npc-name">成就大师</div>
     <div className="npc-coord"><code>-54 73 -3</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🔧</div>
+    <div className="npc-icon"><Wrench className="size-6" /></div>
     <div className="npc-name">维护补偿</div>
     <div className="npc-coord"><code>-69 72 -2</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🎰</div>
+    <div className="npc-icon"><Dice5 className="size-6" /></div>
     <div className="npc-name">致富乐 / 世界Boss / 转转乐</div>
     <div className="npc-coord"><code>-100 73 22</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🎣</div>
+    <div className="npc-icon"><Fish className="size-6" /></div>
     <div className="npc-name">渔夫</div>
     <div className="npc-coord">致富乐左侧临近</div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🏪</div>
+    <div className="npc-icon"><Store className="size-6" /></div>
     <div className="npc-name">贡献商店 / 拓展附魔</div>
     <div className="npc-coord"><code>-115 72 38</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">⚒️</div>
+    <div className="npc-icon"><Hammer className="size-6" /></div>
     <div className="npc-name">铁匠（升级武器等）</div>
     <div className="npc-coord"><code>-133 72 16</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">♻️</div>
+    <div className="npc-icon"><Recycle className="size-6" /></div>
     <div className="npc-name">物品回收</div>
     <div className="npc-coord">铁匠对面</div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">👥</div>
+    <div className="npc-icon"><Users className="size-6" /></div>
     <div className="npc-name">好友邀请</div>
     <div className="npc-coord">铁匠旁边</div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🧙</div>
+    <div className="npc-icon"><Sparkle className="size-6" /></div>
     <div className="npc-name">神秘商店（巴斯克）</div>
     <div className="npc-coord"><code>-130 72 -6</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">📺</div>
+    <div className="npc-icon"><Tv className="size-6" /></div>
     <div className="npc-name">B站兑换</div>
     <div className="npc-coord"><code>-115 72 -11</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🌾</div>
+    <div className="npc-icon"><Wheat className="size-6" /></div>
     <div className="npc-name">扩展农作物</div>
     <div className="npc-coord">B站后面</div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🪧</div>
+    <div className="npc-icon"><Tag className="size-6" /></div>
     <div className="npc-name">铭牌</div>
     <div className="npc-coord"><code>-100 72 -36</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">💎</div>
+    <div className="npc-icon"><Gem className="size-6" /></div>
     <div className="npc-name">赞助</div>
     <div className="npc-coord"><code>-121 72 54</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🐛</div>
+    <div className="npc-icon"><Bug className="size-6" /></div>
     <div className="npc-name">反映Bug</div>
     <div className="npc-coord"><code>-140 72 -44</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">📦</div>
+    <div className="npc-icon"><Package className="size-6" /></div>
     <div className="npc-name">各类宝库</div>
     <div className="npc-coord"><code>-135 72 57</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">💀</div>
+    <div className="npc-icon"><Skull className="size-6" /></div>
     <div className="npc-name">头颅商人</div>
     <div className="npc-coord"><code>-231 75 -30</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">⭐</div>
+    <div className="npc-icon"><Star className="size-6" /></div>
     <div className="npc-name">白嫖积分</div>
     <div className="npc-coord"><code>-249 75 -30</code></div>
   </div>
   <div className="npc-card">
-    <div className="npc-icon">🛋️</div>
+    <div className="npc-icon"><Sofa className="size-6" /></div>
     <div className="npc-name">家具及动物</div>
     <div className="npc-coord"><code>-212 75 -55</code></div>
   </div>
@@ -356,7 +352,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
 
 ## 四、任务指引
 <div className="quest-intro">
-  <div className="q-intro-icon">📜</div>
+  <div className="q-intro-icon"><ScrollText className="size-6" /></div>
   <div className="q-intro-content">
     <h3>新手任务指引</h3>
     <p>本流程主要帮助您在完成新手任务时，快速认识并熟悉服务器的新功能！</p>
@@ -366,7 +362,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
 
 ---
 
-### 🟢 阶段一：启航
+### <Circle className="size-4 inline-block mr-1 text-green-500 fill-green-500" /> 阶段一：启航
 <br/>
 <div className="quest-grid theme-green">
   <div className="quest-card">
@@ -379,7 +375,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>第一次进入服务器时，请向右看寻找<strong>新手引导</strong> NPC 领取任务书！</p>
         <div className="quest-alert info">
-          <span className="alert-icon">💡</span>
+          <span className="alert-icon"><Lightbulb className="size-4" /></span>
           <div className="alert-text">若是不小心丢失，再找 TA 领取一本即可。</div>
         </div>
       </div>
@@ -431,7 +427,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>获取铁矿石资源。</p>
         <div className="quest-alert danger">
-          <span className="alert-icon">⚠️</span>
+          <span className="alert-icon"><TriangleAlert className="size-4" /></span>
           <div className="alert-text"><strong>注意：</strong>生存区是没有铁矿的，请务必前往<strong>冒险世界</strong>挖掘矿物！</div>
         </div>
       </div>
@@ -467,7 +463,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>加入一个你心仪的职业！对于新手，我们强烈推荐选择<strong>药罐子</strong>职业。</p>
         <div className="quest-alert info">
-          <span className="alert-icon">💡</span>
+          <span className="alert-icon"><Lightbulb className="size-4" /></span>
           <div className="alert-text"><strong>刷取经验技巧：</strong>前往主城经验池，手持玻璃瓶挂机右键即可快速升级（合理使用奇妙小道具也没问题哦）。</div>
         </div>
         <div className="quest-action-wrapper">
@@ -511,7 +507,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>使用 <code>/sethome 名称</code> 设置传送点，之后使用 <code>/home 名称</code> 即可快速回城。</p>
         <div className="quest-alert danger">
-          <span className="alert-icon">⚠️</span>
+          <span className="alert-icon"><TriangleAlert className="size-4" /></span>
           <div className="alert-text"><strong>保护家园：</strong>Home 指令仅作为传送点。如果想保护一片区域不被破坏，需要前往生存区使用 <strong>Res 领地系统</strong>。</div>
         </div>
       </div>
@@ -543,7 +539,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
 
 ---
 
-### 🔵 阶段二：进阶发展
+### <Circle className="size-4 inline-block mr-1 text-blue-500 fill-blue-500" /> 阶段二：进阶发展
 <br/>
 <div className="quest-grid theme-blue">
   <div className="quest-card">
@@ -556,7 +552,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>种植三个<strong>辣椒</strong>。等辣椒长成金黄色即可摘取。</p>
         <div className="quest-alert info">
-          <span className="alert-icon">💡</span>
+          <span className="alert-icon"><Lightbulb className="size-4" /></span>
           <div className="alert-text">
             <strong>种植省流：</strong>在生存区用锄头耕地，拿着水桶右键耕地灌水（只需一桶）。<br />
             <em>注意季节：冬天不会生长，且农作物有概率被乌鸦吃掉！冬天想要种植星露谷请查看星露谷wiki！</em>
@@ -617,7 +613,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>前往主城寻找<strong>铁匠 NPC</strong> 强化“破晓者”武器！这是你前期最重要的伙伴，作为新手最强武器，建议无脑拉满槽位！</p>
         <div className="quest-alert danger">
-          <span className="alert-icon">⚠️</span>
+          <span className="alert-icon"><TriangleAlert className="size-4" /></span>
           <div className="alert-text"><strong>千万注意：</strong>一定要在完成任务四后，再接取任务五，或者等待一会儿再觉醒技能！</div>
         </div>
         <div className="quest-action-wrapper">
@@ -644,7 +640,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>前往冒险世界寻找独特的拓展生物（推荐前往：沼泽、海洋、金合欢地形）。</p>
         <div className="quest-alert info">
-          <span className="alert-icon">💡</span>
+          <span className="alert-icon"><Lightbulb className="size-4" /></span>
           <div className="alert-text">拓展生物本质是实体，如果在游戏内装有小地图模组，它们会显示为紫色的光点。</div>
         </div>
       </div>
@@ -719,7 +715,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
       <div className="quest-content">
         <p>带上你在蜂后副本获得的战利品，前往铁匠处<strong>分解任意一件蜜蜂装备</strong>。</p>
         <div className="quest-alert info">
-          <span className="alert-icon">🎉</span>
+          <span className="alert-icon"><PartyPopper className="size-4" /></span>
           <div className="alert-text"><strong>恭喜！</strong>到此您已经完成了所有的新手任务，请自由地享受闲云的美好世界吧！</div>
         </div>
         <div className="quest-action-wrapper">
@@ -742,27 +738,27 @@ dateCreated: 2026-05-07T00:00:00.000Z
 
 <div className="world-grid">
   <div className="world-card">
-    <div className="world-icon">🏙️</div>
+    <div className="world-icon"><Building className="size-6" /></div>
     <div className="world-name">闲云镇</div>
     <div className="world-desc">主城广场，初始出生地，各类 NPC 均在此处。</div>
   </div>
   <div className="world-card">
-    <div className="world-icon">🏡</div>
+    <div className="world-icon"><Home className="size-6" /></div>
     <div className="world-name">生存世界</div>
     <div className="world-desc">玩家建家、生存主要世界。<br /><strong>注意：</strong>末地无法建造，不刷新末影人，不生成矿物，且无法与村民交互。</div>
   </div>
   <div className="world-card">
-    <div className="world-icon">🗺️</div>
+    <div className="world-icon"><Map className="size-6" /></div>
     <div className="world-name">冒险世界</div>
-    <div className="world-desc">专为探险而生，定期刷新资源。<br /><strong>⚠️ 禁止在此建家！</strong></div>
+    <div className="world-desc">专为探险而生，定期刷新资源。<br /><strong><TriangleAlert className="size-4 inline-block mr-1" /> 禁止在此建家！</strong></div>
   </div>
   <div className="world-card world-card--wip">
-    <div className="world-icon">🏘️</div>
+    <div className="world-icon"><Building2 className="size-6" /></div>
     <div className="world-name">社区 <span className="wip-badge">开发中</span></div>
     <div className="world-desc">敬请期待...</div>
   </div>
   <div className="world-card world-card--wip">
-    <div className="world-icon">⚔️</div>
+    <div className="world-icon"><Swords className="size-6" /></div>
     <div className="world-name">征讨世界 <span className="wip-badge">开发中</span></div>
     <div className="world-desc">敬请期待...</div>
   </div>
@@ -776,7 +772,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">01</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🏙️</div>
+        <div className="g-icon"><Building className="size-5" /></div>
         <div className="glass-title">闲云镇 <span className="g-badge">主城</span></div>
       </div>
       <p className="g-desc">服务器主城，包含所有核心的 NPC 与系统入口。初次登录的降生地。</p>
@@ -795,16 +791,16 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">02</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🏡</div>
+        <div className="g-icon"><Home className="size-5" /></div>
         <div className="glass-title">生存世界 <span className="g-badge">建筑/生存</span></div>
       </div>
       <p className="g-desc">专为长期生存与宏伟建筑打造，含有 <strong>Res 领地插件</strong>。地图半径为 <code>1w</code>，内部有各种建筑群（<a href="/index/玩家社区/小镇.html">小镇</a>）。</p>
       <div className="g-features">
-        <div className="g-feature-item"><span>🛡️ 永不刷新</span> 指定的建造世界。</div>
-        <div className="g-feature-item"><span>⚠️ 机制限制</span> 村民无法交易、末地无法前往、没有矿物与末影人。</div>
-        <div className="g-feature-item"><span>⚙️ 安全管理</span> 凋零没有爆炸伤害，限制刷怪与生电。</div>
+        <div className="g-feature-item"><span><Shield className="size-4 inline-block mr-1" /> 永不刷新</span> 指定的建造世界。</div>
+        <div className="g-feature-item"><span><TriangleAlert className="size-4 inline-block mr-1" /> 机制限制</span> 村民无法交易、末地无法前往、没有矿物与末影人。</div>
+        <div className="g-feature-item"><span><Cog className="size-4 inline-block mr-1" /> 安全管理</span> 凋零没有爆炸伤害，限制刷怪与生电。</div>
       </div>
-      <div className="g-alert">👉 <a href="/index/新手指南/领地与地标">点击查看《领地系统》指令指南</a></div>
+      <div className="g-alert"><Hand className="size-4 inline-block mr-1" /> <a href="/index/新手指南/领地与地标">点击查看《领地系统》指令指南</a></div>
     </div>
     <div className="glass-media">
       <img src="/wiki-img/BeginnersGuide/BeginnersGuide/xx3.png" alt="生存世界" />
@@ -814,7 +810,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
   <div className="glass-card glass-faq-card">
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">❓</div>
+        <div className="g-icon"><CircleHelp className="size-5" /></div>
         <div className="glass-title">如何查看自己当前所在的生存世界？</div>
       </div>
       <div className="g-faq-body">
@@ -829,12 +825,12 @@ dateCreated: 2026-05-07T00:00:00.000Z
   <div className="glass-card glass-faq-card">
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🗺️</div>
+        <div className="g-icon"><Map className="size-5" /></div>
         <div className="glass-title">地图画跨区功能与防复制机制</div>
       </div>
       <div className="g-faq-body">
         <p>将地图放入<strong>铁砧</strong>，消耗经验等级即可将其转换为<strong>跨区地图画</strong>。</p>
-        <div className="g-alert danger">⚠️ 跨区地图画默认<strong>无法</strong>使用工作台、制图台等方式复制。</div>
+        <div className="g-alert danger"><TriangleAlert className="size-4 inline-block mr-1" /> 跨区地图画默认<strong>无法</strong>使用工作台、制图台等方式复制。</div>
       </div>
     </div>
   </div>
@@ -848,14 +844,14 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">03</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🗺️</div>
+        <div className="g-icon"><Map className="size-5" /></div>
         <div className="glass-title">冒险世界 <span className="g-badge warning">每周五刷新</span></div>
       </div>
       <p className="g-desc">资源获取核心，未设置边界。含有丰富的拓展生物，可以自由挖矿。</p>
-      <div className="g-alert danger">⚠️ <strong>严禁建家：</strong>每周五地图刷新！家没了不予补偿！！！</div>
+      <div className="g-alert danger"><TriangleAlert className="size-4 inline-block mr-1" /> <strong>严禁建家：</strong>每周五地图刷新！家没了不予补偿！！！</div>
       <div className="g-features">
-        <div className="g-feature-item"><span>⚙️ 机器管制</span> 冒险世界建造的机器不会管理（TNT复制禁用）。</div>
-        <div className="g-feature-item"><span>💀 死亡惩罚</span> 携带 1 万金币以上死亡扣除 2%（充值月卡可免除）。</div>
+        <div className="g-feature-item"><span><Cog className="size-4 inline-block mr-1" /> 机器管制</span> 冒险世界建造的机器不会管理（TNT复制禁用）。</div>
+        <div className="g-feature-item"><span><Skull className="size-4 inline-block mr-1" /> 死亡惩罚</span> 携带 1 万金币以上死亡扣除 2%（充值月卡可免除）。</div>
       </div>
     </div>
     <div className="glass-media">
@@ -866,7 +862,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
   <div className="glass-cmd-wrapper">
     <div className="glass-cmd-section">
       <div className="cmd-header">
-        <div className="c-icon">🌍</div>
+        <div className="c-icon"><Globe className="size-5" /></div>
         <h4>常用世界指令</h4>
       </div>
       <div className="cmd-grid">
@@ -877,7 +873,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     </div>
     <div className="glass-cmd-section">
       <div className="cmd-header">
-        <div className="c-icon">🔀</div>
+        <div className="c-icon"><Shuffle className="size-5" /></div>
         <h4>世界切换指令</h4>
       </div>
       <div className="cmd-banner">
@@ -903,12 +899,12 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">04</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">⚔️</div>
+        <div className="g-icon"><Swords className="size-5" /></div>
         <div className="glass-title">征讨世界 <span className="g-badge danger">战斗/副本</span></div>
       </div>
       <p className="g-desc">组建队伍！挑战副本！攻打世界 BOSS！获取丰厚奖励！</p>
-      <div className="g-alert">💡 <strong>组队机制：</strong>组队可增加副本收益。输入 <code>/team create</code>。</div>
-      <div className="g-alert">👉 <a href="/index/拓展玩法/世界Boss">点击查看《世界 BOSS》指南</a></div>
+      <div className="g-alert"><Lightbulb className="size-4 inline-block mr-1" /> <strong>组队机制：</strong>组队可增加副本收益。输入 <code>/team create</code>。</div>
+      <div className="g-alert"><Hand className="size-4 inline-block mr-1" /> <a href="/index/拓展玩法/世界Boss">点击查看《世界 BOSS》指南</a></div>
       <div className="g-multi-media">
         <img src="/wiki-img/BeginnersGuide/BeginnersGuide/xx6.png" />
         <img src="/wiki-img/BeginnersGuide/BeginnersGuide/xx7.png" />
@@ -930,7 +926,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">05</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🎣</div>
+        <div className="g-icon"><Fish className="size-5" /></div>
         <div className="glass-title">钓鱼世界 <span className="g-badge">社区</span></div>
       </div>
       <p className="g-desc">更多拓展鱼在这里钓！带上你的鱼竿，前往钓鱼世界解锁更多珍稀鱼种吧！</p>
@@ -949,7 +945,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">06</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">⚔️</div>
+        <div className="g-icon"><Swords className="size-5" /></div>
         <div className="glass-title">PVP世界 <span className="g-badge danger">社区</span></div>
       </div>
       <p className="g-desc">和三五好友约好干架！在 PVP 世界中尽情享受公平对决的快感！</p>
@@ -968,7 +964,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
     <div className="glass-num">07</div>
     <div className="glass-content">
       <div className="glass-header">
-        <div className="g-icon">🏃</div>
+        <div className="g-icon"><PersonStanding className="size-5" /></div>
         <div className="glass-title">跑酷世界 <span className="g-badge warning">社区</span></div>
       </div>
       <p className="g-desc">跑酷就给我跑好了呀！挑战各种高难度跑酷关卡，展示你的操作技术！</p>
@@ -979,7 +975,7 @@ dateCreated: 2026-05-07T00:00:00.000Z
   </div>
 </div>
 
-<Callout type="info" title="🌍 更多小世界">
+<Callout type="info" title={<><Globe className="size-4" /> 更多小世界</>}>
 后续会有更多的小世界陆续上线，敬请期待！
 </Callout>
 
@@ -1399,16 +1395,16 @@ dateCreated: 2026-05-07T00:00:00.000Z
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--vp-c-brand-1);
-  color: white;
+  background: #3b82f6 !important;
+  color: #fff !important;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   font-weight: bold;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 4px solid var(--vp-c-bg);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  border: 3px solid var(--vp-c-bg-soft);
 }
 .step-content {
   flex: 1;

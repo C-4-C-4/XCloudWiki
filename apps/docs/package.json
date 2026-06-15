@@ -36,6 +36,7 @@
     "estree-util-build-jsx": "^3.0.1",
     "estree-util-to-js": "^2.0.0",
     "feed": "^5.2.1",
+    "fflate": "^0.8.3",
     "flexsearch": "^0.8.212",
     "fuma-cli": "^0.1.1",
     "fumadocs-core": "workspace:*",

@@ -1,7 +1,6 @@
-import { AlbumIcon, Heart, LayoutTemplate } from 'lucide-react';
+import { AlbumIcon, Heart, LayoutTemplate, Grid } from 'lucide-react';
 import Image from 'next/image';
 import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
-import { FumadocsIcon } from '@/app/layout.client';
 import Logo from '@/public/logo.png';
 
 export const linkItems: LinkItemType[] = [
@@ -13,8 +12,14 @@ export const linkItems: LinkItemType[] = [
   },
   {
     text: '画廊',
-    url: '/showcase',
+    url: '/gallery',
     icon: <LayoutTemplate />,
+    active: 'nested-url',
+  },
+  {
+    text: '展示',
+    url: '/showcase',
+    icon: <Grid />,
     active: 'url',
   },
   {
@@ -39,14 +44,20 @@ export const linkItems: LinkItemType[] = [
 export const logo = (
   <>
     <Image
-      alt="XCloudWiki"
+      alt="XCloud Wiki"
       src={Logo}
       sizes="100px"
       className="hidden w-22 in-[.uwu]:block"
-      aria-label="XCloudWiki"
+      aria-label="XCloud Wiki"
     />
 
-    <FumadocsIcon className="size-5 in-[.uwu]:hidden" />
+    <Image
+      alt="XCloud Wiki"
+      src={Logo}
+      width={24}
+      height={24}
+      className="size-5 rounded in-[.uwu]:hidden"
+    />
   </>
 );
 
@@ -56,7 +67,7 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           {logo}
-          <span className="font-medium in-[.uwu]:hidden">XCloudWiki</span>
+          <span className="font-medium in-[.uwu]:hidden">XCloud Wiki</span>
         </>
       ),
     },

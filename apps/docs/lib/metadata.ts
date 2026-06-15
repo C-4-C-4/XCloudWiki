@@ -9,7 +9,7 @@ export function createMetadata(override: Metadata): Metadata {
       description: override.description ?? undefined,
       url: 'https://fumadocs.dev',
       images: '/banner.png',
-      siteName: 'Fumadocs',
+      siteName: 'XCloud Wiki',
       ...override.openGraph,
     },
     twitter: {

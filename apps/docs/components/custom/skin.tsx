@@ -1,84 +1,163 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Upload, ImagePlus, Copy, Check, Loader2 } from 'lucide-react';
+import { cn } from '@/lib/cn';
+import Image from 'next/image';
 
 export function SkinUploader() {
-  const [skinFile, setSkinFile] = useState<File | null>(null);
-  const [isChecking, setIsChecking] = useState<boolean>(false);
-  const [report, setReport] = useState<{ size: string; type: string; valid: boolean } | null>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [resultUrl, setResultUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+  const [variant, setVariant] = useState<'classic' | 'slim'>('classic');
 
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      if (file.type === 'image/png') {
-        setSkinFile(file);
-        setIsChecking(false);
-        setReport(null);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files?.[0];
+    if (!selected) return;
+    setFile(selected);
+    setResultUrl(null);
+    setError(null);
+    setCopied(false);
+    const reader = new FileReader();
+    reader.onload = () => setPreview(reader.result as string);
+    reader.readAsDataURL(selected);
+  };
+
+  const handleUpload = async () => {
+    if (!file) return;
+    setLoading(true);
+    setError(null);
+    setResultUrl(null);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('name', 'skin');
+      formData.append('variant', variant);
+      const res = await fetch('https://api.mineskin.org/generate/upload', {
+        method: 'POST',
+        headers: { Authorization: 'Bearer msk_qlm6bWTq_ArdZggIAvYF6KIpGGlF1No3cg3DGInYz02UxgRxJ9kYMXLzX_H4QC9ZDvjVOrWAF' },
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.data?.texture?.url) {
+        setResultUrl('/skin url ' + data.data.texture.url);
       } else {
-        alert('仅支持上传扩展名为 .png 的 Minecraft 皮肤文件！');
+        setError(data.error || '上传失败，请重试');
       }
+    } catch {
+      setError('网络错误，请检查连接后重试');
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleValidate = () => {
-    if (!skinFile) return;
-    setIsChecking(true);
-    
-    // 模拟读取图片像素，进行宽高校验
-    setTimeout(() => {
-      setIsChecking(false);
-      setReport({
-        size: '64 * 64 px (双层皮肤规格)',
-        type: 'Alex 纤细手臂版 (或者 Steve 标准规格)',
-        valid: true,
-      });
-    }, 1200);
+  const copyUrl = async () => {
+    if (!resultUrl) return;
+    await navigator.clipboard.writeText(resultUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <div className="my-6 p-6 rounded-2xl border border-fd-border bg-fd-card shadow-sm hover:shadow-md transition-all">
-      <h4 className="text-base font-bold text-fd-foreground mb-4">👕 皮肤文件合规性本地离线检测</h4>
-      
-      <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-fd-border rounded-xl bg-fd-muted hover:bg-fd-accent/10 transition-colors relative cursor-pointer mb-4 text-center">
-        <input
-          type="file"
-          accept="image/png"
-          onChange={handleFile}
-          className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
-        />
-        <span className="text-2xl mb-1.5">👔</span>
-        <span className="text-xs text-fd-foreground font-bold">
-          {skinFile ? skinFile.name : '拖拽您的皮肤图片 (.png) 到此处上传'}
-        </span>
-        <span className="text-[10px] text-fd-muted-foreground mt-1">支持 64x64 / 64x32 传统 Steve 或 Alex 皮肤</span>
+      <h4 className="text-base font-bold text-fd-foreground mb-2">快速更换皮肤</h4>
+      <p className="text-sm mb-4 text-fd-muted-foreground">
+        上传你的皮肤图片，获取皮肤链接，在游戏中快速更换
+      </p>
+
+      {/* 上传区域 */}
+      <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-brand/30 rounded-xl cursor-pointer hover:border-brand/60 hover:bg-brand/5 transition-colors mb-4">
+        {preview ? (
+          <div className="relative w-full h-full rounded-lg overflow-hidden">
+            <Image src={preview} alt="skin preview" fill className="object-contain" unoptimized />
+          </div>
+        ) : (
+          <>
+            <Upload className="size-8 text-brand/50 mb-2" />
+            <p className="text-sm text-fd-muted-foreground">点击或拖拽上传皮肤图片</p>
+            <p className="text-xs text-fd-muted-foreground/60 mt-1">支持 PNG / JPG</p>
+          </>
+        )}
+        <input type="file" accept="image/png,image/jpeg" className="hidden" onChange={handleFileChange} />
+      </label>
+
+      {/* 模型选择 */}
+      <div className="flex gap-2 mb-4">
+        <button
+          onClick={() => setVariant('classic')}
+          className={cn(
+            'flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors border',
+            variant === 'classic'
+              ? 'bg-brand text-brand-foreground border-brand'
+              : 'bg-fd-secondary text-fd-muted-foreground hover:bg-fd-accent',
+          )}
+        >
+          经典 (Steve)
+        </button>
+        <button
+          onClick={() => setVariant('slim')}
+          className={cn(
+            'flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors border',
+            variant === 'slim'
+              ? 'bg-brand text-brand-foreground border-brand'
+              : 'bg-fd-secondary text-fd-muted-foreground hover:bg-fd-accent',
+          )}
+        >
+          纤细 (Alex)
+        </button>
       </div>
 
-      {skinFile && !isChecking && !report && (
+      {/* 操作按钮 */}
+      <div className="flex gap-2 mb-4">
         <button
-          onClick={handleValidate}
-          className="w-full py-2 bg-fd-primary hover:bg-fd-primary/90 text-fd-primary-foreground font-bold text-xs rounded-lg shadow transition-all"
+          onClick={handleUpload}
+          disabled={!file || loading}
+          className={cn(
+            'inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-colors',
+            file && !loading
+              ? 'bg-brand text-brand-foreground hover:bg-brand/90'
+              : 'bg-fd-muted text-fd-muted-foreground cursor-not-allowed',
+          )}
         >
-          开始检测文件尺寸与像素比例
+          {loading ? <Loader2 className="size-4 animate-spin" /> : <ImagePlus className="size-4" />}
+          {loading ? '生成中...' : '生成皮肤链接'}
         </button>
+        {file && (
+          <button
+            onClick={() => { setFile(null); setPreview(null); setResultUrl(null); setError(null); }}
+            className="inline-flex items-center justify-center px-4 py-2.5 rounded-full font-medium text-sm border bg-fd-secondary text-fd-secondary-foreground hover:bg-fd-accent transition-colors"
+          >
+            清除
+          </button>
+        )}
+      </div>
+
+      {/* 错误提示 */}
+      {error && (
+        <p className="text-sm text-red-400 mb-3 bg-red-500/10 rounded-lg px-3 py-2">{error}</p>
       )}
 
-      {isChecking && (
-        <div className="w-full py-4 text-center">
-          <div className="size-5 rounded-full border-2 border-fd-primary border-t-transparent animate-spin mx-auto mb-2" />
-          <span className="text-[10px] text-fd-muted-foreground font-bold animate-pulse">正在检测文件像素分布及透明通道...</span>
-        </div>
-      )}
-
-      {report && (
-        <div className="space-y-3 animate-in fade-in zoom-in-95 duration-200">
-          <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 text-xs text-emerald-500 leading-relaxed font-semibold">
-            🎉 <strong>合规性检测通过！</strong>这只皮肤完全符合 Minecraft 原版规范。<br />
-            - **皮肤分辨率**：{report.size}<br />
-            - **推荐模型**：{report.type}
+      {/* 结果展示 */}
+      {resultUrl && (
+        <div className="rounded-lg bg-fd-secondary/50 border p-3">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs font-medium text-brand flex items-center gap-1.5">
+              <Check className="size-3.5" /> 皮肤链接已生成
+            </p>
+            <button
+              onClick={copyUrl}
+              className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium bg-brand text-brand-foreground hover:bg-brand/90 transition-colors"
+            >
+              {copied ? <Check className="size-3" /> : <Copy className="size-3" />}
+              {copied ? '已复制' : '复制'}
+            </button>
           </div>
-          <div className="p-3 bg-fd-muted border border-fd-border rounded-lg text-xs leading-relaxed text-fd-muted-foreground font-semibold">
-            💡 <strong>绑定操作指引：</strong>请直接登录游戏，使用指令 <code>/skin url [皮肤链接]</code> 或者在群内使用皮肤机器人上传绑定，重新进入服务器即可看到您的个性皮肤！
-          </div>
+          <p className="text-[11px] text-fd-muted-foreground/70 mt-2">
+            在游戏聊天内粘贴发送即可更换皮肤
+          </p>
         </div>
       )}
     </div>

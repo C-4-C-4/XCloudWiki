@@ -16,6 +16,9 @@ export const metadata = createMetadata({
   },
   description: 'The React.js documentation framework.',
   metadataBase: baseUrl,
+  icons: {
+    icon: '/logo.png',
+  },
 });
 
 const geist = Geist({

@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
         title: (
           <>
             {logo}
-            <span className="font-medium in-[.uwu]:hidden max-md:hidden">Fumadocs</span>
+            <span className="font-medium in-[.uwu]:hidden max-md:hidden">XCloud Wiki</span>
           </>
         ),
       }}

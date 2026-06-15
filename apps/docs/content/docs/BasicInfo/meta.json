@@ -5,6 +5,7 @@
   "root": true,
   "pages": [
     "ServerRules",
+    "PenaltyRules",
     "Title",
     "ServerActivity",
     "Mascot"

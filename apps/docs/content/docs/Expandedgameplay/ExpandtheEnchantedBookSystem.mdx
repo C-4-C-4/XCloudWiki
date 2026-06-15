@@ -3,10 +3,14 @@ title: 拓展附魔书系统
 description: 拓展附魔书系统介绍
 published: true
 date: 2025-01-26T16:17:47.618Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2025-01-26T16:17:47.618Z
+publishedAt: 2026-06-14
+authors: "CCCC4444"
 ---
+
+import { Lightbulb, Gift, Coins, Ticket, ShoppingCart, Search, Map, Globe, FileText, AlertTriangle, Trash2, BookOpen, Gem, FlaskConical, Rocket, Circle, Square } from 'lucide-react';
 
 
 <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/150px-enchanted_book.webp" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
@@ -22,42 +26,42 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 <div className="quality-grid">
   <div className="quality-card" style={{}}>
-    <div className="q-icon">⬜</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#e5e5e5' }} /></div>
     <div className="q-info">
       <div className="q-name">普通附魔书</div>
       <div className="q-tier">白色品质</div>
     </div>
   </div>
   <div className="quality-card" style={{}}>
-    <div className="q-icon">🟩</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#22c55e' }} /></div>
     <div className="q-info">
       <div className="q-name">优秀附魔书</div>
       <div className="q-tier">绿色品质</div>
     </div>
   </div>
   <div className="quality-card" style={{}}>
-    <div className="q-icon">🟪</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#a855f7' }} /></div>
     <div className="q-info">
       <div className="q-name">史诗附魔书</div>
       <div className="q-tier">紫色品质</div>
     </div>
   </div>
   <div className="quality-card" style={{}}>
-    <div className="q-icon">🟧</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#f97316' }} /></div>
     <div className="q-info">
       <div className="q-name">传说附魔书</div>
       <div className="q-tier">橙色品质</div>
     </div>
   </div>
   <div className="quality-card" style={{ '--q-color': '#F87171' }}>
-    <div className="q-icon">🟥</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#ef4444' }} /></div>
     <div className="q-info">
       <div className="q-name">神话附魔书</div>
       <div className="q-tier">红色品质</div>
     </div>
   </div>
   <div className="quality-card disabled" style={{}}>
-    <div className="q-icon">🟦</div>
+    <div className="q-icon"><Square className="size-7" style={{ color: '#3b82f6' }} /></div>
     <div className="q-info">
       <div className="q-name">虚幻附魔书</div>
       <div className="q-tier">蓝色品质 <small>(无法抽取)</small></div>
@@ -110,13 +114,13 @@ dateCreated: 2025-01-26T16:17:47.618Z
 ## 一、附魔书获取
 ### 1、附魔之眼兑换
 
-<Callout type="info" title="💡 核心兑换说明">
-玩家可通过 **每日任务**、**玩家市场**、**提升职业等级** 等途径获取 **<font color="#EF4444">附魔之眼</font>**。  
+<Callout type="info" title={<><Lightbulb className="size-4 inline-block mr-1" /> 核心兑换说明</>}>
+玩家可通过 **每日任务**、**玩家市场**、**提升职业等级** 等途径获取 **<font color="#EF4444">附魔之眼</font>**。
 收集足够的附魔之眼后，前往主城的 **NPC 附魔师** 处，即可抽取兑换对应品质的附魔书（附魔属性与等级均为随机）。
 
-**🎁 保底机制**：单品质连续抽取 **10 次** 后触发保底——普通必出 **六级**，优秀/史诗必出 **五级**，传说/神话必出 **四级**。另可 **全品质随机抽取**，连续 **20 次** 后保底必出 **六级** 附魔书。
+**<Gift className="size-4 inline-block mr-1" /> 保底机制**：单品质连续抽取 **10 次** 后触发保底——普通必出 **六级**，优秀/史诗必出 **五级**，传说/神话必出 **四级**。另可 **全品质随机抽取**，连续 **20 次** 后保底必出 **六级** 附魔书。
 
-**💰 抽取消耗**：普通 **8000 经验**；优秀 **1** 个附魔之眼；史诗 **4** 个；传说 **10** 个；神话 **15** 个。
+**<Coins className="size-4 inline-block mr-1" /> 抽取消耗**：普通 **8000 经验**；优秀 **1** 个附魔之眼；史诗 **4** 个；传说 **10** 个；神话 **15** 个。
 </Callout>
 
 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
@@ -126,8 +130,8 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 ### 2、附魔书兑换卷
 
-<Callout type="info" title="🎫 兑换卷获取">
-玩家可通过 **活动签到**、**通行证**、**赛事活动**、**市场**、**贡献币商店**、**官方商城** 等途径获取 **<font color="#F59E0B">附魔书兑换卷</font>**。  
+<Callout type="info" title={<><Ticket className="size-4 inline-block mr-1" /> 兑换卷获取</>}>
+玩家可通过 **活动签到**、**通行证**、**赛事活动**、**市场**、**贡献币商店**、**官方商城** 等途径获取 **<font color="#F59E0B">附魔书兑换卷</font>**。
 收集足够的兑换卷后，前往主城的 **NPC 附魔师** 处，即可直接兑换对应品质的附魔书。
 </Callout>
 
@@ -135,7 +139,7 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 ### 3、玩家市场
 
-<Callout type="info" title="🛒 市场购买">
+<Callout type="info" title={<><ShoppingCart className="size-4 inline-block mr-1" /> 市场购买</>}>
 玩家可通过 **玩家市场** 处，直接购买对应品质的附魔书。
 </Callout>
 
@@ -143,25 +147,20 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 ### 4、附魔书抽奖体验
 
-> [!NOTE] 🎲 Wiki 抽奖模拟器
-> 在正式前往主城 **NPC 附魔师** 抽取之前，可先在下方模拟器体验。支持分品质抽取与 **全品质随机**；消耗、保底次数与保底等级与上文规则一致（普通消耗经验，其余消耗附魔之眼）。卡池数据与 Wiki 图鉴同步，不代表游戏内真实概率。
->
-> 完整属性检索请前往 [附魔书查询引擎](/index/拓展玩法/附魔书查询引擎)。
-
-<EnchantLottery />
-
-<br/>
+<Callout type="warning">
+当前wiki正在迁移内容和重构框架中，还有部分功能未能适配，请耐心等待恢复！
+</Callout>
 
 ---
 
 # 二、附魔书查询
 
-> [!NOTE] 🔍 查询途径指南
+> [!NOTE] <Search className="size-4 inline-block mr-1" /> 查询途径指南
 > 为了方便大家快速了解海量拓展附魔的具体属性与冲突机制，我们提供了以下几种便捷查询方式：
 
 <div className="query-methods">
   <div className="query-card">
-    <div className="query-icon">🗺️</div>
+    <div className="query-icon"><Map className="size-8" /></div>
     <div className="query-content">
       <strong>主城 NPC 查询</strong>
       <span>前往主城寻找“附魔师 NPC”，可以直接在界面内查阅附魔图鉴。</span>
@@ -169,14 +168,14 @@ dateCreated: 2025-01-26T16:17:47.618Z
   </div>
   {/*
   <div className="query-card">
-    <div className="query-icon">📄</div>
+    <div className="query-icon"><FileText className="size-8" /></div>
     <div className="query-content">
       <strong>群文件 Excel</strong>
       <span>在官方交流群的文件区或公告中，下载“附魔大全”Excel 表格进行本地查阅。</span>
     </div>
   </div>*/}
   <div className="query-card">
-    <div className="query-icon">🌐</div>
+    <div className="query-icon"><Globe className="size-8" /></div>
     <div className="query-content">
       <strong>飞书在线文档</strong>
       <span>点击访问网页版 <a href="https://q1wvda1l0d0.feishu.cn/base/DGO5b3Zl4a4s9Ms36qpcu5NHnAB?table=tbloqWKjx3eRaUE8&view=vewsV7UMIT" target="_blank" style={{ color: 'var(--vp-c-brand-1)' }}>拓展附魔书文档</a> 或 <a href="https://q1wvda1l0d0.feishu.cn/share/base/query/shrcnQDbSFmUar2jbIiGOJvs4Bh" target="_blank" style={{ color: 'var(--vp-c-brand-1)' }}>搜索系统</a>，支持快速检索。</span>
@@ -228,7 +227,7 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 # 三、附魔注意事项 
 
-<Callout type="warn" title="⚠️ 附魔核心规则">
+<Callout type="warn" title={<><AlertTriangle className="size-4 inline-block mr-1" /> 附魔核心规则</>}>
 - **槽位机制**：每件装备初始仅有 **3 个**附魔槽。如需新增附魔，必须使用 **附魔凿** 工具开启新槽位（最大上限 8 个）。
 - **品质限制**：<font color="#FBBF24">传说</font> 和 <font color="#F87171">神话</font> 品质的附魔在同一装备上**各仅限一种**！
 - **附魔冲突**：部分附魔之间存在互斥（例如经验修补与无限，以及部分特殊拓展附魔），冲突会导致无法附魔，请提前在图鉴中确认。
@@ -247,23 +246,23 @@ dateCreated: 2025-01-26T16:17:47.618Z
 <div className="action-grid">
   <div className="action-card">
     <div className="action-header">
-      <span className="action-icon">🗑️</span>
+      <span className="action-icon"><Trash2 className="size-6" /></span>
       <span className="action-title">附魔清洗</span>
     </div>
     <div className="action-desc">将选定的附魔从装备上彻底清除（该附魔将直接消失）。</div>
     <div className="action-cost">
-      <strong>所需消耗：</strong>金币 🪙 + 积分 💎 + 经验等级 🧪
+      <strong>所需消耗：</strong>金币 <Coins className="size-4 inline-block mx-1" /> + 积分 <Gem className="size-4 inline-block mx-1" /> + 经验等级 <FlaskConical className="size-4 inline-block mx-1" />
     </div>
   </div>
 
   <div className="action-card">
     <div className="action-header">
-      <span className="action-icon">📖</span>
+      <span className="action-icon"><BookOpen className="size-6" /></span>
       <span className="action-title">附魔拆卸</span>
     </div>
     <div className="action-desc">将选定的附魔安全拆卸，并将其重新转化为可使用的<strong>附魔书</strong>。</div>
     <div className="action-cost">
-      <strong>所需消耗：</strong>金币 🪙 + 积分 💎 + 经验等级 🧪
+      <strong>所需消耗：</strong>金币 <Coins className="size-4 inline-block mx-1" /> + 积分 <Gem className="size-4 inline-block mx-1" /> + 经验等级 <FlaskConical className="size-4 inline-block mx-1" />
     </div>
   </div>
 </div>
@@ -333,7 +332,7 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 # 五、附魔突破
 
-<Callout type="info" title="🚀 突破系统简介">
+<Callout type="info" title={<><Rocket className="size-4 inline-block mr-1" /> 突破系统简介</>}>
 **附魔突破** 能够将拓展附魔书（不包括原版附魔书）的等级上限**强行提高一级**，打破装备属性的极限！
 </Callout>
 
@@ -355,7 +354,7 @@ dateCreated: 2025-01-26T16:17:47.618Z
 
 <img src="/wiki-img/Expandedgameplay/ExpandtheEnchantedBookSystem/agaalgvgzyzrlj24cazg8r9i1hvwss29.png" style={{ borderRadius: '8px', width: '70%', display: 'block', margin: '1.5rem auto', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
 
-> [!IMPORTANT] 💡 界面摆放说明
+> [!IMPORTANT] <Lightbulb className="size-4 inline-block mr-1" /> 界面摆放说明
 > - **顶部槽位**：放置需要突破的**最高等级附魔书**。
 > - **左下槽位**：放置 **<font color="#4ADE80">附魔突破水晶</font>**（非必须，用于防爆防碎）。
 > - **右下槽位**：放置 **<font color="#EF4444">附魔进阶卷轴</font>**（必须）。

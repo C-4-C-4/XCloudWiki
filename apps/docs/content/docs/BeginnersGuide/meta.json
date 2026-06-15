@@ -5,14 +5,10 @@
   "icon": "BookOpen",
   "root": true,
   "pages": [
-    "index",
+    "TravelTips",
     "BeginnersGuide",
-    "Changeskin",
     "CommandFunction",
-    "Calculator",
     "NPC",
-    "Projectortool",
-    "TerritoriesandLandmarks",
-    "TravelTips"
+    "TerritoriesandLandmarks"
   ]
 }

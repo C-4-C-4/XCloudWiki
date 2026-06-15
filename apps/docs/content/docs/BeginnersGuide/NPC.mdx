@@ -7,35 +7,28 @@ date: 2026-05-26T00:00:00.000Z
 tags: 
 editor: markdown
 dateCreated: 2026-05-26T00:00:00.000Z
+publishedAt: 2026-06-14
+authors: "星"
+
 ---
+
+import { User, Lightbulb, Map, Sprout } from 'lucide-react';
 
 <img src="/wiki-img/BeginnersGuide/NPC/420px-Cherry_Blossom_Tree.png" width="125" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
 
-# <center>NPC</center>
+<div style={{ textAlign: 'center', fontSize: '2em', fontWeight: 'bold', marginTop: '1em', marginBottom: '0.5em' }}>NPC</div>
+
 
 <center><font face="courier New" color="#f90000ff" size="6">Non-Player Character</font></center>
 
-<div className="co-creation-box">
-  <div className="co-creation-title">✨ 页面共创</div>
-  <div className="co-creation-users">
-    <div className="co-user">
-      <img src="/avatars/xing.png" alt="星" className="co-avatar" />
-      <span className="co-name">星</span>
-    </div>
-    <div className="co-user">
-      <img src="https://pic1.imgdb.cn/item/6810cbc558cb8da5c8d46931.jpg" alt="CCCC4444" className="co-avatar" />
-      <span className="co-name">CCCC4444</span>
-    </div>
-  </div>
-</div>
 
-<Callout type="info" title="👤 闲云社区 NPC 图鉴总览">
+<Callout type="info" title={<><User className="size-4" /> 闲云社区 NPC 图鉴总览</>}>
 欢迎使用 XCloudX 闲云服务器的 **NPC 检索与图鉴系统**！
 本页为您全面收录了服务器内所有重要的 NPC 角色、功能部分、商业商人与新手向导。您可以按大类进行快速筛选，或直接通过上方的流光搜索框，输入关键字精准定位。
-- 💡 **高阶功能**：点击任意 NPC 卡片或预览图，即可唤出**毛玻璃高清灯箱弹框**卡片，可以看到具体内容哦！
+- <Lightbulb className="size-4 inline-block mr-1" /> **高阶功能**：点击任意 NPC 卡片或预览图，即可唤出**毛玻璃高清灯箱弹框**卡片，可以看到具体内容哦！
 </Callout>
 
-### 🗺️ 1、闲云地图快捷传送
+### <Map className="size-4 inline-block mr-1" /> 1、闲云地图快捷传送
 
 <div className="map-guide">
   <div className="map-guide-content">
@@ -59,7 +52,7 @@ dateCreated: 2026-05-26T00:00:00.000Z
   </div>
 </div>
 
-### 🧑‍🌾 2、NPC 图鉴总览
+### <Sprout className="size-4 inline-block mr-1" /> 2、NPC 图鉴总览
 
 <NpcDirectory />
 

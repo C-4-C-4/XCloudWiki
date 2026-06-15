@@ -1,4 +1,4 @@
-﻿---
+---
 title: 铁匠系统
 description: 铁匠锻造与装备强化系统指南
 published: true
@@ -8,7 +8,11 @@ tags:
   - 装备强化
 editor: markdown
 dateCreated: 2026-05-08T06:08:39.000Z
+publishedAt: 2026-06-14
+authors: "CCCC4444"
 ---
+
+import { Anvil, Zap, Recycle, RefreshCw, Unlock, BookOpen, Sparkles, Flame, AlertTriangle, Info, Package } from 'lucide-react';
 
 <img src="/wiki-img/Expandedgameplay/BlacksmithSystem/Anvil_JE3_BE3.png" width="100" style={{ display: 'block', margin: '0 auto 0.5rem' }} />
 
@@ -16,28 +20,19 @@ dateCreated: 2026-05-08T06:08:39.000Z
 
 <center><font face="courier New" color="#EF4444" size="6">Blacksmith System</font></center>
 
-<Callout type="warn" title="🚧 建设中">
+<Callout type="warn" title="建设中">
 当前页面内容正在完善中...
 </Callout>
 
-<div style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)', position: 'relative', overflow: 'hidden', marginTop: '1rem' }}>
-  <div style={{ position: 'absolute', right: '-15px', bottom: '-15px', fontSize: '5rem', opacity: '0.08', transform: 'rotate(-15deg)', pointerEvents: 'none', userSelect: 'none' }}>🔨</div>
-  <div style={{ fontSize: '2rem', background: 'rgba(239, 68, 68, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', flexShrink: '0', boxShadow: 'inset 0 0 8px rgba(239, 68, 68, 0.15)' }}>⚒️</div>
-  <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '0.25rem', textAlign: 'left' }}>
-    <div style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--vp-c-text-1)', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-      🔥 铁匠工坊功能开启 <span style={{ fontSize: '0.72rem', background: 'rgba(239, 68, 68, 0.12)', color: '#ef4444', padding: '2px 8px', borderRadius: '20px', fontWeight: '700' }}>装备升级</span>
-    </div>
-    <div style={{ fontSize: '0.92rem', color: 'var(--vp-c-text-2)', lineHeight: '1.55', margin: '0' }}>
-      在主城中与铁匠 NPC 对话，即可进入铁匠工坊界面。进行装备升级！
-    </div>
-  </div>
-</div>
+<Callout type="info" title="铁匠工坊功能开启 - 装备升级">
+在主城中与铁匠 NPC 对话，即可进入铁匠工坊界面。进行装备升级！
+</Callout>
 
 ---
 
 # 一、基础介绍
 
-<Callout type="info" title="💡 铁匠工坊入口指引">
+<Callout type="info" title="铁匠工坊入口指引">
 在主城中寻找 **铁匠 NPC** 对话并选择装备升级，即可进入铁匠工坊交互界面。将您背包中的装备放入精炼槽，即可开始专属装备的属性提升！
 </Callout>
 
@@ -48,7 +43,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
 <div className="forge-tips-grid">
   <div className="forge-tip-card">
     <span className="tip-num">01</span>
-    <span className="tip-icon">⚡</span>
+    <span className="tip-icon"><Zap className="size-5" /></span>
     <div className="tip-content">
       <strong>强化</strong>
       <p>可以让装备 +1、+2，最高可以强化到 +15。</p>
@@ -56,7 +51,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
   <div className="forge-tip-card">
     <span className="tip-num">02</span>
-    <span className="tip-icon">♻️</span>
+    <span className="tip-icon"><Recycle className="size-5" /></span>
     <div className="tip-content">
       <strong>分解</strong>
       <p>分解多余装备可以获取精华继续强化装备。</p>
@@ -64,7 +59,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
   <div className="forge-tip-card">
     <span className="tip-num">03</span>
-    <span className="tip-icon">🔮</span>
+    <span className="tip-icon"><RefreshCw className="size-5" /></span>
     <div className="tip-content">
       <strong>重铸</strong>
       <p>可以让强化装备复原到未强化状态。</p>
@@ -72,7 +67,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
   <div className="forge-tip-card">
     <span className="tip-num">04</span>
-    <span className="tip-icon">🔓</span>
+    <span className="tip-icon"><Unlock className="size-5" /></span>
     <div className="tip-content">
       <strong>解绑</strong>
       <p>可以让装备处于未绑定装备可用于交易。</p>
@@ -80,7 +75,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
   <div className="forge-tip-card">
     <span className="tip-num">05</span>
-    <span className="tip-icon">📖</span>
+    <span className="tip-icon"><BookOpen className="size-5" /></span>
     <div className="tip-content">
       <strong>图鉴</strong>
       <p>可以查看服务器可获取的 RPG 装备。</p>
@@ -88,7 +83,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
   <div className="forge-tip-card">
     <span className="tip-num">06</span>
-    <span className="tip-icon">🌟</span>
+    <span className="tip-icon"><Sparkles className="size-5" /></span>
     <div className="tip-content">
       <strong>觉醒</strong>
       <p>是让本身含有技能的装备觉醒技能或强化技能。</p>
@@ -106,7 +101,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
 
 ### 1、强化
 
-<Callout type="info" title="💡 强化指引">
+<Callout type="info" title="强化指引">
 装备强化是大幅提升战力的核心途径。进行强化时，需要注意以下核心规则：
 </Callout>
 
@@ -137,7 +132,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
 
 ### 2、分解
 
-<Callout type="info" title="💡 分解指引">
+<Callout type="info" title="分解指引">
 装备分解是回收材料、获取高级强化资源的重要方式。进行分解时，请务必关注以下细则：
 </Callout>
 
@@ -152,7 +147,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   </div>
 </div>
 
-<Callout type="warn" title="⚠️ 警告">
+<Callout type="error" title="警告">
 **请注意！装备一旦分解完成，其数据将被永久销毁，完全无法复原！** 请各位冒险者在分解高级装备前仔细核对，以免造成不必要的损失。
 </Callout>
 
@@ -164,7 +159,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
 
 ### 3、重铸
 
-<Callout type="info" title="💡 重铸指引">
+<Callout type="info" title="重铸指引">
 装备重铸可以将已强化的装备完美还原。进行重铸时，请遵循以下流程指引：
 </Callout>
 
@@ -195,7 +190,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
 
 ### 4、觉醒
 
-<Callout type="info" title="💡 觉醒指引">
+<Callout type="info" title="觉醒指引">
 装备觉醒能够激活或强化装备上的附带技能。进行觉醒操作时，请遵循以下步骤指引：
 </Callout>
 
@@ -286,6 +281,7 @@ dateCreated: 2026-05-08T06:08:39.000Z
   background: rgba(239, 68, 68, 0.06);
   border-radius: 6px;
   flex-shrink: 0;
+  color: #ef4444;
 }
 .tip-content {
   display: flex;

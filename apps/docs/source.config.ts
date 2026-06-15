@@ -19,9 +19,25 @@ export const docs = defineDocs({
       preview: z.string().optional(),
       index: z.boolean().default(false),
       /**
+       * 页面右上角 Logo 图片路径
+       */
+      logo: z.string().optional(),
+      /**
+       * 页面副标题（显示在标题与描述之间）
+       */
+      subtitle: z.string().optional(),
+      /**
        * API routes only
        */
       method: z.string().optional(),
+      /**
+       * 首次发布时间
+       */
+      publishedAt: z.union([z.string(), z.date()]).optional(),
+      /**
+       * 制作人员（逗号分隔）
+       */
+      authors: z.string().optional(),
     }),
     postprocess: {
       includeProcessedMarkdown: true,

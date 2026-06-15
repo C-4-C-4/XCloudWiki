@@ -5,6 +5,7 @@
 @import 'fumadocs-openapi/css/preset.css';
 @import '@fumadocs/story/css/preset.css';
 @import '@fumadocs/asyncapi/css/preset.css';
+@import '../styles/mascot.css';
 @plugin 'tailwindcss-animate';
 
 @theme {
@@ -222,3 +223,152 @@ body {
   --vp-c-divider: var(--color-fd-border);
 }
 
+/* === 贡献榜页面样式 (Leaderboard) === */
+.contributor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.0rem;
+}
+.contributor-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+.contributor-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.08);
+}
+.contributor-img-wrapper {
+  height: 200px;
+  background: #111111;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--vp-c-divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contributor-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.contributor-card:hover .contributor-img-wrapper img {
+  transform: scale(1.05);
+}
+.contributor-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+.contributor-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.contributor-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+  font-family: var(--vp-font-family-mono);
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+.contributor-name.admin {
+  background: linear-gradient(135deg, #ef4444 0%, #ff7e40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.15));
+}
+.contributor-name.core {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.15));
+}
+.contributor-name.helper {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.15));
+}
+.contributor-card:hover .contributor-name {
+  letter-spacing: 0px;
+}
+.contributor-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.25rem !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 20px;
+  width: fit-content;
+  white-space: nowrap;
+}
+.contributor-badge svg {
+  width: 14px !important;
+  height: 14px !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  vertical-align: middle !important;
+}
+.contributor-badge.admin {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+.contributor-badge.core {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.contributor-badge.helper {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+.contributor-reason {
+  background: rgba(59, 130, 246, 0.03);
+  border-left: 3px solid #3b82f6;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-top: auto;
+}
+.contributor-reason.admin {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.03);
+}.contributor-reason.core {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.03);
+}
+
+/* === 画廊页面样式 (Gallery) === */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cursor-left-arrow {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E") 12 12, auto;
+}
+.cursor-right-arrow {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E") 12 12, auto;
+}

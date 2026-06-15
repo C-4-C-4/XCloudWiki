@@ -11,6 +11,7 @@ import { Image as FrameworkImage } from 'fumadocs-core/framework';
 import { Card, Cards } from '@/components/card';
 import { Callout, CalloutContainer, CalloutDescription, CalloutTitle } from '@/components/callout';
 import { Heading } from '@/components/heading';
+import { Steps, Step } from '@/components/steps';
 import { cn } from '@/utils/cn';
 import {
   CodeBlock,
@@ -78,6 +79,8 @@ const defaultMdxComponents = {
   CalloutContainer,
   CalloutTitle,
   CalloutDescription,
+  Steps,
+  Step,
 };
 
 export const createRelativeLink: typeof import('./mdx.server').createRelativeLink = () => {

@@ -22,13 +22,13 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           text: '文档',
           items: [
             {
-              text: 'Getting Started',
-              url: '/docs',
+              text: '基础信息',
+              url: '/docs/BasicInfo',
               icon: <Book />,
             },
             {
-              text: 'Components',
-              url: '/docs/ui/components',
+              text: '新手教程',
+              url: '/docs/BeginnersGuide',
               icon: <ComponentIcon />,
             },
           ],
@@ -53,44 +53,44 @@ export default function Layout({ children }: LayoutProps<'/'>) {
                       }}
                     />
                   </div>
-                  <p className="font-medium">Getting Started</p>
+                  <p className="font-medium">文档</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    Learn to use Fumadocs on your docs site.
+                    闲云攻略文档
                   </p>
                 </NavbarMenuLink>
 
-                <NavbarMenuLink href="/docs/ui/components" className="lg:col-start-2">
+                <NavbarMenuLink href="/docs/BeginnersGuide/TravelTips" className="lg:col-start-2">
                   <ComponentIcon className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
-                  <p className="font-medium">Components</p>
+                  <p className="font-medium">新手教程</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    Add interactive experience to your docs.
+                    关于闲云服务器的新手入门指南与教学
                   </p>
                 </NavbarMenuLink>
 
-                <NavbarMenuLink href="/docs/openapi" className="lg:col-start-2">
+                <NavbarMenuLink href="/docs/Expandedgameplay/BlacksmithSystem" className="lg:col-start-2">
                   <Server className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
-                  <p className="font-medium">OpenAPI</p>
+                  <p className="font-medium">拓展玩法</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    Generate interactive playgrounds and docs for your OpenAPI schema.
+                    闲云服务器的拓展玩法与特色系统
                   </p>
                 </NavbarMenuLink>
 
-                <NavbarMenuLink href="/docs/markdown" className="lg:col-start-3 lg:row-start-1">
+                <NavbarMenuLink href="/docs/Tools/Changeskin" className="lg:col-start-3 lg:row-start-1">
                   <Pencil className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
-                  <p className="font-medium">Markdown</p>
+                  <p className="font-medium">工具</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    Learn the writing format/syntax of Fumadocs.
+                    实用工具集合
                   </p>
                 </NavbarMenuLink>
 
                 <NavbarMenuLink
-                  href="/docs/manual-installation"
+                  href="/docs//Other/InvestitureoftheGods"
                   className="lg:col-start-3 lg:row-start-2"
                 >
                   <PlusIcon className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
-                  <p className="font-medium">Manual Installation</p>
+                  <p className="font-medium">其他</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    Setup Fumadocs for your existing React.js app.
+                    其他分类
                   </p>
                 </NavbarMenuLink>
               </NavbarMenuContent>

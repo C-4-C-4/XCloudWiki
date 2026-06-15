@@ -1,0 +1,669 @@
+/* ==========================================================================
+   Mascot Article — Typography & Layout System
+   文章排版体系：字体层级 · 行高 · 间距 · 响应式 · 可访问性
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS 自定义属性 / Design Tokens
+   -------------------------------------------------------------------------- */
+.mascot-article {
+  /* 字体栈 */
+  --mascot-font-body: system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC',
+    'Microsoft YaHei', sans-serif;
+  --mascot-font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono',
+    'Consolas', 'Monaco', monospace;
+
+  /* 标题字号体系 */
+  --mascot-h1-size: clamp(2rem, 5vw, 2.75rem);
+  --mascot-h1-line-height: 1.15;
+  --mascot-h2-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  --mascot-h2-line-height: 1.3;
+
+  /* 正文字号 */
+  --mascot-body-size: 0.9375rem;   /* 15px */
+  --mascot-body-line-height: 1.75;
+  --mascot-small-size: 0.8125rem;  /* 13px */
+  --mascot-small-line-height: 1.6;
+
+  /* 间距体系（基于 4px 网格） */
+  --mascot-space-xs: 0.5rem;    /* 8px */
+  --mascot-space-sm: 0.75rem;   /* 12px */
+  --mascot-space-md: 1rem;      /* 16px */
+  --mascot-space-lg: 1.5rem;    /* 24px */
+  --mascot-space-xl: 2rem;      /* 32px */
+  --mascot-space-2xl: 2.5rem;   /* 40px */
+  --mascot-space-3xl: 3rem;     /* 48px */
+
+  /* 段落最大宽度（保证可读性） */
+  --mascot-measure: 68ch;
+
+  /* 颜色（继承主题变量，提供回退） */
+  --mascot-fg: var(--color-fd-foreground, #1a1a2e);
+  --mascot-fg-muted: var(--color-fd-muted-foreground, #6b7280);
+  --mascot-bg-muted: var(--color-fd-muted, #f3f4f6);
+  --mascot-border: var(--color-fd-border, #e5e7eb);
+  --mascot-card-bg: var(--color-fd-card, #ffffff);
+  --mascot-accent: var(--basic-info-color, #3b82f6);
+  --mascot-accent-soft: color-mix(in srgb, var(--mascot-accent) 12%, transparent);
+
+  font-family: var(--mascot-font-body);
+  font-size: var(--mascot-body-size);
+  line-height: var(--mascot-body-line-height);
+  color: var(--mascot-fg);
+  container-type: inline-size;
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero 引导卡片 / Compact Intro Banner
+   -------------------------------------------------------------------------- */
+.mascot-hero {
+  margin-bottom: var(--mascot-space-xl);
+  animation: mascot-fade-up 0.4s ease-out both;
+}
+
+.mascot-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mascot-space-md);
+  background: color-mix(in srgb, var(--mascot-accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mascot-accent) 18%, transparent);
+  border-radius: 0.75rem;
+  padding: var(--mascot-space-md) var(--mascot-space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景装饰：左侧渐变光晕 */
+.mascot-hero-inner::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--mascot-accent) 20%, transparent) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+.mascot-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero 图标 + 标签（同一行） */
+.mascot-hero-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+}
+
+.mascot-hero-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Hero 标签 */
+.mascot-hero-label {
+  font-family: var(--mascot-font-mono);
+  font-size: 0.8125rem;     /* 13px */
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mascot-accent);
+}
+
+/* 引导文案 */
+.mascot-hero-text {
+  font-size: var(--mascot-body-size);
+  line-height: var(--mascot-body-line-height);
+  color: var(--mascot-fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.mascot-hero-text em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--mascot-fg);
+}
+
+/* 作者/日期元信息 */
+.mascot-hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: var(--mascot-small-size);
+  color: var(--mascot-fg-muted);
+  opacity: 0.7;
+  margin-top: 0.15em;
+}
+
+.mascot-hero-meta time {
+  font-variant-numeric: tabular-nums;
+}
+
+.mascot-hero-meta-sep {
+  opacity: 0.5;
+}
+
+/* Hero 右侧：Logo + 英文名 */
+.mascot-hero-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mascot-hero-logo-img {
+  display: block;
+  width: 100px;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.mascot-hero-en {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mascot-accent, #3b82f6);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   3. 内容区块 / Content Sections
+   -------------------------------------------------------------------------- */
+.mascot-section {
+  margin-bottom: var(--mascot-space-2xl);
+}
+
+.mascot-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--mascot-h2-size);
+  line-height: var(--mascot-h2-line-height);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--mascot-fg);
+  text-wrap: balance;
+  margin: 0 0 var(--mascot-space-lg);
+  padding-bottom: var(--mascot-space-xs);
+  border-bottom: 2px solid var(--mascot-accent-soft);
+}
+
+.mascot-section-title > svg {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. 提示框 / Notice（替代 fumadocs Callout）
+   -------------------------------------------------------------------------- */
+.mascot-notice {
+  display: flex;
+  gap: var(--mascot-space-sm);
+  padding: var(--mascot-space-md) var(--mascot-space-lg);
+  margin-bottom: var(--mascot-space-md);
+  border-radius: 0.625rem;
+  border: 1px solid var(--mascot-border);
+  background: var(--mascot-card-bg);
+}
+
+.mascot-notice--info {
+  border-left: 3px solid var(--mascot-accent);
+  background: var(--mascot-accent-soft);
+}
+
+.mascot-notice--warning {
+  border-left: 3px solid #f59e0b;
+  background: color-mix(in srgb, #f59e0b 8%, var(--mascot-card-bg));
+  margin-top: var(--mascot-space-md);
+  margin-bottom: 0;
+}
+
+.mascot-notice-icon {
+  flex-shrink: 0;
+  padding-top: 0.1em;
+  color: var(--mascot-accent);
+}
+
+.mascot-notice--warning .mascot-notice-icon {
+  color: #f59e0b;
+}
+
+.mascot-notice-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mascot-notice-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--mascot-fg);
+  margin: 0 0 0.25em;
+}
+
+.mascot-notice-body > p {
+  font-size: var(--mascot-body-size);
+  line-height: var(--mascot-body-line-height);
+  color: var(--mascot-fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.mascot-notice-body > p + p {
+  margin-top: 0.6em;
+}
+
+.mascot-notice-footnote {
+  font-size: var(--mascot-small-size) !important;
+  color: var(--mascot-fg-muted) !important;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* 列表 */
+.mascot-list {
+  list-style: disc;
+  padding-left: 1.25em;
+  margin: var(--mascot-space-sm) 0 0;
+  font-size: var(--mascot-small-size);
+  line-height: var(--mascot-small-line-height);
+  color: var(--mascot-fg-muted);
+}
+
+.mascot-list li {
+  margin-bottom: 0.35em;
+}
+
+.mascot-list li strong {
+  color: var(--mascot-fg);
+}
+
+/* 行内代码 */
+.mascot-inline-code {
+  font-family: var(--mascot-font-mono);
+  font-size: 0.85em;
+  background: var(--mascot-bg-muted);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  border: 1px solid var(--mascot-border);
+}
+
+/* --------------------------------------------------------------------------
+   5. 基本档案 / Profile
+   -------------------------------------------------------------------------- */
+.mascot-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mascot-space-lg);
+}
+
+@container (min-width: 560px) {
+  .mascot-profile {
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
+
+/* 档案数据卡片 */
+.mascot-profile-data {
+  background: var(--mascot-card-bg);
+  border: 1px solid var(--mascot-border);
+  border-radius: 0.75rem;
+  padding: var(--mascot-space-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.mascot-profile-data:hover {
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+  border-color: var(--mascot-accent);
+}
+
+.mascot-profile-row {
+  display: grid;
+  grid-template-columns: 5em 1fr;
+  gap: var(--mascot-space-sm);
+  align-items: baseline;
+  padding: var(--mascot-space-sm) 0;
+  border-bottom: 1px solid var(--mascot-border);
+  font-size: var(--mascot-body-size);
+  line-height: var(--mascot-body-line-height);
+}
+
+.mascot-profile-row:last-child {
+  border-bottom: none;
+}
+
+.mascot-profile-row dt {
+  font-weight: 600;
+  color: var(--mascot-fg);
+  flex-shrink: 0;
+}
+
+.mascot-profile-row dd {
+  margin: 0;
+  color: var(--mascot-fg-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em;
+}
+
+/* 立绘 */
+.mascot-profile-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mascot-space-sm);
+}
+
+.mascot-portrait-frame {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--mascot-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background: var(--mascot-card-bg);
+}
+
+.mascot-portrait-frame:hover {
+  box-shadow: 0 8px 28px -6px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+}
+
+.mascot-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mascot-portrait-caption {
+  font-size: var(--mascot-small-size);
+  line-height: var(--mascot-small-line-height);
+  color: var(--mascot-fg-muted);
+  text-align: center;
+  background: var(--mascot-accent-soft);
+  padding: var(--mascot-space-sm) var(--mascot-space-md);
+  border-radius: 0.5rem;
+  border: 1px solid var(--mascot-border);
+  width: 100%;
+  max-width: 280px;
+}
+
+/* --------------------------------------------------------------------------
+   6. 刮开交互 / Scratch-Reveal
+   -------------------------------------------------------------------------- */
+.mascot-scratch {
+  display: inline-block;
+  font-family: var(--mascot-font-mono);
+  font-size: 0.8rem;
+  background: var(--mascot-fg);
+  color: var(--mascot-card-bg);
+  padding: 0.15em 0.45em;
+  border-radius: 0.25rem;
+  cursor: help;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mascot-scratch:hover,
+.mascot-scratch:focus-visible {
+  background: transparent;
+  color: var(--mascot-fg-muted);
+  outline: 1px dashed var(--mascot-accent);
+  outline-offset: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   7. 画廊网格 / Gallery Grid
+   -------------------------------------------------------------------------- */
+.mascot-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mascot-space-md);
+  margin-top: var(--mascot-space-lg);
+}
+
+@container (min-width: 560px) {
+  .mascot-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mascot-gallery-item {
+  margin: 0;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  border: 1px solid var(--mascot-border);
+  background: var(--mascot-card-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 性能优化：延迟非首屏画廊渲染 */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}
+
+.mascot-gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.12);
+}
+
+.mascot-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. 页脚分隔线 / Article Footer
+   -------------------------------------------------------------------------- */
+.mascot-article-footer {
+  margin-top: var(--mascot-space-3xl);
+}
+
+.mascot-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mascot-space-sm);
+  padding: var(--mascot-space-lg) 0;
+  opacity: 0.5;
+}
+
+.mascot-divider-line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: var(--mascot-border);
+}
+
+.mascot-divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mascot-accent);
+  opacity: 0.6;
+}
+
+/* --------------------------------------------------------------------------
+   9. 动画 / Animations
+   -------------------------------------------------------------------------- */
+@keyframes mascot-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 仅在页面初始加载时应用，避免重复动画 */
+.mascot-hero {
+  animation: mascot-fade-up 0.4s ease-out both;
+}
+
+.mascot-section {
+  animation: mascot-fade-up 0.45s ease-out both;
+}
+
+.mascot-section:nth-child(2) { animation-delay: 0.05s; }
+.mascot-section:nth-child(3) { animation-delay: 0.1s; }
+.mascot-section:nth-child(4) { animation-delay: 0.15s; }
+
+/* --------------------------------------------------------------------------
+   10. 响应式 / Responsive
+   -------------------------------------------------------------------------- */
+
+/* 平板及以下 */
+@media (max-width: 768px) {
+  .mascot-article {
+    --mascot-body-size: 0.9375rem;
+  }
+
+  .mascot-hero {
+    margin-bottom: var(--mascot-space-lg);
+  }
+
+  .mascot-hero-inner {
+    padding: var(--mascot-space-sm) var(--mascot-space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--mascot-space-sm);
+  }
+
+  .mascot-hero-logo-wrap {
+    flex-direction: row;
+    gap: 0.75em;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    padding-top: var(--mascot-space-xs);
+    border-top: 1px solid color-mix(in srgb, var(--mascot-accent) 12%, transparent);
+  }
+
+  .mascot-hero-logo-img {
+    width: 64px;
+    max-height: 64px;
+  }
+
+  .mascot-notice {
+    padding: var(--mascot-space-sm) var(--mascot-space-md);
+  }
+
+  .mascot-profile-row {
+    grid-template-columns: 4.5em 1fr;
+  }
+}
+
+/* 手机端 */
+@media (max-width: 480px) {
+  .mascot-article {
+    --mascot-body-size: 0.875rem;
+    --mascot-h1-size: 1.65rem;
+    --mascot-h2-size: 1.25rem;
+  }
+
+  .mascot-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mascot-space-sm);
+  }
+
+  .mascot-profile-row {
+    grid-template-columns: 1fr;
+    gap: 0.15em;
+  }
+
+  .mascot-profile-row dt {
+    font-size: 0.8125rem;
+    color: var(--mascot-fg-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. 减少动画偏好 / Reduced Motion（可访问性）
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .mascot-hero,
+  .mascot-section {
+    animation: none;
+    opacity: 1;
+  }
+
+  .mascot-gallery-item,
+  .mascot-profile-data,
+  .mascot-portrait-frame,
+  .mascot-scratch {
+    transition: none;
+  }
+
+  .mascot-gallery-item:hover,
+  .mascot-portrait-frame:hover {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. 打印样式 / Print
+   -------------------------------------------------------------------------- */
+@media print {
+  .mascot-article {
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  .mascot-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .mascot-gallery-item {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .mascot-hero-inner {
+    background: #f5f5f5;
+    border-color: #ccc;
+  }
+
+  .mascot-scratch {
+    background: transparent;
+    color: inherit;
+    border: 1px dashed #999;
+  }
+
+  .mascot-divider {
+    display: none;
+  }
+}
