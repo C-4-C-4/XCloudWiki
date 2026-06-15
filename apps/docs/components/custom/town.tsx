@@ -3,6 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { User, MapPin, Users, TreePine, Star, Calendar, Terminal, Copy, Check, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 // 小镇数据接口
 interface TownData {
   name: string;
@@ -248,7 +251,7 @@ export function TownCard({ name }: { name: string }) {
             {town.images.map((imgUrl, i) => (
               <img
                 key={i}
-                src={imgUrl}
+                src={`${basePath}${imgUrl}`}
                 alt={`${town.name}-${i}`}
                 className={`absolute inset-0 w-full h-full object-cover select-none transition-all duration-500 ease-in-out !m-0 ${
                   currentImgIdx === i

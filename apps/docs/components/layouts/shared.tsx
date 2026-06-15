@@ -6,7 +6,7 @@ import Logo from '@/public/logo.png';
 export const linkItems: LinkItemType[] = [
   {
     icon: <AlbumIcon />,
-    text: '时间线',
+    text: '日志',
     url: '/blog',
     active: 'nested-url',
   },

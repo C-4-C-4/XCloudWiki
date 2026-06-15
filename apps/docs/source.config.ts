@@ -141,6 +141,7 @@ export const blog = defineCollections({
   schema: pageSchema.extend({
     author: z.string(),
     date: z.iso.date().or(z.date()),
+    type: z.enum(['wiki', 'server']).default('wiki'),
   }),
   async: true,
   async mdxOptions(environment) {

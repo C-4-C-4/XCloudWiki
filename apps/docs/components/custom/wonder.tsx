@@ -3,6 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Wrench, Crown, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 // 奇观数据接口
 interface WonderData {
   name: string;
@@ -187,7 +190,7 @@ export function WonderCard({ name }: { name: string }) {
             {wonder.images.map((imgUrl, i) => (
               <img
                 key={i}
-                src={imgUrl}
+                src={`${basePath}${imgUrl}`}
                 alt={`${wonder.name}-${i}`}
                 className={`absolute inset-0 w-full h-full object-cover select-none transition-all duration-500 ease-in-out !m-0 ${
                   currentImgIdx === i

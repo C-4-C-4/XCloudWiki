@@ -833,7 +833,7 @@ export function ArticleServerStatus({ ...props }: ComponentProps<'div'>) {
 
           {/* 数据面板 */}
           {!loading && data && !error && (
-            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[108px]">
               <div className="flex flex-col items-center justify-center py-1 px-2 gap-0.5">
                 <Users className="text-brand size-4" />
                 <span className="font-bold text-fd-foreground text-lg">{data.players}</span>
@@ -860,7 +860,7 @@ export function ArticleServerStatus({ ...props }: ComponentProps<'div'>) {
 
           {/* 加载中骨架屏 */}
           {loading && (
-            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[108px]">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="flex flex-col items-center justify-center animate-pulse py-1 px-2 gap-1">
                   <div className="rounded bg-fd-muted-foreground/20 size-4" />
@@ -874,7 +874,7 @@ export function ArticleServerStatus({ ...props }: ComponentProps<'div'>) {
 
           {/* 离线占位面板 */}
           {!loading && (error || !data) && (
-            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[96px]">
+            <div className="grid grid-cols-3 gap-0 divide-x divide-fd-border h-[108px]">
               <div className="flex flex-col items-center justify-center text-fd-muted-foreground/50 py-1 px-2 gap-0.5">
                 <Users className="size-4" />
                 <span className="font-bold text-lg">--</span>
