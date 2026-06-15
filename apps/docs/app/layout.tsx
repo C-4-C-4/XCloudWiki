@@ -9,6 +9,9 @@ import { TreeContextProvider } from 'fumadocs-ui/contexts/tree';
 import { source } from '@/lib/source';
 import { NextProvider } from 'fumadocs-core/framework/next';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 export const metadata = createMetadata({
   title: {
     template: '%s | XCloudWiki',
@@ -17,7 +20,7 @@ export const metadata = createMetadata({
   description: 'The React.js documentation framework.',
   metadataBase: baseUrl,
   icons: {
-    icon: '/logo.png',
+    icon: `${basePath}/logo.png`,
   },
 });
 

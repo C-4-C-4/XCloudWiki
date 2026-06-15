@@ -10,11 +10,15 @@ import { getMDXComponents } from '@/components/mdx';
 import path from 'node:path';
 import { cn } from '@/lib/cn';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 const avatarMap: Record<string, string> = {
   'CCCC4444': '/avatars/CCCC4444.jpg',
   'Love_Story': '/avatars/LoveStory.jpg',
   'LoveStory': '/avatars/LoveStory.jpg',
   'Sa1nt_Hal0': '/avatars/Sa1nt_Hal0.jpg',
+  'sa1nt_hal0': '/avatars/Sa1nt_Hal0.jpg',
   'StyleYM': '/avatars/StyleYM.jpg',
   'Yep': '/avatars/Yep.jpg',
   'abnormalclarke': '/avatars/abnormalclarke.jpg',
@@ -27,14 +31,19 @@ const avatarMap: Record<string, string> = {
 };
 
 function getAvatar(author: string) {
-  if (avatarMap[author]) return avatarMap[author];
-  const clean = author.replace(/_/g, '').toLowerCase();
-  for (const [key, value] of Object.entries(avatarMap)) {
-    if (key.replace(/_/g, '').toLowerCase() === clean) {
-      return value;
+  let avatarPath = '/avatars/Yep.jpg';
+  if (avatarMap[author]) {
+    avatarPath = avatarMap[author];
+  } else {
+    const clean = author.replace(/_/g, '').toLowerCase();
+    for (const [key, value] of Object.entries(avatarMap)) {
+      if (key.replace(/_/g, '').toLowerCase() === clean) {
+        avatarPath = value;
+        break;
+      }
     }
   }
-  return '/avatars/Yep.jpg';
+  return avatarPath.startsWith('/') ? `${basePath}${avatarPath}` : avatarPath;
 }
 
 export default async function Page(props: PageProps<'/blog/[slug]'>) {

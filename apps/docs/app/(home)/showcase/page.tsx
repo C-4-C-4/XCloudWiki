@@ -23,6 +23,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import Design from './design.png';
 import initialStores from './stores.json';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 interface StoreItem {
   id: string;
   name: string;
@@ -173,7 +176,7 @@ export default function Showcase() {
 
       {/* 头部 Hero 展示区域 */}
       <div className="relative overflow-hidden border border-dashed rounded-2xl p-6 md:p-8 bg-neutral-50/50 dark:bg-neutral-900/30 backdrop-blur-sm mb-12 pb-16 md:pb-20">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="flex-1 w-full">
             <h1 className="mb-4 text-3xl md:text-4xl font-bold tracking-tight">商会</h1>
             <p className="text-fd-muted-foreground text-sm md:text-base max-w-lg leading-relaxed mb-6">
@@ -393,7 +396,7 @@ export default function Showcase() {
                     {/* 卡片头部大图 */}
                     <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-800/60">
                       <Image
-                        src={store.image}
+                        src={store.image.startsWith('/') ? `${basePath}${store.image}` : store.image}
                         alt={store.name}
                         fill
                         className="object-cover"
