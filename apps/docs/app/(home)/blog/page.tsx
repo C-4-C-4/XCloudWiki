@@ -3,17 +3,25 @@ import { blog } from '@/lib/source';
 import { PathUtils } from 'fumadocs-core/source';
 import BannerImage from './banner.png';
 import Image from 'next/image';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata({
+  title: '时间线',
+  description: '记录闲云服务器与Wiki事件',
+});
 
 function getName(path: string) {
   return PathUtils.basename(path, PathUtils.extname(path));
 }
 
 export default function Page() {
-  const posts = [...blog.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? getName(b.path)).getTime() -
-      new Date(a.data.date ?? getName(a.path)).getTime(),
-  );
+  const posts = [...blog.getPages()]
+    .filter((post) => post.slugs[0] !== 'placeholder')
+    .sort(
+      (a, b) =>
+        new Date(b.data.date ?? getName(b.path)).getTime() -
+        new Date(a.data.date ?? getName(a.path)).getTime(),
+    );
 
   return (
     <main className="mx-auto w-full max-w-page px-4 pb-12 md:py-12">
@@ -25,10 +33,10 @@ export default function Page() {
           className="absolute inset-0 size-full -z-1 object-cover"
         />
         <h1 className="mb-4 text-3xl text-landing-foreground font-mono font-medium">
-          Fumadocs Blog
+          时间线
         </h1>
         <p className="text-sm font-mono text-landing-foreground-200">
-          Latest announcements of Fumadocs.
+          记录闲云服务器与Wiki事件
         </p>
       </div>
       <div className="grid grid-cols-1 gap-2 md:grid-cols-3 xl:grid-cols-4">

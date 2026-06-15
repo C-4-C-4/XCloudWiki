@@ -92,6 +92,6 @@ export async function getSponsors(owner: string): Promise<Sponsor[]> {
     );
   } catch (error) {
     console.error('Error fetching sponsors:', error);
-    throw error;
+    return [];
   }
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { cva } from 'class-variance-authority';
 import {
   BatteryChargingIcon,
+  ChevronDown,
   Coins,
   FileIcon,
   FileTextIcon,
@@ -126,6 +127,10 @@ export default function Page() {
               关于我们
             </a>
           </div>
+        </div>
+        {/* 仅在移动端显示的向下箭头提示 */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center justify-center md:hidden animate-bounce text-brand bg-brand/10 p-2 rounded-full border border-brand/20 z-10">
+          <ChevronDown className="size-5" />
         </div>
       </div>
       <div className="grid grid-cols-1 gap-10 mt-12 px-6 mx-auto w-full max-w-[1400px] md:px-12 lg:grid-cols-2 lg:mt-20">

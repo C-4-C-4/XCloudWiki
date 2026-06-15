@@ -24,7 +24,7 @@ export function createMetadata(override: Metadata): Metadata {
       types: {
         'application/rss+xml': [
           {
-            title: 'Fumadocs Blog',
+            title: '时间线',
             url: 'https://fumadocs.dev/blog/rss.xml',
           },
         ],

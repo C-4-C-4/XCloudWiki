@@ -9,7 +9,7 @@ import {
 import Link from 'fumadocs-core/link';
 import Image from 'next/image';
 import Preview from '@/public/banner.png';
-import { Book, ComponentIcon, Pencil, PlusIcon, Server } from 'lucide-react';
+import { Book, ComponentIcon, Pencil, PlusIcon, Server, Users } from 'lucide-react';
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
@@ -22,14 +22,14 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           text: '文档',
           items: [
             {
-              text: '基础信息',
-              url: '/docs/BasicInfo',
+              text: '文档',
+              url: '/docs',
               icon: <Book />,
             },
             {
-              text: '新手教程',
-              url: '/docs/BeginnersGuide',
-              icon: <ComponentIcon />,
+              text: '其他',
+              url: '/docs/Other/InvestitureoftheGods',
+              icon: <PlusIcon />,
             },
           ],
         },
@@ -75,11 +75,11 @@ export default function Layout({ children }: LayoutProps<'/'>) {
                   </p>
                 </NavbarMenuLink>
 
-                <NavbarMenuLink href="/docs/Tools/Changeskin" className="lg:col-start-3 lg:row-start-1">
-                  <Pencil className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
-                  <p className="font-medium">工具</p>
+                <NavbarMenuLink href="/docs/PlayerCommunity/Town" className="lg:col-start-3 lg:row-start-1">
+                  <Users className="bg-fd-primary text-fd-primary-foreground p-1 mb-2 rounded-md" />
+                  <p className="font-medium">玩家社区</p>
                   <p className="text-fd-muted-foreground text-sm">
-                    实用工具集合
+                    玩家社区内容，了解社区动态与玩家互动
                   </p>
                 </NavbarMenuLink>
 

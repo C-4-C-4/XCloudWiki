@@ -1,284 +1,263 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Crown, Shield, PenTool, Sparkles, Cpu, BookOpen, Users } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/cn';
-import { getSponsors, type Sponsor } from '@/lib/get-sponsors';
-import { owner } from '@/lib/github-constants';
-import { organizationAsUserSponsors } from '@/app/(home)/sponsors/data';
-import { HeartIcon } from 'lucide-react';
+import { managementTeam, wikiEditors, type TeamMember } from './data';
 
-const tiers = [
-  {
-    name: 'Platinum Sponsor',
-    min: 1000,
-    color: 'text-purple-600 dark:text-purple-400',
-  },
-  {
-    name: 'Golden Sponsor',
-    min: 225,
-    color: 'text-yellow-600 dark:text-yellow-400',
-  },
-  {
-    name: 'Silver Sponsor',
-    min: 128,
-    color: 'text-fd-muted-foreground',
-  },
-];
+// 页面 SEO 优化
+export const metadata = {
+  title: '关于我们 - XCloud Wiki',
+  description: '闲云 Wiki 制作组成员与内容贡献者荣誉殿堂。致敬每一位为闲云服务器发展倾注心血与热爱的建设者。',
+};
 
-export const revalidate = 3600;
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
 
-function mapSponsors(result: Sponsor[]): (Sponsor & { logo?: ReactNode })[] {
-  return result.flatMap((v) => {
-    const orgs = organizationAsUserSponsors.filter((entity) => entity.asUser === v.login);
-
-    if (orgs.length > 0) {
-      return orgs.map((org) => ({
-        ...v,
-        __typename: 'Organization',
-        login: org.github,
-        name: org.label,
-        websiteUrl: org.url,
-        logo: org.logo,
-      }));
-    }
-
-    return v;
-  });
+function getIcon(iconName: string) {
+  switch (iconName) {
+    case 'Crown':
+      return <Crown className="size-4.5" />;
+    case 'Shield':
+      return <Shield className="size-4.5" />;
+    case 'PenTool':
+      return <PenTool className="size-4.5" />;
+    case 'Sparkles':
+      return <Sparkles className="size-4.5" />;
+    case 'Cpu':
+      return <Cpu className="size-4.5" />;
+    default:
+      return <Sparkles className="size-4.5" />;
+  }
 }
 
-export default async function Page() {
-  const all = await getSponsors(owner);
-  const sponsors = mapSponsors(all.filter((v) => v.isActive));
-  const pastSponsors = mapSponsors(all.filter((v) => !v.isActive));
-
+export default function Page() {
   return (
-    <main className="w-full max-w-page mx-auto flex flex-col items-center px-4 py-16 text-center z-2">
-      <Image
-        src="/circuit_2.svg"
-        alt="circuit"
-        width="1231"
-        height="536"
-        className="absolute top-16 z-[-1] w-full max-w-[1200px] opacity-0 dark:opacity-20"
-      />
-      <h1 className="text-4xl font-semibold">Support Fumadocs</h1>
-      <p className="mt-4 text-sm">
-        Support the development work of Fumadocs. Fumadocs is fully open source, your sponsorship
-        means a lot.
-      </p>
-      <a
-        href="https://github.com/sponsors/fuma-nama"
-        rel="noreferrer noopener"
-        target="_blank"
-        className={cn(
-          buttonVariants({
-            className: 'group rounded-full mt-6',
-          }),
-        )}
-      >
-        Sponsor
-        <span className="w-0 transition-[width] overflow-hidden group-hover:w-6">
-          <HeartIcon className="text-pink-200 ms-auto fill-current size-4 dark:text-red-400" />
-        </span>
-      </a>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" className="max-w-[600px]">
-        <defs>
-          <linearGradient id="circuit-1-fill" x1="0" y1="0" x2="0.939104" y2="0.786487">
-            <stop offset="0%" stopColor="rgb(50,50,60)" />
-            <stop offset="100%" stopColor="rgb(30,30,38)" />
-          </linearGradient>
-          <linearGradient id="circuit-1-energy" x2="0" y2="1">
-            <stop offset="0%" stopColor="transparent" />
-            <stop offset="60%" stopColor="rgb(200,100,255)" />
-          </linearGradient>
-          <linearGradient id="circuit-1-x-line" x1="0" y1="0" y2="0" x2="1">
-            <stop offset="40%" stopColor="rgb(50,50,60)" />
-            <stop offset="100%" stopColor="transparent" />
-          </linearGradient>
-          <linearGradient id="circuit-1-x-energy" x1="0" y1="0" y2="0" x2="1">
-            <stop offset="0%" stopColor="transparent" />
-            <stop offset="60%" stopColor="rgba(140,180,255)" />
-          </linearGradient>
-        </defs>
-        <line
-          x1="300"
-          y1="0"
-          x2="300"
-          y2="99"
-          fill="none"
-          stroke="rgb(50,50,60)"
-          strokeWidth="2"
-          strokeLinecap="square"
-        />
-        <rect
-          x="299"
-          y="0"
-          width="2"
-          height="20"
-          fill="url(#circuit-1-energy)"
-          style={{
-            animation: 'circuit_1 infinite linear 3s',
-          }}
-        />
-        <rect
-          width="120"
-          height="85"
-          rx="6"
-          ry="6"
-          x="240"
-          y="99"
-          fill="url(#circuit-1-fill)"
-          stroke="#3f4c59"
-          strokeWidth="0.5"
-        />
-        {new Array(3).fill(null).map((_, i) => (
-          <Fragment key={i}>
-            <rect
-              x="368"
-              y={120 + i * 20 + 5 / 4}
-              width="232"
-              height="2"
-              fill="url(#circuit-1-x-line)"
-            />
-            <rect
-              x="368"
-              y={120 + i * 20 + 5 / 4}
-              width="20"
-              height="2"
-              fill="url(#circuit-1-x-energy)"
-              style={{
-                opacity: 0,
-                animation: 'circuit_1_x_energy infinite linear 6s',
-                animationDelay: `${(Math.pow(2, i) * 360).toString()}ms`,
-              }}
-            />
-            <rect x="360" y={120 + i * 20} width="8" height="5" fill="rgb(100,100,120)" />
-          </Fragment>
-        ))}
+    <main className="relative w-full min-h-screen overflow-hidden bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 py-20 px-4 md:px-8">
+      {/* 嵌入的微动画和高级 CSS 样式 */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes float-logo {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 0.35; transform: scale(1.05); }
+        }
+        @keyframes slow-rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .animate-float {
+          animation: float-logo 6s ease-in-out infinite;
+        }
+        .animate-glow-slow-1 {
+          animation: pulse-glow 8s ease-in-out infinite;
+        }
+        .animate-glow-slow-2 {
+          animation: pulse-glow 12s ease-in-out infinite;
+          animation-delay: 2s;
+        }
+        .animate-rotate-slow {
+          animation: slow-rotate 40s linear infinite;
+        }
+        
+        /* 扫光效果 */
+        .member-card {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .member-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -150%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent
+          );
+          transform: skewX(-25deg);
+          transition: all 0.75s ease;
+          pointer-events: none;
+          z-index: 10;
+        }
+        .member-card:hover::before {
+          left: 150%;
+        }
+        
+        /* 网格背景线 */
+        .grid-pattern {
+          background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
+        }
+        .dark .grid-pattern {
+          background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.2px, transparent 1.2px);
+        }
+      `}} />
 
-        <circle
-          r="4"
-          cx="348"
-          cy="114"
-          fill="rgb(255,140,255)"
-          style={{
-            filter: 'drop-shadow(2px 0px 8px rgb(255, 100, 255))',
-          }}
-        />
-        <text dx="256" dy="147.793041" fontSize="18" fontWeight="400" fill="rgba(70,70,86,0.9)">
-          Fumadocs
-        </text>
-      </svg>
-      <h2 className="mt-12 font-mono text-xs mb-7">Organization Sponsors</h2>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {sponsors
-          .filter((sponsor) => sponsor.__typename === 'Organization')
-          .map((sponsor) => {
-            const tier = tiers.find((tier) => sponsor.tier.monthlyPriceInDollars >= tier.min);
-
-            return (
-              <a
-                key={sponsor.name}
-                href={getSponsorHref(sponsor.login, sponsor.websiteUrl)}
-                rel="noreferrer noopener"
-                target="_blank"
-                className="flex flex-col items-start"
-              >
-                <div className="inline-flex h-14 items-center gap-2.5 font-medium text-xl">
-                  {sponsor.logo ?? (
-                    <>
-                      <Image
-                        alt="avatar"
-                        src={sponsor.avatarUrl}
-                        unoptimized
-                        width="38"
-                        height="38"
-                        className="rounded-lg"
-                      />
-                      <p>{sponsor.name}</p>
-                    </>
-                  )}
-                </div>
-                {tier && <p className={cn('text-xs', tier.color)}>{tier.name}</p>}
-              </a>
-            );
-          })}
-      </div>
-      <h2 className="mt-12 font-mono text-xs mb-7">Open Source Program</h2>
-      <div className="flex flex-row gap-4 items-center">
-        <a href="https://vercel.com" rel="noreferrer noopener">
-          <svg aria-label="Vercel logotype" role="img" viewBox="0 0 283 64" className="w-32 h-auto">
-            <path
-              d="M141.68 16.25c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm117.14-14.5c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm-39.03 3.5c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9v-46h9zM37.59.25l36.95 64H.64l36.95-64zm92.38 5l-27.71 48-27.71-48h10.39l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10v14.8h-9v-34h9v9.2c0-5.08 5.91-9.2 13.2-9.2z"
-              fill="currentColor"
-            />
-          </svg>
-        </a>
+      {/* 极光渐变背景 */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* 左上角极光 */}
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-brand/30 to-violet-500/20 blur-[130px] rounded-full opacity-20 dark:opacity-50 animate-glow-slow-1 animate-rotate-slow" />
+        {/* 右下角极光 */}
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gradient-to-tr from-rose-500/20 to-amber-500/30 blur-[130px] rounded-full opacity-15 dark:opacity-40 animate-glow-slow-2 animate-rotate-slow" />
+        {/* 顶部放射光芒 */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[350px] bg-gradient-to-b from-brand/5 dark:from-brand/10 via-transparent to-transparent blur-3xl opacity-40 dark:opacity-60" />
+        {/* 点状网格背景 */}
+        <div className="absolute inset-0 grid-pattern opacity-60" />
       </div>
 
-      <h2 className="mt-12 font-mono text-xs">Individual Sponsors</h2>
-      <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {sponsors
-          .filter((sponsor) => sponsor.__typename === 'User')
-          .map((sponsor) => (
-            <a
-              key={sponsor.name}
-              href={getSponsorHref(sponsor.login, sponsor.websiteUrl)}
-              rel="noreferrer noopener"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl p-3 text-xs font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
+        
+        {/* 头部标题区域 */}
+        <div className="text-center mb-20 max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/20 bg-brand/5 backdrop-blur-md mb-6 animate-float">
+            <Users className="size-4 text-brand" />
+            <span className="text-xs font-semibold tracking-wider uppercase text-brand">About Us & Staff</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-600 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-400">
+            制作组与内容贡献者
+          </h1>
+          
+          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-lg leading-relaxed mb-8">
+            闲云 Wiki 的诞生与繁荣，离不开每一位倾注心血的创作者与建设者。
+            特设立此荣誉之殿，感恩并铭记为本站点建设、数据整理及系统维护付出智慧的全体成员。
+          </p>
+
+          <div className="flex gap-4 justify-center">
+            <Link
+              href="/docs"
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'rounded-full border-neutral-200 bg-neutral-50/50 text-neutral-800 hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/50 backdrop-blur-sm dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:text-white transition-all duration-300'
+                })
+              )}
             >
-              <Image
-                alt="avatar"
-                src={sponsor.avatarUrl!}
-                unoptimized
-                width="30"
-                height="30"
-                className="rounded-lg"
-              />
-              {sponsor.name}
-            </a>
-          ))}
-      </div>
+              <BookOpen className="size-4 mr-2" />
+              进入文档中心
+            </Link>
+          </div>
+        </div>
 
-      {pastSponsors.length > 0 && (
-        <>
-          <h2 className="mt-12 font-mono text-xs mb-7">Past Sponsors</h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {pastSponsors.map((sponsor) => (
-              <a
-                key={sponsor.login}
-                href={getSponsorHref(sponsor.login, sponsor.websiteUrl)}
-                rel="noreferrer noopener"
-                target="_blank"
-                className="inline-flex items-center gap-2 rounded-xl p-3 text-xs text-start transition-colors text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground"
-              >
-                {sponsor.logo ?? (
-                  <Image
-                    alt="avatar"
-                    src={sponsor.avatarUrl}
-                    unoptimized
-                    width="30"
-                    height="30"
-                    className="rounded-lg opacity-70"
-                  />
-                )}
-                <p>
-                  <span className="font-medium">{sponsor.name}</span>
-                  <br />
-                  <code>${sponsor.tier.monthlyPriceInDollars}</code>{' '}
-                  {sponsor.isOneTimePayment ? 'one-time' : 'monthly'}
-                </p>
-              </a>
+        {/* 板块一：核心管理团队 */}
+        <div className="w-full mb-24">
+          <div className="flex items-center gap-3 mb-10 border-b border-neutral-200 dark:border-neutral-900 pb-4">
+            <div className="p-2 rounded-lg bg-red-500/10 text-red-500 border border-red-500/20">
+              <Crown className="size-5" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide">核心管理团队</h2>
+              <p className="text-xs text-neutral-500 mt-1">负责服务器架构设计、核心技术维护及站点总体运营决策</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {managementTeam.map((member) => (
+              <MemberCard key={member.name} member={member} />
             ))}
           </div>
-        </>
-      )}
+        </div>
+
+        {/* 板块二：维基内容编辑者 */}
+        <div className="w-full mb-16">
+          <div className="flex items-center gap-3 mb-10 border-b border-neutral-200 dark:border-neutral-900 pb-4">
+            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+              <Sparkles className="size-5" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide">内容贡献者</h2>
+              <p className="text-xs text-neutral-500 mt-1">热衷于文档编写、内容修正与玩家攻略整理的优秀贡献者</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {wikiEditors.map((member) => (
+              <MemberCard key={member.name} member={member} />
+            ))}
+          </div>
+        </div>
+
+        {/* 底部致谢与声明 */}
+        <div className="w-full text-center py-10 border-t border-neutral-200 dark:border-neutral-900 mt-10">
+          <p className="text-xs text-neutral-500 dark:text-neutral-600 font-mono">
+            &copy; {new Date().getFullYear()} XCloud Wiki &bull; 致敬热爱 &bull; 再次感谢所有默默付出的伙伴们！
+          </p>
+        </div>
+
+      </div>
     </main>
   );
 }
 
-function getSponsorHref(login: string, url?: string): string {
-  if (url) return url.startsWith('http') ? url : `https://${url}`;
+function MemberCard({ member }: { member: TeamMember }) {
+  const isInitial = member.avatar.length === 1;
+  const isRelativePath = member.avatar.startsWith('/');
+  const avatarSrc = isRelativePath 
+    ? (isProduction ? `${basePath}${member.avatar}` : member.avatar)
+    : `${basePath}/wiki-img/member/${member.avatar}.jpg`;
 
-  return `https://github.com/${login}`;
+  return (
+    <div className={cn(
+      "member-card group relative flex flex-col items-center text-center p-6 md:p-8 rounded-2xl",
+      "bg-neutral-50/50 border border-neutral-200 backdrop-blur-md dark:bg-neutral-900/30 dark:border-neutral-900",
+      "hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300",
+      member.borderColor
+    )}>
+      {/* 背景悬停发光斑点 */}
+      <div className={cn(
+        "absolute inset-0 -z-10 bg-gradient-to-br blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+        member.glowColor
+      )} />
+
+      {/* 头像容器 */}
+      <div className="relative mb-6">
+        {/* 外圈装饰呼吸灯效果 */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand to-violet-500 blur-sm opacity-40 group-hover:scale-105 transition-all duration-500" />
+        <div className="relative size-24 md:size-28 rounded-full border-2 border-neutral-200 dark:border-neutral-800/80 overflow-hidden bg-white dark:bg-neutral-950 p-1 group-hover:border-brand/40 transition-all duration-500 flex items-center justify-center">
+          {isInitial ? (
+            <span className="text-4xl font-bold text-neutral-400 dark:text-neutral-500 font-mono select-none">{member.avatar}</span>
+          ) : (
+            <Image
+              src={avatarSrc}
+              alt={member.name}
+              width={110}
+              height={110}
+              className="rounded-full object-cover size-full group-hover:scale-110 transition-transform duration-500"
+            />
+          )}
+        </div>
+      </div>
+
+      {/* 徽章 */}
+      <div className={cn(
+        "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border mb-4 shadow-sm",
+        member.badgeBg,
+        member.badgeText
+      )}>
+        {getIcon(member.iconName)}
+        <span>{member.badge}</span>
+      </div>
+
+      {/* 姓名与角色 */}
+      <h3 className="text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 group-hover:text-brand dark:group-hover:text-white transition-colors">
+        {member.name}
+      </h3>
+      <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-1 mb-4 font-medium uppercase tracking-wider">
+        {member.role}
+      </p>
+
+      {/* 贡献描述 */}
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed text-center group-hover:text-neutral-800 dark:group-hover:text-neutral-300 transition-colors">
+        {member.description}
+      </p>
+    </div>
+  );
 }

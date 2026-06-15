@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
 export function AuthorAvatar({ name }: { name: string }) {
-  const avatarSrc = `/wiki-img/member/${name}`;
+  const avatarSrc = `${basePath}/wiki-img/member/${name}`;
 
   return (
     <div className="relative size-6 shrink-0 overflow-hidden rounded-full bg-fd-muted">
@@ -30,3 +33,4 @@ export function AuthorAvatar({ name }: { name: string }) {
     </div>
   );
 }
+

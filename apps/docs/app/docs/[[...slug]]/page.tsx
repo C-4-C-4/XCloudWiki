@@ -58,7 +58,7 @@ const categories = [
     title: '玩家社区',
     description: '玩家社区内容，了解社区动态与玩家互动',
     icon: <Users />,
-    href: '/docs/PlayerCommunity/PlayerCommunity',
+    href: '/docs/PlayerCommunity/Town',
   },
   {
     title: '工具',
@@ -311,5 +311,6 @@ export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): P
 }
 
 export function generateStaticParams() {
-  return source.generateParams();
+  return [...source.generateParams(), { slug: [] }];
 }
+
