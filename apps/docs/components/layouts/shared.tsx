@@ -1,4 +1,4 @@
-import { AlbumIcon, Heart, LayoutTemplate, Grid } from 'lucide-react';
+import { AlbumIcon, Heart, LayoutTemplate, Images, Store } from 'lucide-react';
 import Image from 'next/image';
 import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import Logo from '@/public/logo.png';
@@ -11,15 +11,15 @@ export const linkItems: LinkItemType[] = [
     active: 'nested-url',
   },
   {
-    text: '画廊',
-    url: '/gallery',
-    icon: <LayoutTemplate />,
-    active: 'nested-url',
+    text: '商会',
+    url: '/showcase',
+    icon: <Store />,
+    active: 'url',
   },
   {
-    text: '展示',
-    url: '/showcase',
-    icon: <Grid />,
+    text: '画廊',
+    url: '/gallery',
+    icon: <Images />,
     active: 'url',
   },
   {
@@ -27,6 +27,7 @@ export const linkItems: LinkItemType[] = [
     url: '/sponsors',
     icon: <Heart />,
   },
+
   {
     type: 'icon',
     url: 'https://github.com/fuma-nama/fumadocs',

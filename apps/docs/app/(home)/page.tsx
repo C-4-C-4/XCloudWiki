@@ -28,6 +28,15 @@ import {
 } from '@/app/(home)/page.client';
 import ShadcnImage from './shadcn.png';
 import ContributorCounter from '@/components/contributor-count';
+
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
+const getImagePath = (src: string) => {
+  if (!src) return '';
+  if (src.startsWith('http://') || src.startsWith('https://')) return src;
+  return `${basePath}${src}`;
+};
 import { owner, repo } from '@/lib/github-constants';
 import CLIImage from './cli.png';
 import Bg2Image from './bg-2.png';
@@ -287,7 +296,7 @@ function Feedback() {
         <p className="mb-6">
           闲云中的各种有趣的瞬间
         </p>
-        <Link href="/showcase" className={cn(buttonVariants())}>
+        <Link href="/gallery" className={cn(buttonVariants())}>
           画廊
         </Link>
       </div>
@@ -310,7 +319,7 @@ function Feedback() {
 
               <div className="mt-auto flex flex-row items-center gap-2 pt-4">
                 <Image
-                  src={item.avatar}
+                  src={getImagePath(item.avatar)}
                   alt="avatar"
                   width="32"
                   height="32"
