@@ -44,7 +44,7 @@ jobs:
         run: pnpm --filter docs build
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_BASE_URL: https://c-4-c-4.github.io/XCloudWiki
+          NEXT_PUBLIC_BASE_URL: https://wiki.xcloudx.top
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

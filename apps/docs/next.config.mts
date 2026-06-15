@@ -12,7 +12,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 const config: NextConfig = {
   // GitHub Pages 静态导出配置（仅生产环境）
   ...(isProduction ? { output: 'export' as const } : {}),
-  basePath: isProduction ? '/XCloudWiki' : '',
+  // 使用自定义域名 wiki.xcloudx.top，无需 basePath
+  basePath: '',
   // GitHub Pages 不支持图片优化 API
   images: {
     unoptimized: true,

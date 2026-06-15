@@ -1,24 +1,126 @@
+# XCloudWiki（闲云维基）
+
 ![banner](./apps/docs/public/banner.png)
 
-The framework for building documentation websites in any React.js frameworks.
+> 闲云服务器的官方文档与百科全书，为玩家提供全面的游戏指南、规则说明与社区资源。
 
-**Officially Supported:**
+## 项目简介
 
-- Next.js
-- Vite: Tanstack Start, Waku, React Router
+XCloudWiki 是基于 [Fumadocs](https://fumadocs.dev) 框架构建的 **闲云 Minecraft 服务器官方文档站**。本站采用现代化的文档架构，提供清晰易读的页面布局、强大的搜索功能以及丰富的多媒体内容展示。
 
-📘 Learn More: [Documentation](https://fumadocs.dev).
+## 技术栈
 
-## Compatibility
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Next.js | 16.x | React 全栈框架 |
+| React | 19.x | UI 库 |
+| Fumadocs | latest | 文档站点框架 |
+| Tailwind CSS | 4.x | 样式方案 |
+| MDX | - | 富文本内容格式 |
+| TypeScript | 6.x | 类型安全 |
 
-All packages are **ESM only**.
+## 文档内容
 
-## Sticker
+### 基础信息 (BasicInfo)
+- **服务器规则** - 服规与行为准则
+- **惩罚规则** - 违规处理机制
+- **头衔称号** - 玩家等级与荣誉称号体系（PLAYER / VIP / MVP / PRO / HERO）
+- **服务器活动** - 定期活动公告
+- **吉祥物** - 服务器 IP 形象介绍
 
-![logo](./documents/logo.png)
+### 新手指南 (BeginnersGuide)
+- **入门指南** - 新玩家快速上手教程
+- **命令功能** - 常用指令详解
+- **NPC 交互** - NPC 系统说明
+- **领地与地标** - 圈地与地标机制
+- **旅行提示** - 地图导航与传送技巧
 
-Welcome to print it out :D
+### 扩展游戏玩法 (Expandedgameplay)
+- **铁匠系统** - 装备强化与打造
+- **职业系统** - 多职业选择与发展
+- **附魔书扩展** - 自定义附魔机制
+- **钓鱼系统** - 钓鱼玩法与稀有物品
+- **小镇系统** - 城镇建设与管理
+- **星露谷作物** - 农业种植系统
+- **世界 Boss** - 团队挑战副本
 
-## Contributions
+### 玩家社区 (PlayerCommunity)
+- **小镇展示** - 玩家城镇作品集
+- **奇迹建筑** - 精选建筑欣赏
 
-Make sure to read the [Contributing Guide](/.github/contributing.md) before submitting a pull request.
+### 工具 (Tools)
+- **计算器** - 游戏数据计算工具
+- **换肤工具** - 皮肤更换指南
+- **投影工具** - 建筑辅助工具
+
+### 其他 (Other)
+- **关于我们** - 团队与联系方式
+- **封神榜** - 荣誉榜单
+- **排行榜** - 数据统计排行
+- **时间线维护** - 版本更新记录
+
+## 特色功能
+
+- 🎨 **精美 UI** - 基于 shadcn/ui 的现代化界面设计
+- 🔍 **全文搜索** - Orama 驱动的快速搜索
+- 🌐 **多端适配** - 响应式设计，支持移动端访问
+- 📸 **画廊展示** - 玩家作品与截图集锦
+- 🛒 **商店系统** - 服务器内购商品展示
+- 📚 **API 文档** - OpenAPI / AsyncAPI 规范支持
+- 🤖 **AI 助手** - 集成 LLM 智能问答
+
+## 快速开始
+
+### 环境要求
+
+- Node.js >= 24.14.0
+- pnpm >= 11.1.0
+
+### 安装依赖
+
+```bash
+pnpm install
+```
+
+### 开发模式
+
+```bash
+pnpm dev
+```
+
+访问 http://localhost:3000 查看文档站点。
+
+### 构建生产版本
+
+```bash
+pnpm build
+```
+
+## 项目结构
+
+```
+XCloudWiki/
+├── apps/docs/           # 主文档应用 (Next.js)
+│   ├── app/             # 页面路由
+│   ├── components/      # 组件库
+│   ├── content/docs/    # MDX 文档内容
+│   ├── lib/             # 工具函数
+│   └── public/          # 静态资源
+├── packages/            # 共享包
+├── examples/            # 示例项目
+└── README.md
+```
+
+## 贡献指南
+
+欢迎提交 Issue 和 Pull Request！请先阅读[贡献指南](/.github/contributing.md)。
+
+## 许可证
+
+本项目采用开源许可证，详见 [LICENSE](./LICENSE) 文件。
+
+---
+
+**服务器名称**: 闲云 (XCloud)
+**文档维护**: 社区贡献者
+**最后更新**: 2026 年 6 月

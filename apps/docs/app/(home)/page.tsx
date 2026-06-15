@@ -607,7 +607,7 @@ function OpenSource() {
             文档
           </Link>
           <a
-            href="https://github.com/fuma-nama/fumadocs"
+            href="https://github.com/C-4-C-4/XCloudWiki"
             rel="noreferrer noopener"
             className={cn(
               buttonVariants({

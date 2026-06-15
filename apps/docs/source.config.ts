@@ -175,8 +175,8 @@ export const blog = defineCollections({
 });
 
 function rehypeImgPrefix(): Transformer<Root, Root> {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const basePath = isProduction ? '/XCloudWiki' : '';
+  // 使用自定义域名，无需 basePath 前缀
+  const basePath = '';
 
   return (tree) => {
     if (!basePath) return;

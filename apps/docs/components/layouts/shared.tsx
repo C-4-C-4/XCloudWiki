@@ -30,7 +30,7 @@ export const linkItems: LinkItemType[] = [
 
   {
     type: 'icon',
-    url: 'https://github.com/fuma-nama/fumadocs',
+    url: 'https://github.com/C-4-C-4/XCloudWiki',
     label: 'github',
     text: 'Github',
     icon: (
