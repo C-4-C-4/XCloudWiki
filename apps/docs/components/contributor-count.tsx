@@ -2,8 +2,7 @@ import type { HTMLAttributes } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/cn';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 const getImagePath = (src: string) => {
   if (!src) return '';

@@ -30,8 +30,7 @@ import {
 import ShadcnImage from './shadcn.png';
 import ContributorCounter from '@/components/contributor-count';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 const getImagePath = (src: string) => {
   if (!src) return '';

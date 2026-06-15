@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { User, MapPin, Users, TreePine, Star, Calendar, Terminal, Copy, Check, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 // 小镇数据接口
 interface TownData {

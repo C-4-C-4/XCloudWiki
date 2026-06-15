@@ -7,7 +7,7 @@ export function createMetadata(override: Metadata): Metadata {
     openGraph: {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      url: 'https://fumadocs.dev',
+      url: 'https://wiki.xcloudx.top',
       images: '/banner.png',
       siteName: 'XCloud Wiki',
       ...override.openGraph,
@@ -25,7 +25,7 @@ export function createMetadata(override: Metadata): Metadata {
         'application/rss+xml': [
           {
             title: '日志',
-            url: 'https://fumadocs.dev/blog/rss.xml',
+            url: 'https://wiki.xcloudx.top/blog/rss.xml',
           },
         ],
       },

@@ -224,7 +224,7 @@ export function PreviewImages(props: ComponentProps<'div'>) {
     },
     {
       image: OpenAPIImg,
-      name: '噶拿给木小镇',
+      name: '金鸢尾兰',
     },
   ];
 

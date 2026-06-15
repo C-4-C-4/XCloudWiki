@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import images from '@/lib/gallery.json';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 const getImagePath = (src: string) => {
   if (!src) return '';

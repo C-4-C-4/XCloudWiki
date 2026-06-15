@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 export function AuthorAvatar({ name }: { name: string }) {
   const avatarSrc = `${basePath}/wiki-img/member/${name}`;

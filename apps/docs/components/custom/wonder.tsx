@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Wrench, Crown, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 // 奇观数据接口
 interface WonderData {

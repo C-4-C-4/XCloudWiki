@@ -10,8 +10,7 @@ import { getMDXComponents } from '@/components/mdx';
 import path from 'node:path';
 import { cn } from '@/lib/cn';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 const avatarMap: Record<string, string> = {
   'CCCC4444': '/avatars/CCCC4444.jpg',

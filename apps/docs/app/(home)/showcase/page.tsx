@@ -23,8 +23,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Design from './design.png';
 import initialStores from './stores.json';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 interface StoreItem {
   id: string;

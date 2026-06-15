@@ -12,8 +12,7 @@ export const metadata = {
   description: '闲云 Wiki 制作组成员与内容贡献者荣誉殿堂。致敬每一位为闲云服务器发展倾注心血与热爱的建设者。',
 };
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 function getIcon(iconName: string) {
   switch (iconName) {
@@ -201,7 +200,7 @@ function MemberCard({ member }: { member: TeamMember }) {
   const isInitial = member.avatar.length === 1;
   const isRelativePath = member.avatar.startsWith('/');
   const avatarSrc = isRelativePath 
-    ? (isProduction ? `${basePath}${member.avatar}` : member.avatar)
+    ? `${basePath}${member.avatar}`
     : `${basePath}/wiki-img/member/${member.avatar}.jpg`;
 
   return (

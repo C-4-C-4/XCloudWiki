@@ -9,8 +9,7 @@ import { TreeContextProvider } from 'fumadocs-ui/contexts/tree';
 import { source } from '@/lib/source';
 import { NextProvider } from 'fumadocs-core/framework/next';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/XCloudWiki' : '';
+const basePath = '';
 
 export const metadata = createMetadata({
   title: {
