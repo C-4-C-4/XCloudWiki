@@ -124,7 +124,7 @@ export const docs = defineDocs({
               [remarkAutoTypeTable, typeTableOptions],
               remarkTypeScriptToJavaScript,
             ],
-        rehypePlugins: (v) => [rehypeKatex, ...v],
+        rehypePlugins: (v) => [rehypeKatex, rehypeImgPrefix, ...v],
       })(environment);
     },
   },
@@ -168,9 +168,55 @@ export const blog = defineCollections({
         },
       },
       remarkPlugins: isLint ? [remarkElementIds] : [remarkSteps],
+      rehypePlugins: (v) => [rehypeImgPrefix, ...v],
     })(environment);
   },
 });
+
+function rehypeImgPrefix(): Transformer<Root, Root> {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const basePath = isProduction ? '/XCloudWiki' : '';
+
+  return (tree) => {
+    if (!basePath) return;
+
+    visit(tree, 'element', (node: any) => {
+      if (node.tagName === 'img' && node.properties) {
+        const src = node.properties.src;
+        if (
+          typeof src === 'string' &&
+          src.startsWith('/') &&
+          !src.startsWith('//') &&
+          !src.startsWith(basePath)
+        ) {
+          node.properties.src = `${basePath}${src}`;
+        }
+      }
+    });
+
+    visit(tree, (node: any) => {
+      if (
+        (node.type === 'mdxJsxFlowElement' || node.type === 'mdxJsxTextElement') &&
+        node.name === 'img' &&
+        node.attributes
+      ) {
+        const srcAttr = node.attributes.find(
+          (attr: any) => attr.type === 'mdxJsxAttribute' && attr.name === 'src',
+        );
+        if (srcAttr && typeof srcAttr.value === 'string') {
+          const src = srcAttr.value;
+          if (
+            src.startsWith('/') &&
+            !src.startsWith('//') &&
+            !src.startsWith(basePath)
+          ) {
+            srcAttr.value = `${basePath}${src}`;
+          }
+        }
+      }
+    });
+  };
+}
 
 function transformerEscape(): ShikiTransformer {
   return {

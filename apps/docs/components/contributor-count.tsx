@@ -2,6 +2,15 @@ import type { HTMLAttributes } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/cn';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/XCloudWiki' : '';
+
+const getImagePath = (src: string) => {
+  if (!src) return '';
+  if (src.startsWith('http://') || src.startsWith('https://')) return src;
+  return `${basePath}${src}`;
+};
+
 const localAvatars = [
   '/avatars/LoveStory.jpg',
   '/avatars/CCCC4444.jpg',
@@ -41,7 +50,7 @@ export default async function ContributorCounter({
             }}
           >
             <Image
-              src={src}
+              src={getImagePath(src)}
               alt="avatar"
               width={48}
               height={48}
