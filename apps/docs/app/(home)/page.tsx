@@ -118,7 +118,7 @@ export default function Page() {
               查看文档
             </Link>
             <a
-              href="https://stackblitz.com/github/fuma-nama/fumadocs/tree/main/examples/stackblitz"
+              href="https://wiki.xcloudx.top/sponsors"
               target="_blank"
               rel="noreferrer noopener"
               className={cn(buttonVariants({ variant: 'secondary' }), 'max-sm:text-sm')}
