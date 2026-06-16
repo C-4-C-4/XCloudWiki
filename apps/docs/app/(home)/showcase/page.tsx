@@ -13,7 +13,6 @@ import {
   Check, 
   CheckCircle2,
   Star,
-  AlertTriangle,
   HelpCircle
 } from 'lucide-react';
 import Image from 'next/image';
@@ -35,7 +34,7 @@ interface StoreItem {
   image: string;
   type: 'commercial' | 'charity';
   merchantTypes: ('individual' | 'joint' | 'charity')[];
-  verification: 'blue' | 'yellow' | 'red' | 'rainbow';
+  verification: 'blue' | 'yellow' | 'red' | 'rainbow' | ('blue' | 'yellow' | 'red' | 'rainbow')[];
   createdAt: string;
   tags?: string[];
 }
@@ -61,26 +60,53 @@ function StarInCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+// 自定义圆圈包裹勾号组件（用于黄色认证）
+function CheckInCircleIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="9,12 11,14 15,10" />
+    </svg>
+  );
+}
+
 // 获取认证信息的配置
-const getVerificationConfig = (verification: StoreItem['verification']) => {
+interface VerificationConfig {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  className: string;
+  style?: React.CSSProperties;
+  label: string;
+  tooltip: string;
+}
+
+const getVerificationConfig = (verification: 'blue' | 'yellow' | 'red' | 'rainbow'): VerificationConfig => {
   switch (verification) {
     case 'blue':
       return {
         icon: CheckCircle2,
         className: 'text-blue-500 dark:text-blue-400',
         label: '蓝色认证',
-        tooltip: '该商户可靠性高，店长可以信赖。',
+        tooltip: '商户可靠性高，口碑优秀',
       };
     case 'yellow':
       return {
-        icon: AlertTriangle,
+        icon: CheckInCircleIcon,
         className: 'text-yellow-500 dark:text-yellow-400',
         label: '黄色认证',
-        tooltip: '商户可能存在经常性缺货，是否值得信任有待考究',
+        tooltip: '商品补货较慢，口碑良好',
       };
     case 'red':
       return {
-        icon: HelpCircle,
+        icon: CheckInCircleIcon,
         className: 'text-red-500 dark:text-red-400',
         label: '红色认证',
         tooltip: '暂未获取更多有价值的信息，真实度有待考究。',
@@ -93,7 +119,7 @@ const getVerificationConfig = (verification: StoreItem['verification']) => {
           stroke: 'url(#rainbow-gradient)',
         },
         label: '星标认证',
-        tooltip: '商户人缘极佳，商店补货勤快，口碑优秀。',
+        tooltip: '口碑极佳，可靠性极高，补货勤',
       };
   }
 };
@@ -148,7 +174,7 @@ export default function Showcase() {
       activeTab === 'all' || 
       (activeTab === 'commercial' && store.type === 'commercial') ||
       (activeTab === 'charity' && (store.type === 'charity' || store.merchantTypes.includes('charity')));
-    const matchesStar = !onlyStars || store.verification === 'rainbow';
+    const matchesStar = !onlyStars || (Array.isArray(store.verification) ? store.verification.includes('rainbow') : store.verification === 'rainbow');
     const matchesSearch = 
       store.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       store.owner.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -191,19 +217,19 @@ export default function Showcase() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-blue-500 shrink-0" />
-                  <span><strong className="text-neutral-700 dark:text-neutral-300">蓝色认证</strong>：可靠性高，店长可信赖。</span>
+                  <span><strong className="text-neutral-700 dark:text-neutral-300">蓝色认证</strong>：商户可靠性高，口碑优秀。</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <AlertTriangle className="size-4 text-yellow-500 shrink-0" />
-                  <span><strong className="text-neutral-700 dark:text-neutral-300">黄色认证</strong>：缺货，是否信任有待考究。</span>
+                  <CheckInCircleIcon className="size-4 text-yellow-500 shrink-0" />
+                  <span><strong className="text-neutral-700 dark:text-neutral-300">黄色认证</strong>：商品补货较慢，口碑良好。</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <HelpCircle className="size-4 text-red-500 shrink-0" />
+                  <CheckInCircleIcon className="size-4 text-red-500 shrink-0" />
                   <span><strong className="text-neutral-700 dark:text-neutral-300">红色认证</strong>：缺乏足够信息，有待考究。</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <StarInCircleIcon className="size-4 shrink-0" style={{ stroke: 'url(#rainbow-gradient)' }} />
-                  <span><strong className="text-neutral-700 dark:text-neutral-300">星标认证</strong>：人缘好，补货勤，口碑优秀。</span>
+                  <span><strong className="text-neutral-700 dark:text-neutral-300">星标认证</strong>：口碑极佳，可靠性极高，补货勤。</span>
                 </div>
               </div>
               
@@ -232,6 +258,13 @@ export default function Showcase() {
                     <span>公益商户</span>
                   </span>
                   <span>通常是存在公益行为。</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shrink-0">
+                    <CheckCircle2 className="size-2.5" />
+                    <span>认证商户</span>
+                  </span>
+                  <span>主动认领、入驻商会。</span>
                 </div>
               </div>
             </div>
@@ -380,7 +413,7 @@ export default function Showcase() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredStores.map((store) => {
-              const vConfig = getVerificationConfig(store.verification);
+              const verifications = Array.isArray(store.verification) ? store.verification : [store.verification];
               return (
                 <motion.div
                   key={store.id}
@@ -423,24 +456,27 @@ export default function Showcase() {
                         <h2 className="text-xl font-bold text-neutral-900 dark:text-white tracking-tight">{store.name}</h2>
                         
                         {/* 认证 Badge 容器与悬停气泡解释 */}
-                        <div className="relative group/tooltip flex items-center">
-                          {(() => {
+                        <div className="flex items-center gap-1">
+                          {verifications.map((v) => {
+                            const vConfig = getVerificationConfig(v as 'blue' | 'yellow' | 'red' | 'rainbow');
                             const IconComponent = vConfig.icon;
                             return (
-                              <IconComponent 
-                                className={cn("size-5 cursor-help", vConfig.className)}
-                                style={vConfig.style}
-                              />
+                              <div key={v} className="relative group/tooltip flex items-center">
+                                <IconComponent
+                                  className={cn("size-5 cursor-help", vConfig.className)}
+                                  style={vConfig.style}
+                                />
+                                {/* 精致的 Tooltip */}
+                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-neutral-900 dark:bg-neutral-800 text-white text-xs rounded-lg shadow-xl border border-neutral-700/50 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible translate-y-1 group-hover/tooltip:translate-y-0 transition-all duration-200 z-50 pointer-events-none">
+                                  <div className="relative font-medium leading-relaxed">
+                                    <span className="font-bold block text-brand border-b border-neutral-700/60 pb-1 mb-1">{vConfig.label}</span>
+                                    {vConfig.tooltip}
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-neutral-900 dark:bg-neutral-800 border-r border-b border-neutral-700/50 rotate-45 -mt-[5px]" />
+                                  </div>
+                                </div>
+                              </div>
                             );
-                          })()}
-                          {/* 精致的 Tooltip */}
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-neutral-900 dark:bg-neutral-800 text-white text-xs rounded-lg shadow-xl border border-neutral-700/50 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible translate-y-1 group-hover/tooltip:translate-y-0 transition-all duration-200 z-50 pointer-events-none">
-                            <div className="relative font-medium leading-relaxed">
-                              <span className="font-bold block text-brand border-b border-neutral-700/60 pb-1 mb-1">{vConfig.label}</span>
-                              {vConfig.tooltip}
-                              <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-neutral-900 dark:bg-neutral-800 border-r border-b border-neutral-700/50 rotate-45 -mt-[5px]" />
-                            </div>
-                          </div>
+                          })}
                         </div>
                       </div>
 
@@ -482,11 +518,21 @@ export default function Showcase() {
                         })}
 
                         {/* 自定义特色标签 */}
-                        {store.tags && store.tags.map((tag) => (
-                          <span key={tag} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700/60">
-                            {tag}
-                          </span>
-                        ))}
+                        {store.tags && store.tags.map((tag) => {
+                          if (tag === '认证商户') {
+                            return (
+                              <span key={tag} className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                                <CheckCircle2 className="size-3" />
+                                <span>认证商户</span>
+                              </span>
+                            );
+                          }
+                          return (
+                            <span key={tag} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700/60">
+                              {tag}
+                            </span>
+                          );
+                        })}
                       </div>
 
                       {/* 第四行：简介描述 */}
