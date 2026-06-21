@@ -174,7 +174,7 @@
     "district": "一区",
     "command": "/pw Sakura",
     "description": "Sakura樱花商店开业，低价售卖各种物资，收购钻石、绿宝石，260高价收购附魔之眼",
-    "image": "/Store/Sakura.png",
+    "image": "/Store/sakura.png",
     "type": "commercial",
     "merchantTypes": ["individual"],
     "verification": "red",
