@@ -486,7 +486,7 @@ export function EnchantmentQuery() {
                     ? 'border-red-500/60 shadow-[0_0_15px_rgba(239,68,68,0.08)] bg-red-500/[0.02] dark:bg-red-500/[0.01]'
                     : 'border-fd-border'
                 }`}
-                style={isSelected ? {
+                style={(isSelected ? {
                   borderColor: qCfg.color,
                   '--tw-ring-color': qCfg.color,
                 } : {
@@ -494,7 +494,7 @@ export function EnchantmentQuery() {
                   backgroundImage: isConflicted 
                     ? 'linear-gradient(to bottom, rgba(239, 68, 68, 0.03), rgba(239, 68, 68, 0.03))'
                     : `linear-gradient(to bottom, ${qCfg.color}${qCfg.bgOpacity}, ${qCfg.color}${qCfg.bgOpacity})`,
-                } as React.CSSProperties}
+                }) as React.CSSProperties}
               >
                 
                 {/* 冲突红牌警告浮标 */}
