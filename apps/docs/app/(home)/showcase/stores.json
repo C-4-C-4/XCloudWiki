@@ -168,20 +168,6 @@
     "tags": ["任务材料", "原矿", "蛙灯", "混凝土"]
   },
   {
-    "id": "sakura_shop",
-    "name": "Sakura",
-    "owner": "Borillo",
-    "district": "一区",
-    "command": "/pw Sakura",
-    "description": "Sakura樱花商店开业，低价售卖各种物资，收购钻石、绿宝石，260高价收购附魔之眼",
-    "image": "/Store/sakura.png",
-    "type": "commercial",
-    "merchantTypes": ["individual"],
-    "verification": "red",
-    "createdAt": "2026/05/03 08:27:27",
-    "tags": ["物资售卖", "钻石收购", "附魔眼收购"]
-  },
-  {
     "id": "box_stone_wholesale",
     "name": "盒装石材批发",
     "owner": "fangjiajiuhaov",

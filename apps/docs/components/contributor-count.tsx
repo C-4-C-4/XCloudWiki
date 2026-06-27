@@ -21,6 +21,8 @@ const localAvatars = [
   '/avatars/sickle.jpg',
   '/avatars/laccket.jpg',
   '/avatars/xing.png',
+  '/avatars/satori1024.jpg',
+  'XiaoLiYu777',
 ];
 
 export interface ContributorCounterProps extends HTMLAttributes<HTMLDivElement> {
@@ -40,22 +42,32 @@ export default async function ContributorCounter({
   return (
     <div {...props} className={cn('flex flex-col items-center gap-4', props.className)}>
       <div className="flex flex-row flex-wrap items-center justify-center md:pe-4">
-        {avatars.map((src, i) => (
-          <div
-            key={src}
-            className="size-10 overflow-hidden rounded-full border-4 border-fd-background bg-fd-background md:-mr-4 md:size-12"
-            style={{
-              zIndex: avatars.length - i,
-            }}
-          >
-            <Image
-              src={getImagePath(src)}
-              alt="avatar"
-              width={48}
-              height={48}
-            />
-          </div>
-        ))}
+        {avatars.map((src, i) => {
+          const isTextAvatar = !src.startsWith('/') && !src.includes('.');
+          return (
+            <div
+              key={src}
+              className={cn(
+                "size-10 overflow-hidden rounded-full border-4 border-fd-background bg-fd-background md:-mr-4 md:size-12 flex items-center justify-center text-sm font-bold select-none",
+                isTextAvatar && "bg-brand text-brand-foreground"
+              )}
+              style={{
+                zIndex: avatars.length - i,
+              }}
+            >
+              {isTextAvatar ? (
+                src.charAt(0).toUpperCase()
+              ) : (
+                <Image
+                  src={getImagePath(src)}
+                  alt="avatar"
+                  width={48}
+                  height={48}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="text-center text-sm text-fd-muted-foreground">
         感谢你们的付出和努力

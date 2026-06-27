@@ -20,6 +20,8 @@ function getIcon(iconName: string) {
       return <Crown className="size-4.5" />;
     case 'Shield':
       return <Shield className="size-4.5" />;
+    case 'Book':
+      return <BookOpen className="size-4.5" />;
     case 'PenTool':
       return <PenTool className="size-4.5" />;
     case 'Sparkles':

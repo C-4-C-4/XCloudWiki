@@ -6,6 +6,7 @@
     "build": "pnpm build:pre && next build && pnpm build:post",
     "build:pre": "node ./scripts/pre-build.ts",
     "build:post": "node ./scripts/post-build.ts",
+    "build:skills": "node ./scripts/generate-skills.ts",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "clean": "rimraf .next",
     "dev": "next dev",

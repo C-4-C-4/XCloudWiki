@@ -4,7 +4,7 @@ export interface TeamMember {
   name: string;
   role: string;
   badge: string;
-  iconName: 'Crown' | 'Shield' | 'PenTool' | 'Sparkles' | 'Cpu';
+  iconName: 'Crown' | 'Shield' | 'PenTool' | 'Sparkles' | 'Cpu' | 'Book';
   avatar: string;
   description: string;
   glowColor: string; // 用于发光效果的渐变颜色配置
@@ -30,7 +30,7 @@ export const managementTeam: TeamMember[] = [
     name: 'CCCC4444',
     role: 'WIKI 创建者 & 开发者',
     badge: 'WIKI 编辑',
-    iconName: 'Shield',
+    iconName: 'Book',
     avatar: '/avatars/CCCC4444.jpg',
     description: '深度负责开发并编辑拓展附魔书快速查询系统，倾注海量心血设计、构建、美化并全方位技术性维护本 Wiki 站点。',
     glowColor: 'from-amber-500/20 to-yellow-500/10',
@@ -64,11 +64,11 @@ export const managementTeam: TeamMember[] = [
   },
   {
     name: 'abnormalclarke',
-    role: 'UI设计',
-    badge: 'UI设计',
+    role: '游戏服务器UI设计',
+    badge: '游戏服务器UI设计',
     iconName: 'PenTool',
     avatar: '/avatars/abnormalclarke.jpg',
-    description: '极具匠心的美学工程师。深度参与站点及系统交互界面的UI美术设计与排版，提升全站的视觉表现与交互品质。',
+    description: '极具匠心的美学工程师。深度参与游戏服务器交互界面的UI美术设计与排版，提升游戏内的视觉表现与交互品质。',
     glowColor: 'from-blue-500/20 to-cyan-500/10',
     borderColor: 'group-hover:border-blue-500/50',
     badgeBg: 'bg-blue-500/10 dark:bg-blue-500/20 border-blue-500/30',
@@ -76,11 +76,11 @@ export const managementTeam: TeamMember[] = [
   },
   {
     name: 'Yep',
-    role: 'UI设计',
-    badge: 'UI设计',
+    role: '游戏服务器UI设计',
+    badge: '游戏服务器UI设计',
     iconName: 'PenTool',
     avatar: '/avatars/Yep.jpg',
-    description: '追求完美的细节雕琢者。专注于服务器与站点各种UI视觉要素的美化及优化，致力于打造极佳的用户使用体验。',
+    description: '追求完美的细节雕琢者。专注于游戏服务器内各种UI视觉要素的美化及优化，致力于打造极佳的用户使用体验。',
     glowColor: 'from-blue-500/20 to-indigo-500/10',
     borderColor: 'group-hover:border-blue-500/50',
     badgeBg: 'bg-blue-500/10 dark:bg-blue-500/20 border-blue-500/30',
@@ -149,4 +149,17 @@ export const wikiEditors: TeamMember[] = [
     badgeBg: 'bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/30',
     badgeText: 'text-emerald-600 dark:text-emerald-400',
   },
+  {
+    name: 'satori1024',
+    role: '维基编辑者',
+    badge: '核心编辑',
+    iconName: 'Sparkles',
+    avatar: '/avatars/satori1024.jpg',
+    description: '全权负责新版附魔书数据编写。',
+    glowColor: 'from-emerald-500/20 to-teal-500/10',
+    borderColor: 'group-hover:border-emerald-500/50',
+    badgeBg: 'bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/30',
+    badgeText: 'text-emerald-600 dark:text-emerald-400',
+  },
 ];
+

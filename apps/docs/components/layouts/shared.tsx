@@ -1,9 +1,15 @@
-import { AlbumIcon, Heart, LayoutTemplate, Images, Store } from 'lucide-react';
+import { AlbumIcon, Heart, LayoutTemplate, Images, Store, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import Logo from '@/public/logo.png';
 
 export const linkItems: LinkItemType[] = [
+  {
+    icon: <Sparkles />,
+    text: '附魔书',
+    url: '/fms',
+    active: 'nested-url',
+  },
   {
     icon: <AlbumIcon />,
     text: '日志',

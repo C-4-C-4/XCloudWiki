@@ -1,0 +1,3935 @@
+[
+  {
+    "id": "fms-1",
+    "name": "屠龙者",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对末影龙的伤害",
+    "value": "30",
+    "cd": null,
+    "conflicts": [],
+    "tip": "2.Tip:等级可切换"
+  },
+  {
+    "id": "fms-2",
+    "name": "蜘蛛杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对蜘蛛的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": "3.Tip:金色/红色同品质只能存在一个"
+  },
+  {
+    "id": "fms-3",
+    "name": "饥荒",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加饥饿损失",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": "4.Tip:若是没有对应的属性就会留空"
+  },
+  {
+    "id": "fms-4",
+    "name": "猪灵杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对猪灵的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-5",
+    "name": "屠夫",
+    "tools": [
+      "剑"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对被动生物的伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [
+      "锋利",
+      "亡灵杀手",
+      "节肢杀手",
+      "暗夜静默",
+      "裂魂",
+      "裁决"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-6",
+    "name": "僵尸召唤",
+    "tools": [
+      "剑"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "召唤急速僵尸为你战斗几秒",
+    "value": "60",
+    "cd": "50",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-7",
+    "name": "神秘守护",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率忽略药水效果",
+    "value": "18%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-8",
+    "name": "腐化",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "射中目标使敌人中毒几秒",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-9",
+    "name": "饥饿",
+    "tools": [
+      "剑",
+      "斧",
+      "三叉戟",
+      "锄",
+      "弓",
+      "弩"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "攻击敌人有60%使敌人饥饿几秒",
+    "value": "6",
+    "cd": null,
+    "conflicts": [
+      "荆棘"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-10",
+    "name": "武器大师",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "对敌人手持物品造成损耗",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-11",
+    "name": "混乱",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "击中的单位获得速度与跳跃提升效果几秒",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-12",
+    "name": "药罐子宝典",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率额外获得药罐子经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-13",
+    "name": "紊乱",
+    "tools": [
+      "剑",
+      "斧",
+      "三叉戟",
+      "锄",
+      "弓",
+      "弩"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "攻击敌人有60%使敌人反胃几秒",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-14",
+    "name": "脚下留情",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "防止跳跃时踩坏庄稼",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-15",
+    "name": "幻翼杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对幻翼的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-16",
+    "name": "尸壳杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对尸壳的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-17",
+    "name": "爬行者杀手",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对爬行者的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "锋利",
+      "截肢杀手",
+      "亡灵杀手",
+      "末影终结",
+      "剑神"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-18",
+    "name": "饕餮",
+    "tools": [
+      "胸甲"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "减少吃食物获得的饱食度",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-19",
+    "name": "永恒诅咒",
+    "tools": [
+      "全部"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "无法在铁砧使用",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-20",
+    "name": "心灵感应",
+    "tools": [
+      "镐",
+      "剑",
+      "斧",
+      "刷子",
+      "铲子",
+      "锄",
+      "剪刀"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "掉落物和经验直接进入背包",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "雷管爆破"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-21",
+    "name": "骷髅杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对骷髅的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-22",
+    "name": "女巫杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对女巫的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-23",
+    "name": "潜影贝的馈赠",
+    "tools": [
+      "剑"
+    ],
+    "quality": "白",
+    "level": "3",
+    "effect": "增加潜影贝的掉落",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "抢夺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-24",
+    "name": "流浪者杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对流浪者的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-25",
+    "name": "烈焰人杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对烈焰人的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-26",
+    "name": "青金石傀儡",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "附魔物品时有几率不消耗青金石",
+    "value": "18%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-27",
+    "name": "园丁宝典",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率额外获得园丁经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-28",
+    "name": "美食大厨宝典",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率额外获得美食大厨经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-29",
+    "name": "龟息术",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率免疫窒息伤害",
+    "value": "48%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-30",
+    "name": "建筑师宝典",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "有几率额外获得建筑师经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-31",
+    "name": "绝地逃生",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "生命低于20%后增加移动速度",
+    "value": "30%",
+    "cd": "永久",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-32",
+    "name": "女巫的诅咒",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "每造成一颗心的伤害会使攻击者中毒3秒,最多多中毒几秒",
+    "value": "10",
+    "cd": null,
+    "conflicts": [
+      "荆棘"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-33",
+    "name": "凋零杀手",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对凋零骷髅的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-34",
+    "name": "溺尸杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对溺尸的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-35",
+    "name": "锈蚀",
+    "tools": [
+      "斧",
+      "锄",
+      "镐",
+      "铲子"
+    ],
+    "quality": "白",
+    "level": "3",
+    "effect": "有几率不能打破方块",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-36",
+    "name": "与世隔绝",
+    "tools": [
+      "斧",
+      "锄",
+      "镐",
+      "铲子"
+    ],
+    "quality": "白",
+    "level": "3",
+    "effect": "有几率无法放置方块",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-37",
+    "name": "软弱无力",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": "3",
+    "effect": "有几率使你的攻击无效",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-38",
+    "name": "腐蚀",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "对敌人护甲造成损耗",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-39",
+    "name": "疣猪兽杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对疣猪兽的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-40",
+    "name": "僵尸杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锄",
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": "6",
+    "effect": "增加对僵尸的伤害",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "恶意",
+      "穿刺"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-41",
+    "name": "灵魂绑定",
+    "tools": [
+      "全部"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "死亡时保留此物品",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-42",
+    "name": "弹刀",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "攻击时无法造成伤害",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "锋利",
+      "亡灵杀手",
+      "截肢杀手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-43",
+    "name": "无限之矢",
+    "tools": [
+      "弩"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "每次射中目标时获得新箭",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-44",
+    "name": "火焰保护",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "4",
+    "effect": "减少火焰伤害和60%燃烧时间",
+    "value": "32%",
+    "cd": null,
+    "conflicts": [
+      "保护",
+      "弹射保护",
+      "爆炸保护"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-45",
+    "name": "耐久",
+    "tools": [
+      "全部"
+    ],
+    "quality": "白",
+    "level": "3",
+    "effect": "增加物品耐久",
+    "value": "4",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-46",
+    "name": "摔落保护",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "4",
+    "effect": "减少摔落伤害",
+    "value": "48%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-47",
+    "name": "水下呼吸",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "延长水下呼吸时间,有几率免除溺水伤害",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-48",
+    "name": "击退",
+    "tools": [
+      "剑"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "攻击获得击退加成",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "远离"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-49",
+    "name": "弹射保护",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "4",
+    "effect": "减少受到的弹射物伤害",
+    "value": "32%",
+    "cd": null,
+    "conflicts": [
+      "保护",
+      "火焰保护",
+      "爆炸保护"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-50",
+    "name": "火焰附加",
+    "tools": [
+      "剑",
+      "锤"
+    ],
+    "quality": "白",
+    "level": "2",
+    "effect": "将对手点燃,共造成7%的伤害",
+    "value": "4",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-51",
+    "name": "引雷",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "三叉戟击中目标时召唤闪电",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "召雷",
+      "激流"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-52",
+    "name": "冰霜行者",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "2",
+    "effect": "将玩家脚下的水变成冰",
+    "value": "4",
+    "cd": null,
+    "conflicts": [
+      "海底探索者"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-53",
+    "name": "灵魂疾行",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "增加在灵魂沙和灵魂土上的移动速度",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-54",
+    "name": "横扫之刃",
+    "tools": [
+      "剑"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "增加横扫的伤害",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-55",
+    "name": "绑定诅咒",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "物品不能从护甲栏中移除",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-56",
+    "name": "绑定诅咒",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子",
+      "剑",
+      "弓",
+      "弩",
+      "斧",
+      "镐",
+      "锄",
+      "铲子",
+      "钓鱼竿",
+      "三叉戟",
+      "锤"
+    ],
+    "quality": "白",
+    "level": null,
+    "effect": "物品无法被取下直到物品损坏",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-57",
+    "name": "爆炸保护",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "白",
+    "level": "4",
+    "effect": "减少爆炸伤害并减少60%的爆炸击退",
+    "value": "32%",
+    "cd": null,
+    "conflicts": [
+      "保护",
+      "火焰保护",
+      "弹射保护"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-58",
+    "name": "绝处逢生",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "生命低于20%后给予生命回复效果",
+    "value": "3",
+    "cd": "100",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-59",
+    "name": "裂地矛",
+    "tools": [
+      "长矛"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "Shift右键释放地裂波 造成伤害",
+    "value": "17",
+    "cd": "20",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-60",
+    "name": "坚甲",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "增加RPG防御[最终减少固定伤害]",
+    "value": "1.2000000000000002",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-61",
+    "name": "穿刺箭",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "箭能穿透实体",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-62",
+    "name": "幸运星",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "钓起鱼时获得幸运效果",
+    "value": "11",
+    "cd": "36",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-63",
+    "name": "抗火稿",
+    "tools": [
+      "镐"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "持有时获得抗火效果",
+    "value": null,
+    "cd": "永久",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-64",
+    "name": "猎物印记",
+    "tools": [
+      "剑",
+      "斧",
+      "锄"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "攻击敌人时使敌人宾周发光",
+    "value": "50%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-65",
+    "name": "雪傀儡召唤",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "抛掷雪球召唤雪傀儡为你战斗",
+    "value": "60",
+    "cd": "50",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-66",
+    "name": "暗夜静默",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "在黑暗中对坚守者造成额外伤害",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [
+      "锋利",
+      "亡灵杀手",
+      "截肢杀手",
+      "屠夫",
+      "裁决",
+      "裂魂"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-67",
+    "name": "回弦",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "鱼竿勾中实体拉回速度变快",
+    "value": "400%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-68",
+    "name": "召雷",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "三叉戟左键召唤闪电",
+    "value": null,
+    "cd": "120",
+    "conflicts": [
+      "引雷"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-69",
+    "name": "狂战士宝典",
+    "tools": [
+      "斧"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得狂战士经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-70",
+    "name": "忍者",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "潜行时造成额外近战伤害",
+    "value": "3.5",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-71",
+    "name": "失明",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有12%几率使对手失明几秒",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-72",
+    "name": "考古学家宝典",
+    "tools": [
+      "刷子"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得考古学家经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-73",
+    "name": "恶意",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "增加三叉戟对中立生物的伤害",
+    "value": "18",
+    "cd": null,
+    "conflicts": [
+      "穿刺",
+      "尸壳杀手",
+      "幻翼杀手",
+      "猪灵杀手",
+      "骷髅杀手",
+      "女巫杀手",
+      "流浪者杀手",
+      "烈焰人杀手",
+      "蜘蛛杀手",
+      "溺尸杀手",
+      "疣猪兽杀手",
+      "僵尸杀手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-74",
+    "name": "渔夫宝典",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得渔夫经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-75",
+    "name": "快速生长",
+    "tools": [
+      "锄"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "右键可快速催熟农作物",
+    "value": null,
+    "cd": "6",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-76",
+    "name": "末影终结",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "增加对末影生物伤害",
+    "value": "4",
+    "cd": null,
+    "conflicts": [
+      "爬行者杀手",
+      "剑神"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-77",
+    "name": "热血澎湃",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "在受到伤害后短暂获得速度加成",
+    "value": "4",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-78",
+    "name": "狙击",
+    "tools": [
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "增加弓箭爆头伤害",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-79",
+    "name": "浴血狂战",
+    "tools": [
+      "斧"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "造成伤害时，部分伤害治疗自身",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [
+      "狂舞挥打",
+      "斧刃"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-80",
+    "name": "净化之刃",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "有几率移除你对手全部的正面效果",
+    "value": "0.15",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-81",
+    "name": "矿工宝典",
+    "tools": [
+      "镐"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得煤老板经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-82",
+    "name": "翼人的祝福",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "在空中额外增加弓箭伤害",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-83",
+    "name": "弩手宝典",
+    "tools": [
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得弩手经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-84",
+    "name": "远离",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "给予额外的击退效果",
+    "value": "240%",
+    "cd": null,
+    "conflicts": [
+      "击退"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-85",
+    "name": "逆流而上",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "怪物生命值高于230时造成更多伤害最多多造成几点伤害",
+    "value": "18",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-86",
+    "name": "力量增幅",
+    "tools": [
+      "斧"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "在有力量效果时提升近战伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [
+      "绿宝石之星"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-87",
+    "name": "颠鸾倒凤",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率打乱对手的快捷栏",
+    "value": "12%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-88",
+    "name": "悬浮",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "将你悬浮空中,持续几秒",
+    "value": "7",
+    "cd": "60",
+    "conflicts": [
+      "弹射起步"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-89",
+    "name": "绿宝石之星",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "消耗1绿宝石提升你的近战伤害伤害",
+    "value": "6",
+    "cd": null,
+    "conflicts": [
+      "力量增幅"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-90",
+    "name": "地狱领主",
+    "tools": [
+      "剑",
+      "弓",
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "在下届造成额外伤害",
+    "value": "18",
+    "cd": null,
+    "conflicts": [
+      "致命一击"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-91",
+    "name": "血流不止",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率给你的对手造成1流血伤害,持续6%秒",
+    "value": "18%",
+    "cd": null,
+    "conflicts": [
+      "锋利"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-92",
+    "name": "弓箭手宝典",
+    "tools": [
+      "弓"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得弓箭手经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-93",
+    "name": "重击",
+    "tools": [
+      "剑",
+      "斧",
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率使被攻击的生物眩晕1秒",
+    "value": "28%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-94",
+    "name": "穿刺",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "绿",
+    "level": "5",
+    "effect": "三叉戟对水生生物的伤害",
+    "value": "12.5",
+    "cd": null,
+    "conflicts": [
+      "溺尸杀手",
+      "疣猪兽杀手",
+      "僵尸杀手",
+      "尸壳杀手",
+      "幻翼杀手",
+      "猪灵杀手",
+      "骷髅杀手",
+      "女巫杀手",
+      "流浪者杀手",
+      "烈焰人杀手",
+      "蜘蛛杀手",
+      "恶意",
+      "亡灵杀手",
+      "节肢杀手",
+      "锋利",
+      "破甲",
+      "致密"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-95",
+    "name": "穿透",
+    "tools": [
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "4",
+    "effect": "箭能穿透实体",
+    "value": "5",
+    "cd": null,
+    "conflicts": [
+      "多重射击"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-96",
+    "name": "迅捷潜行",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "绿",
+    "level": "3",
+    "effect": "减少潜行造成的缓慢效果",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-97",
+    "name": "经验修补",
+    "tools": [
+      "全部"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "消耗拾取的经验球来回复物品耐久",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "铁匠赐福",
+      "无限"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-98",
+    "name": "保护",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "绿",
+    "level": "4",
+    "effect": "减少受到的伤害",
+    "value": "16%",
+    "cd": null,
+    "conflicts": [
+      "火焰保护",
+      "弹射物保护",
+      "爆炸保护"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-99",
+    "name": "饵钓",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "绿",
+    "level": "3",
+    "effect": "减少鱼上钩所需的时间",
+    "value": "15",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-100",
+    "name": "冲击",
+    "tools": [
+      "弓"
+    ],
+    "quality": "绿",
+    "level": "2",
+    "effect": "增加弓箭击退",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-101",
+    "name": "精准采集",
+    "tools": [
+      "镐",
+      "斧",
+      "锄",
+      "铲子"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "将方块完整挖下",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "时运",
+      "地狱矿工",
+      "缤纷",
+      "灵火炼矿",
+      "幸运陶瓦",
+      "幸运羊毛",
+      "幸运蛙鸣灯",
+      "幸运混凝土",
+      "幸运海晶石",
+      "幸运石英块"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-102",
+    "name": "水下速掘",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "清除水下挖掘减速惩罚",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-103",
+    "name": "深海探索者",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "绿",
+    "level": "3",
+    "effect": "减少水下缓慢效果",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "冰霜行者"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-104",
+    "name": "无限",
+    "tools": [
+      "弓"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "不会消耗普通箭矢",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "经验修补"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-105",
+    "name": "火失",
+    "tools": [
+      "弓"
+    ],
+    "quality": "绿",
+    "level": null,
+    "effect": "箭头点燃目标并造成5火焰伤害",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-106",
+    "name": "中娅沙漏",
+    "tools": [
+      "锄"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "右键触发无敌金身无法移动持续几秒",
+    "value": "3",
+    "cd": "30",
+    "conflicts": [
+      "弹射起步"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-107",
+    "name": "狂战之怒",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "被攻击时获得速度加成",
+    "value": "30",
+    "cd": "50",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-108",
+    "name": "果冻爱好者",
+    "tools": [
+      "剑",
+      "斧",
+      "弓",
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "对岩浆怪造成额外伤害",
+    "value": "18",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-109",
+    "name": "剑士宝典",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得剑士经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-110",
+    "name": "流血",
+    "tools": [
+      "剑"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率使对手流血,造成持续伤害",
+    "value": "9%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-111",
+    "name": "暗无天日",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率使敌人失明",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-112",
+    "name": "农夫宝典",
+    "tools": [
+      "锄"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "有几率额外获得农夫经验和职业点",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-113",
+    "name": "神圣守护",
+    "tools": [
+      "胸甲",
+      "护腿"
+    ],
+    "quality": "绿",
+    "level": "6",
+    "effect": "当生命低于50%减少受到的伤害",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-114",
+    "name": "绝境坚守",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "生命低于20%后给予抗性提升效果",
+    "value": "3",
+    "cd": "90",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-115",
+    "name": "跳跃强化",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "给予跳跃提升效果",
+    "value": "3",
+    "cd": "永久",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-116",
+    "name": "连突",
+    "tools": [
+      "长矛"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "贯穿冲锋命中重置贯穿冲锋CD",
+    "value": null,
+    "cd": "14",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-117",
+    "name": "决斗守御",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加PVP防御",
+    "value": "3",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-118",
+    "name": "铁匠祝福",
+    "tools": [
+      "全部"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "一段时间恢复一次装备耐久",
+    "value": "9",
+    "cd": "20",
+    "conflicts": [
+      "经验修补"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-119",
+    "name": "冲击波",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "攻击时在对手脚下爆炸几次",
+    "value": "6",
+    "cd": "30",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-120",
+    "name": "音符舞者",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": null,
+    "effect": "一步一音符",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-121",
+    "name": "地狱矿工",
+    "tools": [
+      "镐"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "挖掘远古残骸时有几率额外掉落一个",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集",
+      "时运"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-122",
+    "name": "神农献祭",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "造成的伤害治疗自身",
+    "value": "9%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-123",
+    "name": "灵巧",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "提高攻击速度",
+    "value": "12%",
+    "cd": null,
+    "conflicts": [
+      "千骑冲锋"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-124",
+    "name": "无畏疼痛",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "当你受到伤害时获得几秒力量提升",
+    "value": "16",
+    "cd": "30",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-125",
+    "name": "神农祝福",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": null,
+    "effect": "收获时作物会自动重新种植",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-126",
+    "name": "钻石之星",
+    "tools": [
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "消耗1钻石提升近战伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-127",
+    "name": "致命一击",
+    "tools": [
+      "剑",
+      "斧",
+      "弓",
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "攻击时有几率造成100点伤害",
+    "value": "8%",
+    "cd": null,
+    "conflicts": [
+      "地狱领主"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-128",
+    "name": "弹射起步",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "以一种速度向前冲刺",
+    "value": "9",
+    "cd": "24",
+    "conflicts": [
+      "悬浮",
+      "中娅沙漏"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-129",
+    "name": "高原血统",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "连续攻击增加伤害,最高增加6点",
+    "value": "0.30000000000000004",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-130",
+    "name": "千骑冲锋",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "在冲刺时有攻速加成",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [
+      "灵巧"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-131",
+    "name": "肾上腺素",
+    "tools": [
+      "盾牌"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "成功格挡时,获得几秒力量4",
+    "value": "5",
+    "cd": "25",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-132",
+    "name": "旋风锄",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "攻击对手时有几率获得速度2持续8秒",
+    "value": "20%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-133",
+    "name": "愤怒反击",
+    "tools": [
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "当生命低于一半时，增加近战伤害",
+    "value": "16",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-134",
+    "name": "箭术高手",
+    "tools": [
+      "弓"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "以过半的张力射出满箭",
+    "value": "52%",
+    "cd": null,
+    "conflicts": [
+      "终极猎手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-135",
+    "name": "升级咯",
+    "tools": [
+      "剑",
+      "斧",
+      "镐",
+      "铲子",
+      "锄",
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加经验掉落",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "灵魂三叉戟"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-136",
+    "name": "飞行战士",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加近战伤害",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-137",
+    "name": "波塞冬之柄",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加三叉戟在水下的伤害",
+    "value": "87",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-138",
+    "name": "经验傀儡",
+    "tools": [
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "附魔物品有几率不消耗经验",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-139",
+    "name": "诸神黄昏",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "对手每减少1%生命值，增加几点近战伤害",
+    "value": "0.12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-140",
+    "name": "觅食",
+    "tools": [
+      "剪刀"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加树叶掉落苹果的几率",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-141",
+    "name": "寄生虫",
+    "tools": [
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "造成伤害时，部分伤害治疗自身",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-142",
+    "name": "海底宝藏",
+    "tools": [
+      "刷子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "刷可疑方块时获得一些饱食度",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-143",
+    "name": "盾反",
+    "tools": [
+      "盾牌"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "格挡获得几秒速度提升并使敌人缓慢2秒",
+    "value": "9",
+    "cd": "40",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-144",
+    "name": "快锄",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加锄头攻击速度",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-145",
+    "name": "远掷",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "三叉戟每飞过3方块增加几点额外伤害",
+    "value": "1.2000000000000002",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-146",
+    "name": "未来之刃",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "拥有28%的机会在1秒后造成额外伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-147",
+    "name": "飓风箭阵",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "潜行左键召唤24个箭环并造成伤害",
+    "value": "41",
+    "cd": "25",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-148",
+    "name": "死不瞑目",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "死亡时产生一个毒云，持续几秒",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-149",
+    "name": "真实伤害",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加点真实伤害",
+    "value": "4.1999999999999993",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-150",
+    "name": "反伤刺甲",
+    "tools": [
+      "盾牌"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "将一些伤害反弹回攻击者",
+    "value": "12%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-151",
+    "name": "精力充沛",
+    "tools": [
+      "胸甲"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "减少冲刺时消耗的饥饿值",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-152",
+    "name": "森林灾星",
+    "tools": [
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "一次砍掉一棵树的几个方块",
+    "value": "9",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-153",
+    "name": "雷罚",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "在雷雨天勾住敌人有55%的几率召唤雷电对敌人造成伤害",
+    "value": "7",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-154",
+    "name": "连锁采矿",
+    "tools": [
+      "镐"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "在一个矿脉中连锁挖掘几个方块",
+    "value": "9",
+    "cd": null,
+    "conflicts": [
+      "爆破采矿"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-155",
+    "name": "致命之锄",
+    "tools": [
+      "锄"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加锄头的伤害",
+    "value": "39",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-156",
+    "name": "凛冬已至",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加36%的几率使敌人冻结几秒",
+    "value": "2.0999999999999996",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-157",
+    "name": "时光回溯",
+    "tools": [
+      "剑",
+      "斧",
+      "镐",
+      "铲子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "时空逆流送你到几秒前的位置",
+    "value": "10",
+    "cd": "30",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-158",
+    "name": "荆棘",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": "3",
+    "effect": "受到物理伤害时有几率把伤害反弹回攻击者",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [
+      "紊乱",
+      "腐化",
+      "饥饿",
+      "女巫的诅咒"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-159",
+    "name": "亡灵杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锤"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加对亡灵生物的伤害",
+    "value": "12.5",
+    "cd": null,
+    "conflicts": [
+      "弹刀",
+      "屠夫",
+      "爬行者杀手",
+      "暗夜静默",
+      "穿刺",
+      "锋利",
+      "破甲",
+      "节肢杀手",
+      "致密",
+      "裂魂",
+      "裁决",
+      "神剑"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-160",
+    "name": "突进",
+    "tools": [],
+    "quality": "紫",
+    "level": "3",
+    "effect": "消耗饥饿值以一种速度向前冲刺",
+    "value": null,
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-161",
+    "name": "海之眷顾",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "紫",
+    "level": "4",
+    "effect": "增加钓上宝藏的几率",
+    "value": "8%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-162",
+    "name": "力量",
+    "tools": [
+      "弓"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加弓的伤害",
+    "value": "250%",
+    "cd": null,
+    "conflicts": [
+      "终极猎手",
+      "聚能弓",
+      "聚能弩"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-163",
+    "name": "锋利",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加近战伤害",
+    "value": "3.5",
+    "cd": null,
+    "conflicts": [
+      "弹刀",
+      "屠夫",
+      "爬行者杀手",
+      "暗夜静默",
+      "血流不止",
+      "穿刺",
+      "亡灵杀手",
+      "节肢杀手",
+      "破甲",
+      "致密",
+      "斧刃",
+      "裂魂",
+      "破军",
+      "狂舞挥打",
+      "裁决",
+      "神剑"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-164",
+    "name": "激流",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": null,
+    "effect": "在雨天或水中右键蓄力向前冲刺",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "引雷",
+      "忠诚"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-165",
+    "name": "破甲",
+    "tools": [
+      "锤"
+    ],
+    "quality": "紫",
+    "level": "4",
+    "effect": "减少对方护甲和韧性的减伤",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [
+      "穿刺",
+      "亡灵杀手",
+      "节肢杀手",
+      "锋利",
+      "致密"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-166",
+    "name": "节肢杀手",
+    "tools": [
+      "剑",
+      "斧",
+      "锤"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加对节肢生物的伤害",
+    "value": "12.5",
+    "cd": null,
+    "conflicts": [
+      "弹刀",
+      "屠夫",
+      "爬行者杀手",
+      "暗夜静默",
+      "穿刺",
+      "亡灵杀手",
+      "锋利",
+      "破甲",
+      "致密",
+      "裂魂",
+      "裁决",
+      "神剑"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-167",
+    "name": "效率",
+    "tools": [
+      "镐",
+      "斧",
+      "锄",
+      "铲子"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加挖掘速度",
+    "value": "45%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-168",
+    "name": "时运",
+    "tools": [
+      "镐",
+      "斧",
+      "锄",
+      "铲子"
+    ],
+    "quality": "紫",
+    "level": "3",
+    "effect": "增加物品掉落率",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "精准采集",
+      "地狱矿工"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-169",
+    "name": "致密",
+    "tools": [
+      "锤"
+    ],
+    "quality": "紫",
+    "level": "5",
+    "effect": "增加下落攻击伤害",
+    "value": "2.5",
+    "cd": null,
+    "conflicts": [
+      "穿刺",
+      "亡灵杀手",
+      "节肢杀手",
+      "锋利",
+      "破甲"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-170",
+    "name": "忠诚",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": null,
+    "effect": "丢出的三叉戟会返回到手中",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "激流"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-171",
+    "name": "抢夺",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "3",
+    "effect": "增加3个最大普通掉落物,有几率获得稀有掉落",
+    "value": "3%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-172",
+    "name": "快速装填",
+    "tools": [
+      "弩"
+    ],
+    "quality": "紫",
+    "level": "3",
+    "effect": "减少弩的装填时间",
+    "value": "0.75",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-173",
+    "name": "多重射击",
+    "tools": [
+      "弩"
+    ],
+    "quality": "紫",
+    "level": null,
+    "effect": "弩一次射出3支箭",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "穿透",
+      "爆炸箭头",
+      "终极猎手",
+      "万箭齐发"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-174",
+    "name": "风暴",
+    "tools": [
+      "锤"
+    ],
+    "quality": "紫",
+    "level": "3",
+    "effect": "重击击退生物并造成伤害",
+    "value": "2.1999999999999997",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-175",
+    "name": "冲刺箭羽",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "冲刺时射箭增加额外伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-176",
+    "name": "末影召唤",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "召唤末影人为你战斗",
+    "value": "60",
+    "cd": "50",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-177",
+    "name": "天罚",
+    "tools": [
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "增加对玩家的伤害",
+    "value": "26",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-178",
+    "name": "生命窃取",
+    "tools": [
+      "剑"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "以少量造成的伤害治疗自身",
+    "value": "6%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-179",
+    "name": "风之子",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "手持三叉戟提升移动速度",
+    "value": "24%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-180",
+    "name": "空间刺客",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "用箭射击把对手向自身位置拉然后传送到对手所在位置",
+    "value": null,
+    "cd": "32",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-181",
+    "name": "铁傀儡召唤",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "抛掷鸡蛋召唤两个铁傀儡为你战斗",
+    "value": "60",
+    "cd": "50",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-182",
+    "name": "撕裂",
+    "tools": [
+      "弓",
+      "弩",
+      "三叉戟"
+    ],
+    "quality": "紫",
+    "level": "6",
+    "effect": "有60%几率使敌人每秒流血3点持续几秒",
+    "value": "8",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-183",
+    "name": "落羽",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "给予缓降效果",
+    "value": "2",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-184",
+    "name": "岿然不动",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "Shift无法移动并给予抗性提升效果",
+    "value": "3",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-185",
+    "name": "硬化护体",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加减伤",
+    "value": "3%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-186",
+    "name": "贯穿冲锋",
+    "tools": [
+      "长矛"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "右键突击 撞击后造成伤害",
+    "value": "16",
+    "cd": "14",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-187",
+    "name": "震荡",
+    "tools": [
+      "重锤"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "潜行右键释放冲击波 击飞5格 造成伤害",
+    "value": "12",
+    "cd": "40",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-188",
+    "name": "缤纷",
+    "tools": [
+      "剪刀"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "剪树叶时有几率掉落花朵和染料",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-189",
+    "name": "爆炸箭头",
+    "tools": [
+      "弩"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "箭头落地会造成几次爆炸",
+    "value": "6",
+    "cd": "30",
+    "conflicts": [
+      "多重射击"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-190",
+    "name": "痛贯天灵",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加几点伤害",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-191",
+    "name": "渔夫奇遇",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "钓鱼收杆时有几率额外获得1个鱼类",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-192",
+    "name": "爆炸魔法",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "死亡时自爆同时对3格内造成伤害",
+    "value": "30",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-193",
+    "name": "一剑",
+    "tools": [
+      "剑"
+    ],
+    "quality": "金",
+    "level": "5",
+    "effect": "对处于90%生命以上的玩家造成额外真实伤害",
+    "value": "15",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-194",
+    "name": "连锁挖掘",
+    "tools": [
+      "铲子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "一次多挖几个方块",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-195",
+    "name": "盾击",
+    "tools": [
+      "盾牌"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "对8方块内的玩家造成伤害",
+    "value": "24",
+    "cd": "30",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-196",
+    "name": "超会心",
+    "tools": [
+      "剑"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加近战伤害但有60%概率增加28点伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-197",
+    "name": "陶片透视",
+    "tools": [
+      "刷子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "使15方块内的可疑方块发光,持续几秒",
+    "value": "7",
+    "cd": "140",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-198",
+    "name": "均衡之刃",
+    "tools": [
+      "剑"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加近战伤害",
+    "value": "18",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-199",
+    "name": "疾驰",
+    "tools": [
+      "胸甲"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "减少冲刺的饥饿消耗",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-200",
+    "name": "巡航箭",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "自动瞄准范围内的怪",
+    "value": "14",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-201",
+    "name": "缓伤",
+    "tools": [
+      "护腿"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "被攻击时获得20%生命上限和伤害吸收持续几秒",
+    "value": "7",
+    "cd": "25",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-202",
+    "name": "金蝉脱壳",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加闪避率",
+    "value": "3%",
+    "cd": null,
+    "conflicts": [
+      "星闪"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-203",
+    "name": "雷神",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "有几率向你对手释放3闪电",
+    "value": "48",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-204",
+    "name": "人体火箭",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "有几率不消耗烟花",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-205",
+    "name": "生命涌泉",
+    "tools": [
+      "锄"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "极速回复生命",
+    "value": "27",
+    "cd": "90",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-206",
+    "name": "近破者",
+    "tools": [
+      "弩"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "弩箭射中目标距离越近伤害越高造成伤害同时给予目标击退",
+    "value": "18",
+    "cd": "26",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-207",
+    "name": "星闪",
+    "tools": [
+      "胸甲"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加闪避概率",
+    "value": "4.8000000000000007",
+    "cd": null,
+    "conflicts": [
+      "金蝉脱壳"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-208",
+    "name": "灵魂三叉戟",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "潜行时发射或使用三叉戟攻击时对6方块内的敌人造成额外伤害",
+    "value": "35",
+    "cd": "40",
+    "conflicts": [
+      "升级"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-209",
+    "name": "连锁收割",
+    "tools": [
+      "锄"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "一次性多采摘一些农作物",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-210",
+    "name": "活动肌肉",
+    "tools": [
+      "斧"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加近战伤害,右键获得10秒力量3",
+    "value": "18",
+    "cd": "32",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-211",
+    "name": "斧刃",
+    "tools": [
+      "斧"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "为狂舞挥打增加伤害和24点溅射伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [
+      "锋利",
+      "浴血狂战"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-212",
+    "name": "雷管爆破",
+    "tools": [
+      "镐"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "潜行时右键挖掘一个区域的方块",
+    "value": "9×9",
+    "cd": "90",
+    "conflicts": [
+      "心灵感应"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-213",
+    "name": "矿物透视",
+    "tools": [
+      "镐"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "使15方块内的矿石发光,持续几秒",
+    "value": "7",
+    "cd": "60",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-214",
+    "name": "灵火炼矿",
+    "tools": [
+      "镐"
+    ],
+    "quality": "金",
+    "level": null,
+    "effect": "自动熔炼矿物",
+    "value": null,
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-215",
+    "name": "茁壮成长",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "增加血量",
+    "value": "6",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-216",
+    "name": "百步穿杨",
+    "tools": [
+      "弓"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "",
+    "value": "4",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-217",
+    "name": "瘟疫蔓延",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "你的三叉戟在降落时有几率生成一团毒云",
+    "value": "60%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-218",
+    "name": "怒之领域",
+    "tools": [
+      "剑"
+    ],
+    "quality": "金",
+    "level": "6",
+    "effect": "右键向前闪现同时增加近战伤害,持续27秒",
+    "value": "13",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-219",
+    "name": "夜之眼",
+    "tools": [
+      "头盔"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "提供常态夜视3效果",
+    "value": "20秒",
+    "cd": "5",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-220",
+    "name": "灵羽之力",
+    "tools": [
+      "鞘翅"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "提供常态力量3效果",
+    "value": "20秒",
+    "cd": "5",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-221",
+    "name": "激素矿工",
+    "tools": [
+      "镐"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘矿物后给予急迫3持续数秒",
+    "value": "60",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-222",
+    "name": "生命结界",
+    "tools": [
+      "头盔",
+      "胸甲",
+      "护腿",
+      "靴子"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加生命值",
+    "value": "12",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-223",
+    "name": "幸运海晶灯",
+    "tools": [
+      "镐"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘石头时有几率掉落海晶灯",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-224",
+    "name": "幸运混凝土",
+    "tools": [
+      "铲子"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘沙子/泥土时有几率掉落随机颜色混凝土",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-225",
+    "name": "幸运蛙鸣灯",
+    "tools": [
+      "铲子"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘沙子/泥土时有几率掉落蛙鸣灯",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-226",
+    "name": "幸运羊毛",
+    "tools": [
+      "剪刀"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "剪树叶时有几率掉落随机颜色羊毛",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-227",
+    "name": "幸运陶瓦",
+    "tools": [
+      "镐"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘石头时有几率掉落随机颜色陶瓦",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-228",
+    "name": "幸运石英块",
+    "tools": [
+      "镐"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挖掘下届岩时有几率掉落石英块",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "精准采集"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-229",
+    "name": "幸运矿钓",
+    "tools": [
+      "钓鱼竿"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "钓鱼收杆时有几率随机获得原版矿物",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-230",
+    "name": "幸运陶片",
+    "tools": [
+      "刷子"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "考古时有几率随机掉落一个陶片",
+    "value": "12%",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-231",
+    "name": "神剑",
+    "tools": [
+      "剑"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "额外增加近战伤害",
+    "value": "35",
+    "cd": null,
+    "conflicts": [
+      "爬行者杀手",
+      "末影终结",
+      "锋利",
+      "亡灵杀手",
+      "节肢杀手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-232",
+    "name": "终极猎手",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加对boss的弓箭伤害",
+    "value": "82",
+    "cd": null,
+    "conflicts": [
+      "力量",
+      "多重射击",
+      "箭术高手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-233",
+    "name": "裂魂",
+    "tools": [
+      "斧"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加对玩家的伤害",
+    "value": "129",
+    "cd": null,
+    "conflicts": [
+      "屠夫",
+      "暗夜静默",
+      "锋利",
+      "亡灵杀手",
+      "节肢杀手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-234",
+    "name": "裁决",
+    "tools": [
+      "剑"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加对玩家的伤害",
+    "value": "86",
+    "cd": null,
+    "conflicts": [
+      "屠夫",
+      "暗夜静默",
+      "锋利",
+      "亡灵杀手",
+      "节肢杀手"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-235",
+    "name": "狂舞挥打",
+    "tools": [
+      "斧"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "挥舞斧头对半径3格内的敌人造成溅射伤害",
+    "value": "12",
+    "cd": null,
+    "conflicts": [
+      "浴血狂战",
+      "锋利"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-236",
+    "name": "潮漩",
+    "tools": [
+      "三叉戟"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加三叉戟近战和投掷的伤害",
+    "value": "35",
+    "cd": null,
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-237",
+    "name": "万箭齐发",
+    "tools": [
+      "弓",
+      "弩"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "一次射出五支箭递推分散7.8°角度每支箭增加伤害",
+    "value": "16",
+    "cd": null,
+    "conflicts": [
+      "多重射击"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-238",
+    "name": "爆破采矿",
+    "tools": [
+      "镐"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "有几率挖掘3×3区域",
+    "value": "30%",
+    "cd": null,
+    "conflicts": [
+      "连锁采矿"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-239",
+    "name": "一剑开门天",
+    "tools": [
+      "剑",
+      "斧"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加近战伤害,但与其他所有附魔冲突",
+    "value": "44",
+    "cd": null,
+    "conflicts": [
+      "其他附魔"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-240",
+    "name": "破军",
+    "tools": [
+      "斧"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加额外伤害",
+    "value": "43",
+    "cd": null,
+    "conflicts": [
+      "锋利"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-241",
+    "name": "大地守护",
+    "tools": [
+      "锄"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "获得持续几秒的生命恢复",
+    "value": "18",
+    "cd": "24",
+    "conflicts": [],
+    "tip": null
+  },
+  {
+    "id": "fms-242",
+    "name": "聚能弩",
+    "tools": [
+      "弩"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加弩伤害",
+    "value": "35",
+    "cd": null,
+    "conflicts": [
+      "力量"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-243",
+    "name": "聚能弓",
+    "tools": [
+      "弓"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "增加弓伤害",
+    "value": "35",
+    "cd": null,
+    "conflicts": [
+      "力量"
+    ],
+    "tip": null
+  },
+  {
+    "id": "fms-244",
+    "name": "完美防御",
+    "tools": [
+      "盾牌"
+    ],
+    "quality": "红",
+    "level": "6",
+    "effect": "格挡成功恢复一些生命",
+    "value": "6",
+    "cd": "4",
+    "conflicts": [],
+    "tip": null
+  }
+]

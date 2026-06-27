@@ -78,6 +78,7 @@ const TOWN_DATA: TownData[] = [
     tpCommand: '/res tp OUZHEN',
     desc: '招收一起玩的活跃萌萌人玩家想加入游戏里 msg 或者群里 at我目前主要在二区 res tp OUZHEN',
     images: [
+      '/wiki-img/PlayerCommunity/Smalltown/jylw6.png',
       '/wiki-img/PlayerCommunity/Smalltown/jylw1.png',
       '/wiki-img/PlayerCommunity/Smalltown/jylw2.png',
       '/wiki-img/PlayerCommunity/Smalltown/jylw3.png',
@@ -131,6 +132,26 @@ const TOWN_DATA: TownData[] = [
       '/wiki-img/PlayerCommunity/Smalltown/ap9.png',
       '/wiki-img/PlayerCommunity/Smalltown/ap10.png',
       '/wiki-img/PlayerCommunity/Smalltown/ap11.png'
+    ]
+  },
+  {
+    name: '包子小镇',
+    mayor: 'Da_bao_z',
+    zone: '三区',
+    population: '21/25 人',
+    treeLevel: 'Lv.1',
+    townLevel: 3,
+    createDate: '2026-06-02',
+    status: '招新中',
+    tpCommand: '/res tp Da_bao_z',
+    desc: '申请小镇群里@Da_bao_z私聊',
+    images: [
+      '/wiki-img/PlayerCommunity/Smalltown/bz1.png',
+      '/wiki-img/PlayerCommunity/Smalltown/bz2.png',
+      '/wiki-img/PlayerCommunity/Smalltown/bz3.png',
+      '/wiki-img/PlayerCommunity/Smalltown/bz4.png',
+      '/wiki-img/PlayerCommunity/Smalltown/bz5.png',
+      '/wiki-img/PlayerCommunity/Smalltown/bz6.png'
     ]
   }
 ];
