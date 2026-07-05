@@ -1,0 +1,20 @@
+name = "forum-api"
+main = "src/index.ts"
+compatibility_date = "2025-07-01"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "DB"
+database_name = "forum-db"
+database_id = "dedb5308-d5d4-4df2-b95e-0907963974a5"
+
+# R2 对象存储绑定
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "xcloud-wiki"
+
+# 环境变量
+[vars]
+JWT_SECRET = "xcloud-forum-jwt-secret-change-in-production"
+ALLOWED_ORIGINS = "https://wiki.xcloudx.top,http://localhost:3000,https://c-4-c-4.github.io"
+R2_PUBLIC_URL = "https://r2.ccomm.top"

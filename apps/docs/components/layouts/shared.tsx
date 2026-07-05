@@ -1,4 +1,4 @@
-import { AlbumIcon, Heart, LayoutTemplate, Images, Store, Sparkles } from 'lucide-react';
+import { AlbumIcon, Heart, LayoutTemplate, Images, Store, Sparkles, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import Logo from '@/public/logo.png';
@@ -27,6 +27,12 @@ export const linkItems: LinkItemType[] = [
     url: '/gallery',
     icon: <Images />,
     active: 'url',
+  },
+  {
+    text: '论坛',
+    url: '/forum',
+    icon: <MessageSquare />,
+    active: 'nested-url',
   },
   {
     text: '关于',

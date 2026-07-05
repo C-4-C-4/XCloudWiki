@@ -14,3 +14,4 @@ allowBuilds:
   protobufjs: false
   sharp: false
   vue-demi: false
+  workerd: true
