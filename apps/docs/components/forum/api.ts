@@ -3,8 +3,7 @@
  * 封装所有 API 请求，处理 token 和错误
  */
 
-// TODO: 部署后替换为实际 API 域名
-const API_BASE_URL = 'https://forum-api.govs.workers.dev';
+const API_BASE_URL = 'https://forumapi.ccomm.top';
 
 /**
  * 通用请求方法
