@@ -4,7 +4,7 @@
  * 发布/编辑文章页面
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -302,7 +302,13 @@ function WriteContent() {
 export default function WritePage() {
   return (
     <AuthProvider>
-      <WriteContent />
+      <Suspense fallback={
+        <div className="flex items-center justify-center min-h-[50vh]">
+          <Loader2 className="size-8 text-fd-primary animate-spin" />
+        </div>
+      }>
+        <WriteContent />
+      </Suspense>
     </AuthProvider>
   );
 }
