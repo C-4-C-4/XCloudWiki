@@ -27,18 +27,6 @@ export const managementTeam: TeamMember[] = [
     badgeText: 'text-red-600 dark:text-red-400',
   },
   {
-    name: 'CCCC4444',
-    role: 'WIKI 创建者 & 开发者',
-    badge: 'WIKI 编辑',
-    iconName: 'Book',
-    avatar: '/avatars/CCCC4444.jpg',
-    description: '深度负责开发并编辑拓展附魔书快速查询系统，倾注海量心血设计、构建、美化并全方位技术性维护本 Wiki 站点。',
-    glowColor: 'from-amber-500/20 to-yellow-500/10',
-    borderColor: 'group-hover:border-amber-500/50',
-    badgeBg: 'bg-amber-500/10 dark:bg-amber-500/20 border-amber-500/30',
-    badgeText: 'text-amber-600 dark:text-amber-400',
-  },
-  {
     name: 'xuan562',
     role: 'SPVR 闲云服务器管理员',
     badge: '管理员',
@@ -160,6 +148,21 @@ export const wikiEditors: TeamMember[] = [
     borderColor: 'group-hover:border-emerald-500/50',
     badgeBg: 'bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/30',
     badgeText: 'text-emerald-600 dark:text-emerald-400',
+  },
+];
+
+export const retiredTeam: TeamMember[] = [
+  {
+    name: 'CCCC4444',
+    role: '前 WIKI 创建者 & 开发者',
+    badge: '已卸任',
+    iconName: 'Book',
+    avatar: '/avatars/CCCC4444.jpg',
+    description: '深度负责开发并编辑拓展附魔书快速查询系统，倾注海量心血设计、构建、美化并全方位技术性维护本 Wiki 站点。',
+    glowColor: 'from-gray-500/20 to-slate-500/10',
+    borderColor: 'group-hover:border-gray-500/50',
+    badgeBg: 'bg-gray-500/10 dark:bg-gray-500/20 border-gray-500/30',
+    badgeText: 'text-gray-600 dark:text-gray-400',
   },
 ];
 

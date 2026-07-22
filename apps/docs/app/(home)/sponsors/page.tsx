@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Crown, Shield, PenTool, Sparkles, Cpu, BookOpen, Users } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/cn';
-import { managementTeam, wikiEditors, type TeamMember } from './data';
+import { managementTeam, wikiEditors, retiredTeam, type TeamMember } from './data';
 
 // 页面 SEO 优化
 export const metadata = {
@@ -185,6 +185,27 @@ export default function Page() {
             ))}
           </div>
         </div>
+
+        {/* 板块三：已卸任成员 */}
+        {retiredTeam.length > 0 && (
+          <div className="w-full mb-16">
+            <div className="flex items-center gap-3 mb-10 border-b border-neutral-200 dark:border-neutral-900 pb-4">
+              <div className="p-2 rounded-lg bg-gray-500/10 text-gray-500 border border-gray-500/20">
+                <BookOpen className="size-5" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold tracking-wide">已卸任成员</h2>
+                <p className="text-xs text-neutral-500 mt-1">感谢曾经为闲云 Wiki 站点及社区生态付出心血与努力的贡献者</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {retiredTeam.map((member) => (
+                <MemberCard key={member.name} member={member} />
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* 底部致谢与声明 */}
         <div className="w-full text-center py-10 border-t border-neutral-200 dark:border-neutral-900 mt-10">
