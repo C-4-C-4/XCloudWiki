@@ -8,6 +8,7 @@ import { Geist, JetBrains_Mono } from 'next/font/google';
 import { TreeContextProvider } from 'fumadocs-ui/contexts/tree';
 import { source } from '@/lib/source';
 import { NextProvider } from 'fumadocs-core/framework/next';
+import { RainbowProgressBar } from '@/components/rainbow-progress-bar';
 
 const basePath = '';
 
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${geist.variable} ${mono.variable}`} suppressHydrationWarning>
       <Body>
         <NextProvider>
+          <RainbowProgressBar />
           <TreeContextProvider tree={source.getPageTree()}>
             <Provider>{children}</Provider>
           </TreeContextProvider>
