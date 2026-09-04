@@ -120,11 +120,12 @@ export function AlertDialog({
             </button>
 
             <div className="p-6 md:p-7">
-              <div className={`inline-flex p-3 rounded-xl ${styles.iconBg} ${styles.iconColor} mb-4`}>
-                <Icon className="size-6" />
+              <div className="flex items-center gap-3.5 mb-4">
+                <div className={`inline-flex p-2.5 rounded-xl ${styles.iconBg} ${styles.iconColor} shrink-0`}>
+                  <Icon className="size-5 md:size-6" />
+                </div>
+                <h3 className="text-xl font-bold text-fd-foreground">{title}</h3>
               </div>
-
-              <h3 className="text-lg font-bold text-fd-foreground">{title}</h3>
               {description && (
                 <div className="text-sm text-fd-muted-foreground mt-2 leading-relaxed">
                   {description}

@@ -192,7 +192,7 @@ export function MusicPlayer() {
     setCurrentTime(audio.currentTime);
   };
 
-  const currentLyric = activeLyricIndex >= 0 ? lyrics[activeLyricIndex]?.text : '再见 - 张震岳';
+  const currentLyric = activeLyricIndex >= 0 ? lyrics[activeLyricIndex]?.text : '再见';
   const nextLyric = activeLyricIndex >= 0 && activeLyricIndex + 1 < lyrics.length ? lyrics[activeLyricIndex + 1]?.text : '';
 
   if (!visible) {
