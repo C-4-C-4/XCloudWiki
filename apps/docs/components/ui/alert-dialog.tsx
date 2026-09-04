@@ -4,6 +4,7 @@ import { useEffect, type ReactNode } from 'react';
 import { X, AlertTriangle, CheckCircle2, Info, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { buttonVariants } from './button';
+import { cn } from '@/lib/cn';
 
 export type AlertDialogVariant = 'default' | 'success' | 'warning' | 'danger' | 'info';
 
@@ -132,7 +133,7 @@ export function AlertDialog({
                   type="button"
                   onClick={onConfirm}
                   disabled={loading}
-                  className={`${buttonVariants({ variant: 'default', size: 'sm' })} ${styles.accentBtn}`}
+                  className={cn(buttonVariants({ variant: 'default', size: 'sm' }), styles.accentBtn)}
                 >
                   {confirmText}
                 </button>

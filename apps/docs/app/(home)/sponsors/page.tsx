@@ -179,11 +179,29 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {wikiEditors.map((member) => (
-              <MemberCard key={member.name} member={member} />
-            ))}
-          </div>
+          {wikiEditors.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {wikiEditors.map((member) => (
+                <MemberCard key={member.name} member={member} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md p-8 rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-700 bg-neutral-50/30 dark:bg-neutral-900/20 text-center">
+                <div className="inline-flex p-3 rounded-xl bg-amber-500/10 text-amber-500 mb-5">
+                  <BookOpen className="size-6" />
+                </div>
+                <h3 className="text-lg font-bold text-neutral-800 dark:text-neutral-100 mb-3">
+                  所有 Wiki 编辑成员已全部卸任
+                </h3>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                  如果你热爱写作，并有意愿成为 Wiki 编辑者，
+                  <br />
+                  请联系服主 <strong className="text-amber-500">Love_Story</strong> 加入我们！
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* 板块三：已卸任成员 */}
@@ -238,6 +256,20 @@ function MemberCard({ member }: { member: TeamMember }) {
         "absolute inset-0 -z-10 bg-gradient-to-br blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500",
         member.glowColor
       )} />
+
+      {/* 已卸任印章标记 */}
+      {member.retired && (
+        <div className="absolute top-4 right-4 z-20 select-none pointer-events-none">
+          <div
+            className="flex items-center justify-center px-3 py-1.5 rounded-md border-2 border-dashed border-red-500/60 dark:border-red-400/50"
+            style={{ transform: 'rotate(12deg)' }}
+          >
+            <span className="text-xs font-black tracking-widest uppercase text-red-500/70 dark:text-red-400/60">
+              已卸任
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* 头像容器 */}
       <div className="relative mb-6">

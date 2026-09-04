@@ -27,6 +27,7 @@ import {
   Writing,
   SkinUploader,
 } from '@/app/(home)/page.client';
+import { AnnouncementDialog } from '@/components/announcement-dialog';
 import ShadcnImage from './shadcn.png';
 import ContributorCounter from '@/components/contributor-count';
 
@@ -83,6 +84,7 @@ const cardVariants = cva('rounded-2xl text-sm p-6 bg-origin-border shadow-lg', {
 export default function Page() {
   return (
     <main className="text-landing-foreground pt-4 pb-6 dark:text-landing-foreground-dark md:pb-12">
+      <AnnouncementDialog />
       <style>{`
         @keyframes pencil-draw {
           0% { clip-path: polygon(0 0, 0 100%, 0 100%, 0 0); }
@@ -565,6 +567,7 @@ function OpenSource() {
         </div>
       </div>
 
+      {/* 已注释：特性列表与按钮区块
       <ul
         className={cn(
           cardVariants({
@@ -618,6 +621,7 @@ function OpenSource() {
           </a>
         </li>
       </ul>
+      */}
     </>
   );
 }

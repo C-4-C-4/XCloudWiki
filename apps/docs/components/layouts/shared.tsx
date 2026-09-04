@@ -34,6 +34,7 @@ export const linkItems: LinkItemType[] = [
     icon: <Heart />,
   },
 
+  /* 已注释：GitHub 图标
   {
     type: 'icon',
     url: 'https://github.com/C-4-C-4/XCloudWiki',
@@ -46,6 +47,7 @@ export const linkItems: LinkItemType[] = [
     ),
     external: true,
   },
+  */
 ];
 
 export const logo = (
