@@ -49,9 +49,14 @@ export interface AlertDialogProps {
   confirmText?: string;
   cancelText?: string;
   showCancel?: boolean;
+  showSecondary?: boolean;
+  secondaryText?: string;
+  secondaryClassName?: string;
   loading?: boolean;
+  className?: string;
   onConfirm: () => void;
   onCancel: () => void;
+  onSecondary?: () => void;
 }
 
 export function AlertDialog({
@@ -62,9 +67,14 @@ export function AlertDialog({
   confirmText = '确定',
   cancelText = '取消',
   showCancel = false,
+  showSecondary = false,
+  secondaryText = '取消',
+  secondaryClassName,
   loading = false,
+  className,
   onConfirm,
   onCancel,
+  onSecondary,
 }: AlertDialogProps) {
   const styles = VARIANT_STYLES[variant];
   const Icon = styles.icon;
@@ -95,7 +105,10 @@ export function AlertDialog({
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 10 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-sm mx-4 bg-fd-card border border-fd-border rounded-2xl shadow-xl overflow-hidden"
+            className={cn(
+              "relative w-full max-w-md mx-4 bg-fd-card border border-fd-border rounded-2xl shadow-xl overflow-hidden",
+              className
+            )}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -113,30 +126,46 @@ export function AlertDialog({
 
               <h3 className="text-lg font-bold text-fd-foreground">{title}</h3>
               {description && (
-                <p className="text-sm text-fd-muted-foreground mt-2 leading-relaxed">
+                <div className="text-sm text-fd-muted-foreground mt-2 leading-relaxed">
                   {description}
-                </p>
+                </div>
               )}
 
-              <div className="flex items-center justify-end gap-2 pt-5 mt-5 border-t border-fd-border">
-                {showCancel && (
+              <div className="flex items-center justify-between gap-2 pt-5 mt-5 border-t border-fd-border">
+                {showSecondary ? (
                   <button
                     type="button"
-                    onClick={onCancel}
+                    onClick={onSecondary || onCancel}
                     disabled={loading}
-                    className={buttonVariants({ variant: 'outline', size: 'sm' })}
+                    className={cn(
+                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      secondaryClassName
+                    )}
                   >
-                    {cancelText}
+                    {secondaryText}
                   </button>
-                )}
-                <button
-                  type="button"
-                  onClick={onConfirm}
-                  disabled={loading}
-                  className={cn(buttonVariants({ variant: 'default', size: 'sm' }), styles.accentBtn)}
-                >
-                  {confirmText}
-                </button>
+                ) : <div />}
+
+                <div className="flex items-center gap-2">
+                  {showCancel && (
+                    <button
+                      type="button"
+                      onClick={onCancel}
+                      disabled={loading}
+                      className={buttonVariants({ variant: 'outline', size: 'sm' })}
+                    >
+                      {cancelText}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    onClick={onConfirm}
+                    disabled={loading}
+                    className={cn(buttonVariants({ variant: 'default', size: 'sm' }), styles.accentBtn)}
+                  >
+                    {confirmText}
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>

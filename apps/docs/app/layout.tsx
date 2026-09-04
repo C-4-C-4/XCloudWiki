@@ -10,6 +10,7 @@ import { source } from '@/lib/source';
 import { NextProvider } from 'fumadocs-core/framework/next';
 import { RainbowProgressBar } from '@/components/rainbow-progress-bar';
 import { SecurityGuard } from '@/components/security-guard';
+import { MusicPlayer } from '@/components/music-player';
 
 const basePath = '';
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <TreeContextProvider tree={source.getPageTree()}>
             <Provider>{children}</Provider>
           </TreeContextProvider>
+          <MusicPlayer />
         </NextProvider>
       </Body>
     </html>
