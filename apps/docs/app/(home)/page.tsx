@@ -153,6 +153,9 @@ export default function Page() {
         <ForEngineers />
         <OpenSource />
       </div>
+      <footer className="mt-16 pb-4 text-center text-xs text-fd-muted-foreground/60 font-mono">
+        <p>&copy; {new Date().getFullYear()} XCloud Wiki &middot; Made by CCCC4444</p>
+      </footer>
     </main>
   );
 }
